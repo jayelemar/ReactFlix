@@ -3,7 +3,7 @@ import { AiOutlineUser, AiOutlineMessage, AiOutlineBell, AiOutlineSetting, AiOut
 import styled from 'styled-components';
 
 // Import your profile image
-import profileImage from '../assets/images/th1.jpg';
+import profileImage from '/images/th1.jpg';
 
 const NavigationContainer = styled.div`
   background-color: #191970;

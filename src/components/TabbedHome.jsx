@@ -62,7 +62,7 @@ class TabsComponent extends React.Component {
           movies: [
             {
               title: 'Movie 1',
-              imageUrl: './src/assets/images/spidey.jpg',
+              imageUrl: '/images/spidey.jpg',
               year: '2021',
               duration: '120min',
               rating: '7.5',

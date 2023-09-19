@@ -54,7 +54,7 @@ const CardList = () => {
     <Wrapper>
       <CardsList className="flex cards">
         <CardItem>
-          <CardImage src="./src/assets/images/spidey.jpg" alt="Card 1 Image" />
+          <CardImage src="/images/spidey.jpg" alt="Card 1 Image" />
           <CardTitle>Card 1</CardTitle>
           <CardContent>
             <div className="rating-button">
@@ -65,7 +65,7 @@ const CardList = () => {
           </CardContent>
         </CardItem>
         <CardItem>
-          <CardImage src="./src/assets/images/spidey.jpg" alt="Card 2 Image" />
+          <CardImage src="/images/spidey.jpg" alt="Card 2 Image" />
           <CardTitle>Card 2</CardTitle>
           <CardContent>
             <div className="rating-button">Rating</div>
@@ -74,7 +74,7 @@ const CardList = () => {
           </CardContent>
         </CardItem>
         <CardItem>
-          <CardImage src="./src/assets/images/spidey.jpg" alt="Card 3 Image" />
+          <CardImage src="/images/spidey.jpg" alt="Card 3 Image" />
           <CardTitle>Card 3</CardTitle>
           <CardContent>
             <div className="rating-button">
@@ -85,7 +85,7 @@ const CardList = () => {
           </CardContent>
         </CardItem>
         <CardItem>
-          <CardImage src="./src/assets/images/spidey.jpg" alt="Card 4 Image" />
+          <CardImage src="/images/spidey.jpg" alt="Card 4 Image" />
           <CardTitle>Card 4</CardTitle>
           <CardContent>
             <div className="rating-button">
@@ -96,7 +96,7 @@ const CardList = () => {
           </CardContent>
         </CardItem>
         <CardItem>
-          <CardImage src="./src/assets/images/spidey.jpg" alt="Card 5 Image" />
+          <CardImage src="/images/spidey.jpg" alt="Card 5 Image" />
           <CardTitle>Card 5</CardTitle>
           <CardContent>
             <div className="rating-button">
@@ -107,7 +107,7 @@ const CardList = () => {
           </CardContent>
         </CardItem>
         <CardItem>
-          <CardImage src="./src/assets/images/spidey.jpg" alt="Card 5 Image" />
+          <CardImage src="/images/spidey.jpg" alt="Card 5 Image" />
           <CardTitle>Card 5</CardTitle>
           <CardContent>
             <div className="rating-button">
@@ -118,7 +118,7 @@ const CardList = () => {
           </CardContent>
         </CardItem>
         <CardItem>
-          <CardImage src="./src/assets/images/spidey.jpg" alt="Card 5 Image" />
+          <CardImage src="/images/spidey.jpg" alt="Card 5 Image" />
           <CardTitle>Card 5</CardTitle>
           <CardContent>
             <div className="rating-button">
@@ -129,7 +129,7 @@ const CardList = () => {
           </CardContent>
         </CardItem>
         <CardItem>
-          <CardImage src="./src/assets/images/spidey.jpg" alt="Card 5 Image" />
+          <CardImage src="/images/spidey.jpg" alt="Card 5 Image" />
           <CardTitle>Card 5</CardTitle>
           <CardContent>
             <div className="rating-button">
@@ -140,7 +140,7 @@ const CardList = () => {
           </CardContent>
         </CardItem>
         <CardItem>
-          <CardImage src="./src/assets/images/spidey.jpg" alt="Card 5 Image" />
+          <CardImage src="/images/spidey.jpg" alt="Card 5 Image" />
           <CardTitle>Card 5</CardTitle>
           <CardContent>
             <div className="rating-button">
@@ -151,7 +151,7 @@ const CardList = () => {
           </CardContent>
         </CardItem>
         <CardItem>
-          <CardImage src="./src/assets/images/spidey.jpg" alt="Card 5 Image" />
+          <CardImage src="/images/spidey.jpg" alt="Card 5 Image" />
           <CardTitle>Card 5</CardTitle>
           <CardContent>
             <div className="rating-button">
@@ -162,7 +162,7 @@ const CardList = () => {
           </CardContent>
         </CardItem>
         <CardItem>
-          <CardImage src="./src/assets/images/spidey.jpg" alt="Card 5 Image" />
+          <CardImage src="/images/spidey.jpg" alt="Card 5 Image" />
           <CardTitle>Card 5</CardTitle>
           <CardContent>
             <div className="rating-button">
@@ -173,7 +173,7 @@ const CardList = () => {
           </CardContent>
         </CardItem>
         <CardItem>
-          <CardImage src="./src/assets/images/spidey.jpg" alt="Card 5 Image" />
+          <CardImage src="/images/spidey.jpg" alt="Card 5 Image" />
           <CardTitle>Card 5</CardTitle>
           <CardContent>
             <div className="rating-button">
@@ -184,7 +184,7 @@ const CardList = () => {
           </CardContent>
         </CardItem>
         <CardItem>
-          <CardImage src="./src/assets/images/spidey.jpg" alt="Card 5 Image" />
+          <CardImage src="/images/spidey.jpg" alt="Card 5 Image" />
           <CardTitle>Card 5</CardTitle>
           <CardContent>
             <div className="rating-button">
@@ -195,7 +195,7 @@ const CardList = () => {
           </CardContent>
         </CardItem>
         <CardItem>
-          <CardImage src="./src/assets/images/spidey.jpg" alt="Card 5 Image" />
+          <CardImage src="/images/spidey.jpg" alt="Card 5 Image" />
           <CardTitle>Card 5</CardTitle>
           <CardContent>
             <div className="rating-button">
@@ -206,7 +206,7 @@ const CardList = () => {
           </CardContent>
         </CardItem>
         <CardItem>
-          <CardImage src="./src/assets/images/spidey.jpg" alt="Card 5 Image" />
+          <CardImage src="/images/spidey.jpg" alt="Card 5 Image" />
           <CardTitle>Card 5</CardTitle>
           <CardContent>
             <div className="rating-button">

@@ -60,7 +60,7 @@ const MyComponent = () => {
       {Array.from(Array(20)).map((_, index) => (
         <GridItem xs={1} sm={1} md={1} key={index}>
           <Item>
-            <Image src="../images/th.jpg" alt="Your Image" />
+            <Image src="/images/th.jpg" alt="Your Image" />
             {`Movie ${index + 1}`}
             <p>This is a paragraph element.</p>
           </Item>

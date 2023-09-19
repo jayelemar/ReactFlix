@@ -44,7 +44,7 @@ const DestiSlider = () => {
               <Link to="/another-page">
             <Link to="/another-page">
               <img
-                src="./src/assets/images/th.jpg"
+                src="/images/th.jpg"
                 alt="Slider Image"
                  style={{ height:"300px", width:"400px",objectFit: "cover", borderTopLeftRadius: "25px", borderTopRightRadius: "25px"}}
               />
@@ -89,7 +89,7 @@ const DestiSlider = () => {
             <div className="item-img">
               <Link to="/another-page">
               <img
-                src="./src/assets/images/Heart_of_Stone_2023_poster.jpg"
+                src="/images/Heart_of_Stone_2023_poster.jpg"
                 alt="Slider Image"
                  style={{ height:"300px", width:"400px",objectFit: "cover", borderTopLeftRadius: "25px", borderTopRightRadius: "25px"}}
               />
@@ -132,7 +132,7 @@ const DestiSlider = () => {
             <div className="item-img">
               <Link to="/another-page">
               <img
-                src="./src/assets/images/transformer.jpg"
+                src="/images/transformer.jpg"
                 alt="Slider Image"
                  style={{ height:"300px", width:"400px",objectFit: "cover", borderTopLeftRadius: "25px", borderTopRightRadius: "25px"}}
               />
@@ -172,7 +172,7 @@ const DestiSlider = () => {
             <div className="item-img">
               <Link to="/another-page">
               <img
-                src="./src/assets/images/spider.jpg"
+                src="/images/spider.jpg"
                 alt="Slider Image"
                  style={{ height:"300px", width:"400px",objectFit: "cover", borderTopLeftRadius: "25px", borderTopRightRadius: "25px"}}
               />
@@ -213,7 +213,7 @@ const DestiSlider = () => {
             <div className="item-img">
               <Link to="/another-page">
               <img
-                src="./src/assets/images/flash.jpg"
+                src="/images/flash.jpg"
                 alt="Slider Image"
                  style={{ height:"300px", width:"400px",objectFit: "cover", borderTopLeftRadius: "25px", borderTopRightRadius: "25px"}}
               />

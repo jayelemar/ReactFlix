@@ -7,37 +7,37 @@ import { faArrowLeft, faArrowRight } from "@fortawesome/free-solid-svg-icons";
 function MyCarousel() {
   const carouselData = [
     {
-      imageSrc: "./src/assets/images/spidey.jpg",
+      imageSrc: "/images/spidey.jpg",
       link: "/playing",
       text: "The Flash",
       description: "Barry Allen, aka The Flash, returns in an action-packed adventure. Can he overcome his greatest challenge yet and save Central City from impending doom?"
     },
     {
-      imageSrc: "./src/assets/images/transformer.jpg",
+      imageSrc: "/images/transformer.jpg",
       link: "/playing",
       text: "Transformer: Rise of The Beast",
       description: "Join the Autobots and Decepticons in their latest battle for Earth. Explosive action, epic showdowns, and new robotic heroes await."
     },
     {
-      imageSrc: "./src/assets/images/got.jpg",
+      imageSrc: "/images/got.jpg",
       link: "/playing",
       text: "Guardians of the Galaxy Vol. 3",
       description: "Star-Lord and his crew face new challenges and old foes in this cosmic sequel. Prepare for a galactic adventure like no other."
     },
     {
-      imageSrc: "./src/assets/images/ig.jpg",
+      imageSrc: "/images/ig.jpg",
       link: "/playing",
       text: "Indiana Jones and the Dial of Destiny",
       description: "Indiana Jones embarks on another thrilling quest in search of a mystical artifact. Ancient mysteries and heart-pounding excitement await."
     },
     {
-      imageSrc: "./src/assets/images/d.jpg",
+      imageSrc: "/images/d.jpg",
       link: "/playing",
       text: "The Last Voyage of the Demeter",
       description: "Witness the horrifying journey of the Demeter, a ship carrying Dracula to England. Can the crew survive the terror that lurks in the darkness?"
     },
     {
-      imageSrc: "./src/assets/images/s.jpg",
+      imageSrc: "/images/s.jpg",
       link: "/playing",
       text: "Spider-Man: Across the Spider-Verse",
       description: "Spider-Man teams up with other Spideys from different dimensions to save the multiverse. Swing into action with your friendly neighborhood hero."
