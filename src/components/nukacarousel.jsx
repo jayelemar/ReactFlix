@@ -51,7 +51,7 @@ function MyCarousel() {
     speed={1000}
     slidesToShow={1}
     style={{
-      height: "600px", // Set the height to 600px
+      height: "520px", // Set the height to 600px
       backgroundColor: "#212016", // Set the background color
     }}
     renderCenterLeftControls={({ previousSlide }) => (
@@ -84,7 +84,7 @@ function MyCarousel() {
           <div
             style={{
               position: "absolute",
-              bottom: "10px",
+              bottom: "100px",
               left: "10px",
               backgroundColor: "rgba(0, 0, 0, 0.5)",
               color: "white",
