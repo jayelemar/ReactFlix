@@ -10,6 +10,8 @@ import Contact from './pages/contact'
 import Login from './Modal/login'
 import Register from './Modal/reg'
 
+import Dashboard from './pages/Dashboard'
+
 function App() {
   return (
     <BrowserRouter>
@@ -23,7 +25,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/reg" element={<Register />} />
 
-
+        <Route path="/dashboard" element={<Dashboard />} />
       </Routes>
     </BrowserRouter>
   );

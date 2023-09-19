@@ -1,19 +1,19 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import styled, { css } from "styled-components";
-import DropdownComponent from "../components/dropdown"; // Import the DropdownComponent
+import styled from "styled-components";
+import SearchBar from "../Search/search";
 
 const StyledNavbar = styled.nav`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #191970;
+  background-color: #444654;
   height: 60px;
-  padding: 0 20px; /* Add some padding for better spacing */
+  padding: 0 20px;
   font-family: "Montserrat", sans-serif;
 
   @media (max-width: 1000px) {
-    display: none; /* Hide the whole navbar when screen width is less than 1000px */
+    display: none;
   }
 `;
 
@@ -29,8 +29,8 @@ const NavLinks = styled.ul`
   margin: 0;
   padding: 0;
   list-style: none;
-  justify-content: center; /* Center the NavLinks horizontally */
-  flex-grow: 1; /* Allow NavLinks to take up available space */
+  justify-content: center;
+  flex-grow: 1;
 `;
 
 const NavLinkItem = styled.li`
@@ -50,16 +50,6 @@ const SearchBarContainer = styled.div`
   align-items: center;
 `;
 
-const SearchBar = styled.input`
-  border: none;
-  border-bottom: 1px solid white;
-  background-color: transparent;
-  color: white;
-  font-size: 16px;
-  padding: 5px;
-  margin-right: 10px;
-`;
-
 const SearchIcon = styled.i`
   color: white;
   font-size: 24px;
@@ -67,10 +57,6 @@ const SearchIcon = styled.i`
 `;
 
 const Navbar = () => {
-  const animeDropdownItems = ["Adventure", "Isekai", "Echi"];
-  const moviesDropdownItems = ["Action", "Drama", "Comedy"];
-  const seriesDropdownItems = ["Season 1", "Season 2", "Season 3"];
-
   return (
     <StyledNavbar>
       <Logo>
@@ -81,22 +67,25 @@ const Navbar = () => {
           <NavLink to="/Home">Home</NavLink>
         </NavLinkItem>
         <NavLinkItem>
-          <DropdownComponent label="Movies" items={moviesDropdownItems} />
+          <NavLink to="/Movies">Movies</NavLink>
         </NavLinkItem>
         <NavLinkItem>
-          <DropdownComponent label="Anime" items={animeDropdownItems} />
+          <NavLink to="/Anime">Anime</NavLink>
         </NavLinkItem>
         <NavLinkItem>
-          <DropdownComponent label="Series" items={seriesDropdownItems} />
+          <NavLink to="/Series">Series</NavLink>
         </NavLinkItem>
         <NavLinkItem>
           <NavLink to="/login">Login</NavLink>
         </NavLinkItem>
       </NavLinks>
-      <SearchBarContainer>
-        <SearchBar type="text" placeholder="Search" />
+      <NavLinkItem>
+        <SearchBarContainer>
+        <SearchBar />
         <SearchIcon className="fas fa-search" />
       </SearchBarContainer>
+      </NavLinkItem>
+      
     </StyledNavbar>
   );
 };

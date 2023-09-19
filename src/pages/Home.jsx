@@ -4,7 +4,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "aos/dist/aos.css";
 import AOS from "aos";
-import Navbar from "../Header/navbar";
+import Navbar from "../Header/navbar1";
 import Carousel from "../components/nukacarousel";
 import TabbedHome from "../components/TabbedHome";
 import FlexWrap from "../components/multiplecard";
@@ -43,7 +43,7 @@ const Home = () => {
   return (
     <section
       className="slider4 mbr-embla cid-tEzwvrEiry"
-      style={{ backgroundColor: "#fff" }}
+      style={{ backgroundColor: "#8E95A5" }}
       id="slider4-2j"
     >
       <Navbar />
