@@ -72,7 +72,7 @@ const Navbar = () => {
           <NavLink to="/Anime">Anime</NavLink>
         </NavLinkItem>
         <NavLinkItem>
-          <NavLink to="/Series">Series</NavLink>
+          <NavLink to="/series">Series</NavLink>
         </NavLinkItem>
         <NavLinkItem>
           <NavLink to="/login">Login</NavLink>

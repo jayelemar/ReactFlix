@@ -155,19 +155,19 @@ function MyCarousel() {
               alt={`Dot ${index + 1}`}
               style={{
                 height: "50px",
-                border: "1px solid black", // Set the height to 100px
                 width: "100%", // Set the width to 100%
-                marginBottom: "10px", // Add a 10px top margin and 5px horizontal margins
+                marginBottom: "110px", // Add a 10px top margin and 5px horizontal margins
                 cursor: "pointer",
                 margin: "5px",
                 opacity: currentSlide === index ? 1 : 0.5, // Highlight the active dot
-                border: "1px solid black",
+                border: "1px solid black", // Remove the duplicated 'border' property
               }}
               onClick={() => goToSlide(index)} // Make the dot clickable
             />
           ))}
         </div>
       )}
+      
     >
       {carouselData.map((item, index) => (
         <div key={index} className="carousel-item">
