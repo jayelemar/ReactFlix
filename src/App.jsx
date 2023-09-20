@@ -6,6 +6,7 @@ const IntroPage = lazy(() => import("./pages/IntroPage"));
 const Home = lazy(() => import("./pages/Home"));
 const Series = lazy(() => import("./pages/series"));
 const Movie = lazy(() => import("./pages/movie"));
+const Anime = lazy(() => import("./pages/anime"));
 const Term = lazy(() => import("./pages/term"));
 const Contact = lazy(() => import("./pages/contact"));
 const Login = lazy(() => import("./pages/login"));
@@ -40,6 +41,15 @@ function App() {
             <Suspense fallback={<LoadingSpinner />}>
               {" "}
               <Movie />
+            </Suspense>
+          }
+        />
+        <Route
+          path="/anime"
+          element={
+            <Suspense fallback={<LoadingSpinner />}>
+              {" "}
+              <Anime />
             </Suspense>
           }
         />
