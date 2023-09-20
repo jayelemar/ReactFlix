@@ -57,6 +57,7 @@ function MyCarousel() {
       trailerLink: "/trailer/spidey",
       text: "The Flash",
       genre: "Action",
+      genre: "Sci-Fi",
     },
     {
       imageSrc: "/images/transformer.jpg",
@@ -70,7 +71,7 @@ function MyCarousel() {
       playLink: "/playing",
       trailerLink: "/trailer/got",
       text: "Guardians of the Galaxy Vol. 3",
-      genre: "Adventure",
+      genre: "Action",
     },
     {
       imageSrc: "/images/ig.jpg",
@@ -91,7 +92,7 @@ function MyCarousel() {
       playLink: "/playing",
       trailerLink: "/trailer/s",
       text: "Spider-Man: Across the Spider-Verse",
-      genre: "Action",
+      genre: "Animation",
     },
     // Add more items with genres as needed
   ];

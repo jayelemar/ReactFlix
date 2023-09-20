@@ -29,6 +29,7 @@ const FooterText = styled.p`
   text-align: center;
   font-family: 'Montserrat', sans-serif;
   width: 800px;
+  color: #fff;
 
   /* Media Query for screens with width less than or equal to 600px */
   @media (max-width: 600px) {
@@ -48,7 +49,7 @@ const Footer = () => {
         <strong>ReactFlix</strong> is a Free Movies streaming app with zero ads. We let you watch movies online without having to register or pay, with over 10,000 movies and TV-Series. You can also download full movies from MoviesCloud and watch them later if you want.
       </FooterText>
       <FooterText>
-        <a href="/term">Terms of Service</a> | <a href="/contact">Contact</a> | <FooterLink href="#">Sitemap</FooterLink>
+        <a href="/term" style={{color:"#fff"}}>Terms of Service</a> | <a href="/contact" style={{color:"#fff"}}>Contact</a> | <FooterLink href="#" style={{color:"#fff"}}>Sitemap</FooterLink>
       </FooterText>
     </FooterContainer>
   );

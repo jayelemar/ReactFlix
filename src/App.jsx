@@ -9,6 +9,7 @@ const Movie = lazy(() => import("./pages/movie"));
 const Term = lazy(() => import("./pages/term"));
 const Contact = lazy(() => import("./pages/contact"));
 const Login = lazy(() => import("./pages/login"));
+const Register = lazy(() => import("./pages/reg"));
 
 function App() {
   return (
@@ -66,6 +67,15 @@ function App() {
             <Suspense fallback={<LoadingSpinner />}>
               {" "}
               <Login />
+            </Suspense>
+          }
+        />
+        <Route
+          path="/reg"
+          element={
+            <Suspense fallback={<LoadingSpinner />}>
+              {" "}
+              <Register />
             </Suspense>
           }
         />
