@@ -1,32 +1,68 @@
-import React from "react";
+import React, { Suspense, lazy } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import IntroPage from "./pages/IntroPage";
-import Home from "./pages/Home";
-import Series from "./pages/series";
-import Movie from "./pages/playing"
+import LoadingSpinner from "./components/loadinganime"; // Import your loading component
 
-import Term from './pages/term'
-import Contact from './pages/contact'
-
-import Login from './Modal/login'
-import Register from './Modal/reg'
-
+const IntroPage = lazy(() => import("./pages/IntroPage"));
+const Home = lazy(() => import("./pages/Home"));
+const Series = lazy(() => import("./pages/series"));
+const Movie = lazy(() => import("./pages/movie"));
+const Term = lazy(() => import("./pages/term"));
+const Contact = lazy(() => import("./pages/contact"));
+const Login = lazy(() => import("./pages/login"));
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<IntroPage />} />
-        <Route path="/home" element={<Home />} />
-        <Route path="/term" element={<Term />} />
-        <Route path="/series" element={<Series />} />
-
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/playing" element={<Movie />} />
-
-        <Route path="/login" element={<Login />} />
-        <Route path="/reg" element={<Register />} />
-
+        <Route
+          path="/home"
+          element={
+            <Suspense fallback={<LoadingSpinner />}> {/* Use your loading component */}
+              <Home />
+            </Suspense>
+          }
+        />
+        <Route
+          path="/series"
+          element={
+            <Suspense fallback={<LoadingSpinner />}> {/* Use your loading component */}
+              <Series />
+            </Suspense>
+          }
+        />
+        <Route
+          path="/playing"
+          element={
+            <Suspense fallback={<LoadingSpinner />}> {/* Use your loading component */}
+              <Movie />
+            </Suspense>
+          }
+        />
+        <Route
+          path="/term"
+          element={
+            <Suspense fallback={<LoadingSpinner />}> {/* Use your loading component */}
+              <Term />
+            </Suspense>
+          }
+        />
+        <Route
+          path="/contact"
+          element={
+            <Suspense fallback={<LoadingSpinner />}> {/* Use your loading component */}
+              <Contact />
+            </Suspense>
+          }
+        />
+        <Route
+          path="/login"
+          element={
+            <Suspense fallback={<LoadingSpinner />}> {/* Use your loading component */}
+              <Login />
+            </Suspense>
+          }
+        />
       </Routes>
     </BrowserRouter>
   );
