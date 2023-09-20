@@ -20,7 +20,6 @@ function App() {
           element={
             <Suspense fallback={<LoadingSpinner />}>
               {" "}
-              
               <Home />
             </Suspense>
           }
@@ -30,7 +29,6 @@ function App() {
           element={
             <Suspense fallback={<LoadingSpinner />}>
               {" "}
-              
               <Series />
             </Suspense>
           }
@@ -40,7 +38,6 @@ function App() {
           element={
             <Suspense fallback={<LoadingSpinner />}>
               {" "}
-              
               <Movie />
             </Suspense>
           }
@@ -50,7 +47,6 @@ function App() {
           element={
             <Suspense fallback={<LoadingSpinner />}>
               {" "}
-              
               <Term />
             </Suspense>
           }
@@ -60,7 +56,6 @@ function App() {
           element={
             <Suspense fallback={<LoadingSpinner />}>
               {" "}
-              
               <Contact />
             </Suspense>
           }
@@ -70,7 +65,6 @@ function App() {
           element={
             <Suspense fallback={<LoadingSpinner />}>
               {" "}
-              
               <Login />
             </Suspense>
           }
