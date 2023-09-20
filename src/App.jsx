@@ -1,6 +1,6 @@
 import React, { Suspense, lazy } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import LoadingSpinner from "./components/loadinganime"; // Import your loading component
+import LoadingSpinner from "../src/components/loadinganime"; // Import your loading component
 
 const IntroPage = lazy(() => import("./pages/IntroPage"));
 const Home = lazy(() => import("./pages/Home"));
