@@ -14,30 +14,32 @@ const SidebarMenuBg = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #444654;
+  background-color: rgba(255, 255, 255, 0.2); /* Semi-transparent white background */
+  backdrop-filter: blur(10px); /* Apply blur effect */
   height: 60px;
   padding: 0 20px;
   font-family: "Montserrat", sans-serif;
 `;
 
 const Logo = styled.img`
-  height: 40px; /* Set the height of the icon */
-  width: 50px; /* Let the width adjust to maintain aspect ratio */
+  height: 40px;
+  width: 50px;
   margin-right: auto;
-  border-radius:10px;
+  border-radius: 10px;
 `;
 
 const SideMenuWrapper = styled.div`
   position: fixed;
   top: 0;
-  left: ${(props) =>
-    props.isOpen ? "0" : "-300px"}; /* Slide in from the left */
-  width: 300px; /* Set the width when open */
+  left: ${(props) => (props.isOpen ? "0" : "-300px")};
+  width: 300px;
   height: 100%;
-  background-color: #333;
   transition: left 0.3s ease-in-out;
-  z-index: ${(props) =>
-    props.isOpen ? "1000" : "-1"}; /* Control stacking order */
+  z-index: ${(props) => (props.isOpen ? "1000" : "-1")};
+
+  /* Glassmorphism effect */
+  background: rgba(255, 255, 255, 0.15); /* Semi-transparent white background */
+  backdrop-filter: blur(10px); /* Apply blur effect */
 `;
 
 const HeaderButton = styled.div`
@@ -83,21 +85,22 @@ const LoginLink = styled.a`
   display: flex;
   align-items: center;
 `;
+
 const GenreGridContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
 `;
 
-// Define a styled component for each genre tag
 const GenreTag = styled.a`
   padding: 5px 10px;
   background-color: transparent;
-  color: #fff;
+  color: #000;
   border-radius: 5px;
   text-decoration: none;
   border: 1px solid black;
 `;
+
 class Navbar extends Component {
   constructor(props) {
     super(props);
@@ -123,7 +126,7 @@ class Navbar extends Component {
     return (
       <nav style={{ height: "60px" }}>
         <SidebarMenuBg>
-        <Logo src="/images/OIP.jpg" alt="Reactflix Logo" />
+          <Logo src="/images/OIP.jpg" alt="Reactflix Logo" />
           <HeaderButton onClick={this.toggleSidebar}>
             <FaBars />
           </HeaderButton>
@@ -142,31 +145,31 @@ class Navbar extends Component {
           </LoginLink>
         </SidebarMenuBg>
         <SideMenuWrapper isOpen={isSidebarOpen}>
-        <button
-  onClick={this.toggleSidebar}
-  style={{
-    position: "absolute",
-    top: "10px",
-    right: "10px",
-    borderRadius: "50%", /* 50% will make it round */
-    width: "40px", /* Adjust the width and height to your preference */
-    height: "40px",
-    border: "none", /* Remove the border */
-    background: "#666666", /* Make the background transparent */
-    cursor: "pointer", /* Add a pointer cursor on hover */
-  }}
->
-  &larr;
-</button>
+          <button
+            onClick={this.toggleSidebar}
+            style={{
+              position: "absolute",
+              top: "10px",
+              right: "10px",
+              borderRadius: "50%",
+              width: "40px",
+              height: "40px",
+              border: "none",
+              background: "#666666",
+              cursor: "pointer",
+            }}
+          >
+            &larr;
+          </button>
 
           <br />
           <ul>
-            <h3 style={{ color: "white" }}>SideMenu</h3>
+            <h3 style={{ color: "black" }}>SideMenu</h3>
             <div style={{ marginBottom: "20px" }}>
               <a
                 href="/home"
                 style={{
-                  color: "white",
+                  color: "black",
                   textDecoration: "none",
                   fontSize: "20px",
                 }}
@@ -179,7 +182,7 @@ class Navbar extends Component {
               <a
                 href="/movies"
                 style={{
-                  color: "white",
+                  color: "black",
                   textDecoration: "none",
                   fontSize: "20px",
                 }}
@@ -192,7 +195,7 @@ class Navbar extends Component {
               <a
                 href="/tv-shows"
                 style={{
-                  color: "white",
+                  color: "black",
                   textDecoration: "none",
                   fontSize: "20px",
                 }}
@@ -205,7 +208,7 @@ class Navbar extends Component {
               <a
                 href="/top-imdb"
                 style={{
-                  color: "white",
+                  color: "black",
                   textDecoration: "none",
                   fontSize: "20px",
                 }}
@@ -218,7 +221,7 @@ class Navbar extends Component {
               <a
                 href="/android-app"
                 style={{
-                  color: "white",
+                  color: "black",
                   textDecoration: "none",
                   fontSize: "20px",
                 }}
@@ -227,7 +230,7 @@ class Navbar extends Component {
               </a>
             </div>
 
-            <h3 style={{ color: "white" }}>GENRE</h3>
+            <h3 style={{ color: "black" }}>GENRE</h3>
             <GenreGridContainer>
               <GenreTag href="/action">Action</GenreTag>
               <GenreTag href="/action-adventure">Action & Adventure</GenreTag>
@@ -258,7 +261,6 @@ class Navbar extends Component {
               <GenreTag href="/war-politics">War & Politics</GenreTag>
               <GenreTag href="/western">Western</GenreTag>
             </GenreGridContainer>
-            {/* Add more tags here */}
           </ul>
         </SideMenuWrapper>
       </nav>
