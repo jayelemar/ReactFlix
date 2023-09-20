@@ -29,6 +29,7 @@ const TabsNavButton = styled.button`
   padding: 1em 2em;
   text-align: center;
   cursor: pointer;
+  color:white,
   transition: background-color 0.3s, color 0.3s;
   height: 70px;
   font-size: 20px; /* Set the font size to 20px */

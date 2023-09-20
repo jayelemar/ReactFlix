@@ -53,6 +53,7 @@ const Home = () => {
         speed={1000}
         slidesToShow={1}
       ></Carousel>
+      
      <TabbedHome />
      <FlexWrap />
       <Footer />

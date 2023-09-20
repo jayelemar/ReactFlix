@@ -2,6 +2,7 @@ import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import IntroPage from "./pages/IntroPage";
 import Home from "./pages/Home";
+import Series from "./pages/series";
 import Movie from "./pages/playing"
 
 import Term from './pages/term'
@@ -18,6 +19,8 @@ function App() {
         <Route path="/" element={<IntroPage />} />
         <Route path="/home" element={<Home />} />
         <Route path="/term" element={<Term />} />
+        <Route path="/series" element={<Series />} />
+
         <Route path="/contact" element={<Contact />} />
         <Route path="/playing" element={<Movie />} />
 

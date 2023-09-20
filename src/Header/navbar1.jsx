@@ -20,10 +20,11 @@ const SidebarMenuBg = styled.div`
   font-family: "Montserrat", sans-serif;
 `;
 
-const Logo = styled.a`
-  color: white;
-  text-decoration: none;
+const Logo = styled.img`
+  height: 40px; /* Set the height of the icon */
+  width: 50px; /* Let the width adjust to maintain aspect ratio */
   margin-right: auto;
+  border-radius:10px;
 `;
 
 const SideMenuWrapper = styled.div`
@@ -122,7 +123,7 @@ class Navbar extends Component {
     return (
       <nav style={{ height: "60px" }}>
         <SidebarMenuBg>
-          <Logo href="/home">Reactflix</Logo>
+        <Logo src="/images/OIP.jpg" alt="Reactflix Logo" />
           <HeaderButton onClick={this.toggleSidebar}>
             <FaBars />
           </HeaderButton>

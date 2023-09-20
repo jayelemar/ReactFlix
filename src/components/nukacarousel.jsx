@@ -1,105 +1,313 @@
-import React from "react";
+import React, { useState } from "react";
 import Carousel from "nuka-carousel";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowLeft, faArrowRight } from "@fortawesome/free-solid-svg-icons";
+import {
+  faArrowLeft,
+  faArrowRight,
+  faPlay,
+  faFilm,
+  faHeart,
+  faShare,
+} from "@fortawesome/free-solid-svg-icons";
+import styled from "styled-components";
+import Movietabs from '../tabs/Movietabs'
 
+const customDotImages = [
+  "/images/spidey.jpg", // Customize the paths as needed
+  "/images/transformer.jpg",
+  "/images/got.jpg",
+  "/images/ig.jpg",
+  "/images/d.jpg",
+  "/images/s.jpg",
+];
+const CarouselButton = styled.a`
+  background: #d6d4d4;
+  border: 1px solid #d6d4d4;
+  color: black;
+  text-decoration: none;
+  transition: background-color 0.5s;
+  height: 50px;
+  width: 100px;
+  border-radius: 100px; /* You can simplify the border-radius to make it a circle */
+  display: inline-flex; /* Use inline-flex to center both horizontally and vertically */
+  align-items: center; /* Center vert/images/spidey.jpgically */
+  justify-content: center; /* Center horizontally */
+  margin: 10px;
+  margin-left: 0px;
+  border; 1px solid black;
+
+  &:hover {
+    background: black;
+    color: white;
+  }
+
+  &.clicked {
+    background: black;
+    color: white;
+  }
+`;
 
 function MyCarousel() {
+  const [showTrailer, setShowTrailer] = useState(false);
+
   const carouselData = [
     {
       imageSrc: "/images/spidey.jpg",
-      link: "/playing",
+      playLink: "/playing",
+      trailerLink: "/trailer/spidey",
       text: "The Flash",
-      description: "Barry Allen, aka The Flash, returns in an action-packed adventure. Can he overcome his greatest challenge yet and save Central City from impending doom?"
+      genre: "Action",
     },
     {
       imageSrc: "/images/transformer.jpg",
-      link: "/playing",
+      playLink: "/playing",
+      trailerLink: "/trailer/transformer",
       text: "Transformer: Rise of The Beast",
-      description: "Join the Autobots and Decepticons in their latest battle for Earth. Explosive action, epic showdowns, and new robotic heroes await."
+      genre: "Sci-Fi",
     },
     {
       imageSrc: "/images/got.jpg",
-      link: "/playing",
+      playLink: "/playing",
+      trailerLink: "/trailer/got",
       text: "Guardians of the Galaxy Vol. 3",
-      description: "Star-Lord and his crew face new challenges and old foes in this cosmic sequel. Prepare for a galactic adventure like no other."
+      genre: "Adventure",
     },
     {
       imageSrc: "/images/ig.jpg",
-      link: "/playing",
+      playLink: "/playing",
+      trailerLink: "/trailer/ig",
       text: "Indiana Jones and the Dial of Destiny",
-      description: "Indiana Jones embarks on another thrilling quest in search of a mystical artifact. Ancient mysteries and heart-pounding excitement await."
+      genre: "Adventure",
     },
     {
       imageSrc: "/images/d.jpg",
-      link: "/playing",
+      playLink: "/playing",
+      trailerLink: "/trailer/d",
       text: "The Last Voyage of the Demeter",
-      description: "Witness the horrifying journey of the Demeter, a ship carrying Dracula to England. Can the crew survive the terror that lurks in the darkness?"
+      genre: "Horror",
     },
     {
       imageSrc: "/images/s.jpg",
-      link: "/playing",
+      playLink: "/playing",
+      trailerLink: "/trailer/s",
       text: "Spider-Man: Across the Spider-Verse",
-      description: "Spider-Man teams up with other Spideys from different dimensions to save the multiverse. Swing into action with your friendly neighborhood hero."
+      genre: "Action",
     },
+    // Add more items with genres as needed
   ];
 
   return (
+    <div>
     <Carousel
-    autoplay={true}
-    wrapAround={true}
-    speed={1000}
-    slidesToShow={1}
-    style={{
-      height: "520px", // Set the height to 600px
-      backgroundColor: "#212016", // Set the background color
-    }}
-    renderCenterLeftControls={({ previousSlide }) => (
-      <button
-        onClick={previousSlide}
-        className="carousel-button"
-        style={{ left: "50px", background: "transparent", border: "none", color: "black" }}
-      >
-        <FontAwesomeIcon icon={faArrowLeft} size="2x" color="black" style={{ fontSize: "40px" }} />
-      </button>
-    )}
-    renderCenterRightControls={({ nextSlide }) => (
-      <button
-        onClick={nextSlide}
-        className="carousel-button"
-        style={{ right: "50px", background: "transparent", border: "none", color: "black" }}
-      >
-        <FontAwesomeIcon icon={faArrowRight} size="2x" color="black" style={{ fontSize: "40px" }} />
-      </button>
-    )}
-  >
-    {carouselData.map((item, index) => (
-      <a key={index} href={item.link} className="carousel-item">
-        <div style={{ position: "relative" }}>
-          <img
-            src={item.imageSrc}
-            alt={`Image ${index + 1}`}
-            style={{ width: "100%", height: "550px" }}
+      autoplay={true}
+      wrapAround={true}
+      speed={1000}
+      slidesToShow={1}
+      style={{
+        height: "550px",
+        backgroundColor: "#212016",
+        marginTop: "5px",
+      }}
+      renderCenterLeftControls={({ previousSlide }) => (
+        <button
+          onClick={previousSlide}
+          className="carousel-button"
+          style={{
+            left: "50px",
+            background: "transparent",
+            border: "none",
+            color: "black",
+          }}
+        >
+          <FontAwesomeIcon
+            icon={faArrowLeft}
+            size="2x"
+            color="black"
+            style={{ fontSize: "40px" }}
           />
-          <div
-            style={{
-              position: "absolute",
-              bottom: "100px",
-              left: "10px",
-              backgroundColor: "rgba(0, 0, 0, 0.5)",
-              color: "white",
-              padding: "5px 10px",
-              fontSize: "50px",
-              fontFamily: "Montserrat, sans-serif",
-            }}
-          >
-            <div>{item.text}</div>
-            <div style={{ fontSize: "20px" }}>{item.description}</div>
+        </button>
+      )}
+      renderCenterRightControls={({ nextSlide }) => (
+        <button
+          onClick={nextSlide}
+          className="carousel-button"
+          style={{
+            right: "50px",
+            background: "transparent",
+            border: "none",
+            color: "black",
+          }}
+        >
+          <FontAwesomeIcon
+            icon={faArrowRight}
+            size="2x"
+            color="black"
+            style={{ fontSize: "40px" }}
+          />
+        </button>
+      )}
+      renderBottomCenterControls={({ slideCount, currentSlide, goToSlide }) => (
+        <div style={{ display: "flex", justifyContent: "center" }}>
+          {carouselData.map((_, index) => (
+            <img
+              key={index}
+              src={customDotImages[index]} // Use your custom dot image here
+              alt={`Dot ${index + 1}`}
+              style={{
+                height: "50px",
+                border: "1px solid black", // Set the height to 100px
+                width: "100%", // Set the width to 100%
+                marginBottom: "10px", // Add a 10px top margin and 5px horizontal margins
+                cursor: "pointer",
+                margin: "5px",
+                opacity: currentSlide === index ? 1 : 0.5, // Highlight the active dot
+                border: "1px solid black",
+              }}
+              onClick={() => goToSlide(index)} // Make the dot clickable
+            />
+          ))}
+        </div>
+      )}
+    >
+      {carouselData.map((item, index) => (
+        <div key={index} className="carousel-item">
+          <div style={{ position: "relative" }}>
+            <img
+              src={item.imageSrc}
+              alt={`Image ${index + 1}`}
+              style={{ width: "100%", height: "550px" }}
+            />
+            <div
+              style={{
+                position: "absolute",
+                marginLeft: "50px",
+                bottom: "60px",
+                left: "0",
+                right: "0",
+                backgroundColor: "tranparent",
+                color: "#000",
+                fontWeight: "bold",
+                padding: "5px 10px",
+                display: "flex",
+                justifyContent: "space-between",
+                alignItems: "center",
+                fontFamily: "Montserrat, sans-serif",
+              }}
+            >
+              <div>
+                <div
+                  style={{
+                    fontSize: "50px",
+                    fontFamily: "Montserrat, sans-serif",
+                  }}
+                >
+                  {item.text}
+                  <div
+                    style={{
+                      fontSize: "15px",
+                      marginTop: "5px",
+                      fontFamily: "Montserrat, sans-serif",
+                      backgroundColor: "#fff",
+                      color: "#000",
+                      width: "100px",
+                      height: "30px",
+                      
+                      display: "flex",
+                      alignItems: "center", // Center vertically
+                      justifyContent: "center", // Center horizontally
+                      borderRadius: "100px", // Rounded border
+                      border:"1px solid black",
+                    }}
+                  >
+                    {item.genre}
+                  </div>
+                </div>
+                <div style={{ fontSize: "15px" }}>
+                  {showTrailer ? (
+                    // Show the trailer content
+                    <iframe
+                      title={`Trailer ${index + 1}`}
+                      width="560"
+                      height="315"
+                      src={item.trailerSrc}
+                      frameBorder="0"
+                      allowFullScreen
+                    ></iframe>
+                  ) : (
+                    // Show play and show trailer buttons
+                    <>
+                      <CarouselButton
+                        href={item.playLink}
+                        onClick={(event) => {
+                          event.preventDefault(); // Prevent the link from navigating
+                          event.target.classList.toggle("clicked"); // Toggle the "clicked" class
+                        }}
+                        style={{ height: "50px", border: "1px solid black" }} // Set the height of the CarouselButton
+                      >
+                        <FontAwesomeIcon
+                          icon={faPlay}
+                          size="2x"
+                          style={{ height: "20px", marginRight: "5px" }} // Set the height of the FontAwesomeIcon
+                        />
+                        Play
+                      </CarouselButton>
+
+                      <CarouselButton
+                        href={item.trailerLink}
+                        onClick={(event) => {
+                          event.preventDefault(); // Prevent the link from navigating
+                          event.target.classList.toggle("clicked"); // Toggle the "clicked" class
+                        }}
+                        style={{ height: "50px", border: "1px solid black" }}
+                      >
+                        <FontAwesomeIcon
+                          icon={faFilm}
+                          size="2x"
+                          style={{ height: "20px", marginRight: "5px" }} // Set the height of the FontAwesomeIcon
+                        />
+                        Trailer
+                      </CarouselButton>
+                      <CarouselButton
+                        href={item.trailerLink}
+                        onClick={(event) => {
+                          event.preventDefault(); // Prevent the link from navigating
+                          event.target.classList.toggle("clicked"); // Toggle the "clicked" class
+                        }}
+                        style={{ height: "50px", border: "1px solid black" }}
+                      >
+                        <FontAwesomeIcon
+                          icon={faHeart}
+                          size="2x"
+                          style={{ height: "20px", marginRight: "5px" }} // Set the height of the FontAwesomeIcon
+                        />
+                      </CarouselButton>
+                      <CarouselButton
+                        href={item.trailerLink}
+                        onClick={(event) => {
+                          event.preventDefault(); // Prevent the link from navigating
+                          event.target.classList.toggle("clicked"); // Toggle the "clicked" class
+                        }}
+                        style={{ height: "50px", border: "1px solid black" }}
+                      >
+                        <FontAwesomeIcon
+                          icon={faShare}
+                          size="2x"
+                          style={{ height: "20px", marginRight: "5px" }} // Set the height of the FontAwesomeIcon
+                        />
+                        Share
+                      </CarouselButton>
+                    </>
+                  )}
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-      </a>
-    ))}
-  </Carousel>
+      ))}
+      
+    </Carousel>
+    
+    </div>
   );
 }
 

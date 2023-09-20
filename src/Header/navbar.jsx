@@ -17,11 +17,11 @@ const StyledNavbar = styled.nav`
   }
 `;
 
-const Logo = styled.div`
-  color: white;
-  font-size: 24px;
-  font-weight: bold;
-  font-family: "Montserrat", sans-serif;
+const Logo = styled.img`
+  height: 40px; /* Set the height of the icon */
+  width: 50px; /* Let the width adjust to maintain aspect ratio */
+  margin-right: auto;
+  border-radius:10px;
 `;
 
 const NavLinks = styled.ul`
@@ -59,9 +59,8 @@ const SearchIcon = styled.i`
 const Navbar = () => {
   return (
     <StyledNavbar>
-      <Logo>
-        <NavLink to="/">ReactFlix</NavLink>
-      </Logo>
+      <Logo src="/images/OIP.jpg" alt="Reactflix Logo" />
+      
       <NavLinks>
         <NavLinkItem>
           <NavLink to="/Home">Home</NavLink>
