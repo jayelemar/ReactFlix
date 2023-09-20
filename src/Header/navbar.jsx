@@ -6,16 +6,18 @@ const StyledNavbar = styled.nav`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: rgba(68, 70, 84, 0.8); /* Glassmorphism background */
-  backdrop-filter: blur(10px); /* Glassmorphism blur effect */
-  height: 60px;
-  padding: 0 20px;
+  height:70px;
+  background: rgba(255, 255, 255, 0.15); /* Semi-transparent white background */
+  backdrop-filter: blur(10px); /* Apply blur effect */
   font-family: "Montserrat", sans-serif;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Shadow effect */
+  color: white; /* Text color */
 
   @media (max-width: 1000px) {
     display: none;
   }
 `;
+
 
 
 const Logo = styled.img`

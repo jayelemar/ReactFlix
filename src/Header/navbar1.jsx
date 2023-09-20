@@ -16,7 +16,7 @@ const SidebarMenuBg = styled.div`
   align-items: center;
   background-color: rgba(255, 255, 255, 0.2); /* Semi-transparent white background */
   backdrop-filter: blur(10px); /* Apply blur effect */
-  height: 60px;
+  height:70px;
   padding: 0 20px;
   font-family: "Montserrat", sans-serif;
 `;
