@@ -2,13 +2,13 @@ import React, { Suspense, lazy } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import LoadingSpinner from "./components/loadinganime"; // Import your loading component
 
-const IntroPage = lazy(() => import("./pages/IntroPage"))
-const Home = lazy(() => import("./pages/Home"))
-const Series = lazy(() => import("./pages/series"))
-const Movie = lazy(() => import("./pages/movie"))
-const Term = lazy(() => import("./pages/term"))
-const Contact = lazy(() => import("./pages/contact"))
-const Login = lazy(() => import("./pages/login"))
+const IntroPage = lazy(() => import("./pages/IntroPage"));
+const Home = lazy(() => import("./pages/Home"));
+const Series = lazy(() => import("./pages/series"));
+const Movie = lazy(() => import("./pages/movie"));
+const Term = lazy(() => import("./pages/term"));
+const Contact = lazy(() => import("./pages/contact"));
+const Login = lazy(() => import("./pages/login"));
 
 function App() {
   return (
@@ -18,7 +18,9 @@ function App() {
         <Route
           path="/home"
           element={
-            <Suspense fallback={<LoadingSpinner />}> {/* Use your loading component */}
+            <Suspense fallback={<LoadingSpinner />}>
+              {" "}
+              
               <Home />
             </Suspense>
           }
@@ -26,15 +28,19 @@ function App() {
         <Route
           path="/series"
           element={
-            <Suspense fallback={<LoadingSpinner />}> {/* Use your loading component */}
+            <Suspense fallback={<LoadingSpinner />}>
+              {" "}
+              
               <Series />
             </Suspense>
           }
         />
         <Route
-          path="/playing"
+          path="/movie"
           element={
-            <Suspense fallback={<LoadingSpinner />}> {/* Use your loading component */}
+            <Suspense fallback={<LoadingSpinner />}>
+              {" "}
+              
               <Movie />
             </Suspense>
           }
@@ -42,7 +48,9 @@ function App() {
         <Route
           path="/term"
           element={
-            <Suspense fallback={<LoadingSpinner />}> {/* Use your loading component */}
+            <Suspense fallback={<LoadingSpinner />}>
+              {" "}
+              
               <Term />
             </Suspense>
           }
@@ -50,7 +58,9 @@ function App() {
         <Route
           path="/contact"
           element={
-            <Suspense fallback={<LoadingSpinner />}> {/* Use your loading component */}
+            <Suspense fallback={<LoadingSpinner />}>
+              {" "}
+              
               <Contact />
             </Suspense>
           }
@@ -58,7 +68,9 @@ function App() {
         <Route
           path="/login"
           element={
-            <Suspense fallback={<LoadingSpinner />}> {/* Use your loading component */}
+            <Suspense fallback={<LoadingSpinner />}>
+              {" "}
+              
               <Login />
             </Suspense>
           }
