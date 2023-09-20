@@ -63,13 +63,13 @@ const Navbar = () => {
       
       <NavLinks>
         <NavLinkItem>
-          <NavLink to="/Home">Home</NavLink>
+          <NavLink to="/home">Home</NavLink>
         </NavLinkItem>
         <NavLinkItem>
-          <NavLink to="/Movies">Movies</NavLink>
+          <NavLink to="/movies">Movies</NavLink>
         </NavLinkItem>
         <NavLinkItem>
-          <NavLink to="/Anime">Anime</NavLink>
+          <NavLink to="/anime">Anime</NavLink>
         </NavLinkItem>
         <NavLinkItem>
           <NavLink to="/series">Series</NavLink>
