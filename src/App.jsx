@@ -2,13 +2,13 @@ import React, { Suspense, lazy } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import LoadingSpinner from "./components/loadinganime"; // Import your loading component
 
-const IntroPage = lazy(() => import("./pages/IntroPage"));
-const Home = lazy(() => import("./pages/Home"));
-const Series = lazy(() => import("./pages/series"));
-const Movie = lazy(() => import("./pages/movie"));
-const Term = lazy(() => import("./pages/term"));
-const Contact = lazy(() => import("./pages/contact"));
-const Login = lazy(() => import("./pages/login"));
+const IntroPage = lazy(() => import("./pages/IntroPage"))
+const Home = lazy(() => import("./pages/Home"))
+const Series = lazy(() => import("./pages/series"))
+const Movie = lazy(() => import("./pages/movie"))
+const Term = lazy(() => import("./pages/term"))
+const Contact = lazy(() => import("./pages/contact"))
+const Login = lazy(() => import("./pages/login"))
 
 function App() {
   return (
