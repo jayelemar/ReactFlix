@@ -19,11 +19,12 @@ const PopupContent = styled.div`
   background-color: #fff;
   padding: 20px;
   border-radius: 10px;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+  box-shadow: 0px 0px 0px 100vmax rgba(0, 0, 0, 0.5); /* Increased spread and inset shadow */
   text-align: center; /* Center the content */
   position: relative;
   max-width: 80%; /* Limit maximum width */
 `;
+
 
 const CloseButton = styled.button`
   background-color: transparent;

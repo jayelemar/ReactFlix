@@ -7,6 +7,7 @@ const StyledNavbar = styled.nav`
   justify-content: space-between;
   align-items: center;
   height:70px;
+  width: 100%;
   background: rgba(255, 255, 255, 0.15); /* Semi-transparent white background */
   backdrop-filter: blur(10px); /* Apply blur effect */
   font-family: "Montserrat", sans-serif;
