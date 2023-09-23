@@ -111,39 +111,59 @@ function MyCarousel() {
       }}
       renderCenterLeftControls={({ previousSlide }) => (
         <button
-          onClick={previousSlide}
-          className="carousel-button"
-          style={{
-            left: "50px",
-            background: "transparent",
-            border: "none",
-            color: "black",
-          }}
-        >
+        onClick={previousSlide}
+        className="carousel-button"
+        style={{
+          margin:"10px",
+          left: "70px",
+          background: "transparent",
+          border: "none",
+          color: "black",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          padding: "5px",
+          borderRadius: "10%",
+          width: "40px", // Adjust the width as needed
+          height: "60px", // Adjust the height as needed
+          boxShadow: "0 0 10px rgba(0, 0, 0, 0.5)", // Glassmorphism effect
+          border: "1px solid white", // Glassmorphism border
+        }}
+      >
           <FontAwesomeIcon
             icon={faArrowLeft}
             size="2x"
-            color="black"
-            style={{ fontSize: "40px" }}
+            color="white"
+            style={{ fontSize: "30px" }}
           />
         </button>
       )}
       renderCenterRightControls={({ nextSlide }) => (
         <button
-          onClick={nextSlide}
-          className="carousel-button"
-          style={{
-            right: "50px",
-            background: "transparent",
-            border: "none",
-            color: "black",
-          }}
-        >
+        onClick={nextSlide}
+        className="carousel-button"
+        style={{
+          margin:"10px",
+          right: "70px",
+          background: "transparent",
+          border: "none",
+          color: "white",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          padding: "5px",
+          borderRadius: "10%",
+          width: "40px", // Adjust the width as needed
+          height: "60px", // Adjust the height as needed
+          boxShadow: "0 0 10px rgba(0, 0, 0, 0.5)", // Glassmorphism effect
+          border: "1px solid white", // Glassmorphism border
+        }}
+      >
           <FontAwesomeIcon
             icon={faArrowRight}
             size="2x"
-            color="black"
-            style={{ fontSize: "40px" }}
+            color="white"
+            style={{ fontSize: "30px" }}
           />
         </button>
       )}
