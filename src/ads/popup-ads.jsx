@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { FaFacebook, FaTwitter, FaWhatsapp, FaFacebookMessenger } from 'react-icons/fa';
+import { FaFacebook, FaTwitter, FaWhatsapp, FaFacebookMessenger,FaTelegram  } from 'react-icons/fa';
 
 import styled from 'styled-components';
 
@@ -172,6 +172,10 @@ function PopUpAd() {
 <ShareButton onClick={shareOnMessenger}>
   <FaFacebookMessenger /> Share on Messenger
 </ShareButton>
+<ShareButton onClick={shareOnMessenger}>
+  <FaTelegram /> Share on Telegram
+</ShareButton>
+
         </ShareButtonContainer>
       </PopupContent>
     </PopupContainer>
