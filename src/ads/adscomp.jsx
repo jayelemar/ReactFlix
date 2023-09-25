@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from 'react';
-import styled from 'styled-components';
+import React, { useState, useEffect } from "react";
+import styled from "styled-components";
+import { FaAd } from "react-icons/fa";
 
 const AdContainer = styled.div`
   width: 100%;
@@ -23,25 +24,32 @@ const AdContent = styled.div`
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  padding: 10px;
+  padding: 3px;
 `;
 
 const AdText = styled.p`
-  font-size: 12px;
+  font-size: 15px;
   color: #333;
   margin: 0;
+  display: flex;
+  align-items: center; /* Center the icon and text vertically */
+
+  svg {
+    margin-right: 5px; /* Add spacing between the icon and text */
+  }
 `;
 
 const CloseButton = styled.button`
   background-color: transparent;
   border: none;
   cursor: pointer;
-  font-size: 16px;
+  font-size: 15px;
   color: #999;
+  margin:10px;
 `;
 
 const Timer = styled.div`
-  font-size: 12px;
+  font-size: 15px;
   color: #999;
 `;
 
@@ -90,7 +98,7 @@ function Ad() {
   const formatTime = (seconds) => {
     const minutes = Math.floor(seconds / 60);
     const remainingSeconds = seconds % 60;
-    return `${minutes}:${remainingSeconds < 10 ? '0' : ''}${remainingSeconds}`;
+    return `${minutes}:${remainingSeconds < 10 ? "0" : ""}${remainingSeconds}`;
   };
 
   return (
@@ -98,11 +106,19 @@ function Ad() {
       {isOpen && (
         <AdContainer>
           <AdContent>
-            <AdText>This is an ad</AdText>
+          <AdText>
+  <FaAd style={{ margin:"10px" }} /> {/* Add the icon here */}
+  This is an ad
+</AdText>
+
+
             <Timer>Auto close in {formatTime(timeRemaining)}</Timer>
             <CloseButton onClick={handleCloseClick}>X</CloseButton>
           </AdContent>
-          <AdImage src="https://via.placeholder.com/900X100" alt="Advertisement" />
+          <AdImage
+            src="https://via.placeholder.com/900X100"
+            alt="Advertisement"
+          />
         </AdContainer>
       )}
     </>
