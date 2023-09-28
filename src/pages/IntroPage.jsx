@@ -1,211 +1,61 @@
 import React from "react";
-import Navbar from "../Header/navbar";
 import styled from "styled-components";
-import { FaTwitter, FaFacebook, FaGithub, FaLinkedin } from "react-icons/fa";
-import { Link } from "react-router-dom";
-import Footer from '../Footer/footer';
+import Navbar from '../Header/navbar';
+import MovieSlider from '../section/reactf'
 
 const PageWrapper = styled.div`
-  background-color: rgba(255, 255, 255, 0.2); /* Semi-transparent black background */
-  backdrop-filter: blur(10px); /* Apply blur effect */
+  background-image: url('/images/ssa.jpg'); 
+  background-size: cover;
+  background-position: center;
+  height: 100vh; /* 100% of the viewport height */
+  width: 100vw; /* 100% of the viewport width */
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 250px;
-  width: 800px;
-  border: 1px solid #000;
-  border-radius: 25px;
-  margin: 40px auto;
-  font-family: 'Montserrat', sans-serif;
-
-  /* Media Query for screens with width less than or equal to 600px */
-  @media (max-width: 600px) {
-    width: 400px;
-    height: 310px;
-  }
-
-  /* Media Query for screens with width less than or equal to 400px */
-  @media (max-width: 400px) {
-    height: 320px;
-    width: 350px;
-  }
+  align-items: center; /* Center horizontally */
+  text-align: center; /* Center text within */
 `;
 
-
-const ContentSection = styled.section`
-  text-align: center;
-  height: 1200px; /* Set the section height */
-  
-
-  /* Media Query for screens with width less than or equal to 600px */
-  @media (max-width: 600px) {
-    height: auto; /* Reset height for smaller screens */
-    padding: 20px; /* Add some padding for better readability */
-  }
-
-  /* Media Query for screens with width less than or equal to 400px */
-  @media (max-width: 400px) {
-    height: auto; /* Reset height for smaller screens */
-    padding: 10px; /* Adjust padding for better readability */
-  }
-`;
-
-
-const iconStyle1 = {
-  color: "white",
-  fontSize: "24px",
-  marginRight: "10px",
-  border: "1px solid blue",
-  padding: "5px",
-  borderRadius: "0%",
-  width: "50px",
-  backgroundColor: "blue",
-};
-const iconStyle2 = {
-  color: "white",
-  fontSize: "24px",
-  marginRight: "10px",
-  border: "1px solid white",
-  padding: "5px",
-  width: "50px",
-  borderRadius: "0%",
-  backgroundColor: "black",
-};
-const iconStyle3 = {
-  color: "white",
-  fontSize: "24px",
-  marginRight: "10px",
-  border: "1px solid blue",
-  padding: "5px",
-  width: "50px",
-  borderRadius: "0%",
-  backgroundColor: "blue",
-};
-const iconStyle4 = {
-  color: "white",
-  fontSize: "24px",
-  marginRight: "10px",
-  border: "1px solid black",
-  width: "50px",
-  padding: "5px",
-  borderRadius: "0%",
-  backgroundColor: "blue",
-};
-
-const StyledLink = styled(Link)`
-  margin: 10px;
-  height: 50px;
-  color: black;
-  text-align: center;
-  font-family: "Montserrat", sans-serif;
-  border-radius: 25px;
+const ContentWrapper = styled.div`
+  flex: 1;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  text-decoration: none;
-  border: none;
-  cursor: pointer;
-  background-color: yellow;
+  flex-direction: column;
+  justify-content: center; /* Center vertically */
+  align-items: center; /* Center horizontally */
+  text-align: center; /* Center text within */
 `;
-const CenteredContent = styled.div`
-  margin-top: 30px;
-  color: white;
-  text-align: center;
-  font-family: 'Montserrat', sans-serif;
-  width: 800px;
-  margin: 0 auto; /* Horizontally center the content */
 
-  /* Media Query for screens with width less than or equal to 600px */
-  @media (max-width: 600px) {
-    width: 90%; 
-  }
+const Heading = styled.h1`
+  color: white;
+  font-size: 50px;
+  margin-top: 20px;
+  font-family: "Gotham", sans-serif;
+`;
+
+const GetStartedLink = styled.a`
+  background-color: #E50914;
+  color: white;
+  font-size: 18px;
+  text-decoration: none;
+  margin-top: 10px;
+  border: 2px solid #E50914;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: "Gotham", sans-serif;
 `;
 
 const IntroPage = () => {
   return (
-    <section style={{ backgroundColor: "#212016", height: "700px" }}>
+    <section>
+    <PageWrapper>
       <Navbar />
-      <PageWrapper style={{ backgroundColor: "white", }}>
-        <ContentSection>
-          <div>
-            <h1 style={{ color: "black" }}><strong>ReactFlix</strong></h1>
-            <p style={{ color: "black" }}>
-              Please help us by sharing this site with your friends. Thanks!
-            </p>
-            <p style={{ color: "black" }}>Send Request any Movies Using These our Social Media Account</p>
-            <a
-              href="https://www.facebook.com/your_facebook_page"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <FaFacebook style={iconStyle3} />
-            </a>
-            <a
-              href="https://twitter.com/your_twitter_username"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <FaTwitter style={iconStyle1} />
-            </a>
-            <a
-              href="https://www.instagram.com/your_instagram_username"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <FaGithub style={iconStyle2} />
-            </a>
-
-            <a
-              href="https://www.facebook.com/your_facebook_page"
-              style={{
-                height: "50px",
-                color: "black",
-                textAlign: "center",
-                fontFamily: "Montserrat, sans-serif",
-              }}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <FaLinkedin style={iconStyle4} />
-            </a>
-            <a
-              href="https://www.facebook.com/your_facebook_page"
-              style={{
-                height: "50px",
-                color: "black",
-                textAlign: "center",
-                fontFamily: "Montserrat, sans-serif",
-              }}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <FaLinkedin style={iconStyle4} />
-            </a>
-            <br />
-            <StyledLink to="/Home">
-              Browse All Movie,Series and Anime Here
-            </StyledLink>
-          </div>
-        </ContentSection>
-      </PageWrapper>
-      <CenteredContent>
-        <p>
-          Looking for something fun to watch now or later today? Too many
-          suspicious free movie sites on the internet that you don’t know which
-          one to trust? Stop looking as <strong>ReactFlix</strong> is your stop from now on.
-          Here, you can search for your movie and watch it with only one click -
-          No need to register and log in, No need to pay for anything, No need
-          to bear unnecessary and harmful ads or pop-ups. Only regularly updated
-          and full HD and high-quality movies are on <strong>ReactFlix</strong> free movies
-          site! Not only that, but this website is also the best place to watch
-          free movies on mobile as well! When you go on to the mobile web
-          version of this website, you don’t have to constantly close the ads
-          and pop-ups. Your movies are just 1 click away with multiple subtitles
-          and features on the media player! Perfect for binge-watcher!
-        </p>
-      </CenteredContent>
-      <Footer />
+      <ContentWrapper>
+        <Heading>Unlimited movies, TV shows, and <br/> more</Heading>
+        <GetStartedLink href="/home">Get Started</GetStartedLink>
+      </ContentWrapper>
+      
+    </PageWrapper>
+    <MovieSlider /> {/* Render the additional section below the Navbar */}
     </section>
   );
 };

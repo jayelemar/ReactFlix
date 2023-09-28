@@ -213,7 +213,7 @@ class Navbar extends Component {
                   fontSize: "20px",
                 }}
               >
-                <FontAwesomeIcon icon={faStar} /> Top IMDB
+                <FontAwesomeIcon icon={faStar} /> Top Rated
               </a>
             </div>
 

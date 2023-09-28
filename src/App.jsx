@@ -10,8 +10,8 @@ const Movie = lazy(() => import("./pages/movie"));
 const Anime = lazy(() => import("./pages/anime"));
 const Term = lazy(() => import("./pages/term"));
 const Contact = lazy(() => import("./pages/contact"));
-const Login = lazy(() => import("./pages/login"));
-const Register = lazy(() => import("./pages/reg"));
+const Login = lazy(() => import("../src/account/login"));
+const Register = lazy(() => import("../src/account/register"));
 
 function App() {
   return (

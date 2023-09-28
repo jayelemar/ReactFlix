@@ -1,80 +1,75 @@
-import { Link } from 'react-router-dom';
-import { useForm } from "react-hook-form";
-import { yupResolver } from '@hookform/resolvers/yup';
-import * as Yup from 'yup';
-import { useDispatch } from 'react-redux';
+import React, { useState } from 'react';
+import axios from 'axios';
 
-import { history } from '_helpers';
-import { userActions, alertActions } from '_store';
+function RegistrationForm() {
+  const [formData, setFormData] = useState({
+    username: '',
+    email: '',
+    password: '',
+  });
 
-export { Register };
-
-function Register() {
-    const dispatch = useDispatch();
-
-    // form validation rules 
-    const validationSchema = Yup.object().shape({
-        firstName: Yup.string()
-            .required('First Name is required'),
-        lastName: Yup.string()
-            .required('Last Name is required'),
-        username: Yup.string()
-            .required('Username is required'),
-        password: Yup.string()
-            .required('Password is required')
-            .min(6, 'Password must be at least 6 characters')
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({
+      ...formData,
+      [name]: value,
     });
-    const formOptions = { resolver: yupResolver(validationSchema) };
+  };
 
-    // get functions to build form with useForm() hook
-    const { register, handleSubmit, formState } = useForm(formOptions);
-    const { errors, isSubmitting } = formState;
+  const handleSubmit = async (e) => {
+    e.preventDefault();
 
-    async function onSubmit(data) {
-        dispatch(alertActions.clear());
-        try {
-            await dispatch(userActions.register(data)).unwrap();
-
-            // redirect to login page and display success alert
-            history.navigate('/account/login');
-            dispatch(alertActions.success({ message: 'Registration successful', showAfterRedirect: true }));
-        } catch (error) {
-            dispatch(alertActions.error(error));
-        }
+    try {
+      const response = await axios.post('/register', formData);
+      console.log(response.data.message);
+      // Optionally, you can redirect the user to a login page or display a success message.
+    } catch (error) {
+      console.error('Registration failed:', error);
+      // Handle registration error (e.g., display an error message to the user).
     }
+  };
 
-    return (
-        <div className="card m-3">
-            <h4 className="card-header">Register</h4>
-            <div className="card-body">
-                <form onSubmit={handleSubmit(onSubmit)}>
-                    <div className="mb-3">
-                        <label className="form-label">First Name</label>
-                        <input name="firstName" type="text" {...register('firstName')} className={`form-control ${errors.firstName ? 'is-invalid' : ''}`} />
-                        <div className="invalid-feedback">{errors.firstName?.message}</div>
-                    </div>
-                    <div className="mb-3">
-                        <label className="form-label">Last Name</label>
-                        <input name="lastName" type="text" {...register('lastName')} className={`form-control ${errors.lastName ? 'is-invalid' : ''}`} />
-                        <div className="invalid-feedback">{errors.lastName?.message}</div>
-                    </div>
-                    <div className="mb-3">
-                        <label className="form-label">Username</label>
-                        <input name="username" type="text" {...register('username')} className={`form-control ${errors.username ? 'is-invalid' : ''}`} />
-                        <div className="invalid-feedback">{errors.username?.message}</div>
-                    </div>
-                    <div className="mb-3">
-                        <label className="form-label">Password</label>
-                        <input name="password" type="password" {...register('password')} className={`form-control ${errors.password ? 'is-invalid' : ''}`} />
-                        <div className="invalid-feedback">{errors.password?.message}</div>
-                    </div>
-                    <button disabled={isSubmitting} className="btn btn-primary">
-                        {isSubmitting && <span className="spinner-border spinner-border-sm me-1"></span>}
-                        Register
-                    </button>
-                    <Link to="../login" className="btn btn-link">Cancel</Link>
-                </form>
-            </div>
+  return (
+    <div>
+      <h2>Registration</h2>
+      <form onSubmit={handleSubmit}>
+        <div>
+          <label htmlFor="username">Username:</label>
+          <input
+            type="text"
+            id="username"
+            name="username"
+            value={formData.username}
+            onChange={handleChange}
+            required
+          />
         </div>
-    )
+        <div>
+          <label htmlFor="email">Email:</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            value={formData.email}
+            onChange={handleChange}
+            required
+          />
+        </div>
+        <div>
+          <label htmlFor="password">Password:</label>
+          <input
+            type="password"
+            id="password"
+            name="password"
+            value={formData.password}
+            onChange={handleChange}
+            required
+          />
+        </div>
+        <button type="submit">Register</button>
+      </form>
+    </div>
+  );
 }
+
+export default RegistrationForm;

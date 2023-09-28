@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import SimplePagination from "../components/pagination";
 import styled from "styled-components"; 
 import { Link } from 'react-router-dom';
-import ModalContentWrapper from '../pages/login'
+import ModalContentWrapper from '../account/login'
 
 // Styled-components styles (same as before)
 const AppContainer = styled.div`
