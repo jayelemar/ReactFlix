@@ -105,9 +105,9 @@ function MyCarousel() {
       speed={1000}
       slidesToShow={1}
       style={{
-        height: "550px",
+        height: "650px",
         backgroundColor: "#212016",
-        marginTop: "5px",
+        marginTop: "-70px",
       }}
       renderCenterLeftControls={({ previousSlide }) => (
         <button
@@ -196,7 +196,7 @@ function MyCarousel() {
             <img
               src={item.imageSrc}
               alt={`Image ${index + 1}`}
-              style={{ width: "100%", height: "550px" }}
+              style={{ width: "100%", height: "650px" }}
             />
             <div
               style={{

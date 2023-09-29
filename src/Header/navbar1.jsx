@@ -11,21 +11,34 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 
 const SidebarMenuBg = styled.div`
+  position: fixed; /* Make the navigation bar sticky */
+  top: 0; /* Stick it to the top of the viewport */
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: rgba(255, 255, 255, 0.2); /* Semi-transparent white background */
-  backdrop-filter: blur(10px); /* Apply blur effect */
-  height:70px;
+  background-color: transparent;
+  height: 70px;
   padding: 0 20px;
-  font-family: "Montserrat", sans-serif;
+  font-family: "Gotham", sans-serif; /* Use the Gotham font */
+  font-weight: bold; /* Make it bold */
+  width: 100%; /* Ensure it spans the full width of the viewport */
+  z-index: 100; /* Ensure it's above other content */
+  border-bottom: 1px solid black; /* Add the 1px solid black border at the bottom */
 `;
 
-const Logo = styled.img`
-  height: 40px;
-  width: 50px;
+
+
+const Logo = styled.div`
+  font-family: "Gotham", sans-serif; /* Use the Gotham font */
+  font-size: 24px; /* Set the font size */
+  height: 80px; /* Set the height */
+  display: flex;
+  align-items: center;
   margin-right: auto;
   border-radius: 10px;
+  padding: 0 20px;
+  font-weight: bold;
+  color: white;
 `;
 
 const SideMenuWrapper = styled.div`
@@ -70,14 +83,6 @@ const SearchInput = styled.input`
   margin: 20px;
 `;
 
-const Button = styled.button`
-  width: 150px;
-  height: 30px;
-  background-color: #444654;
-  color: white;
-  border: none;
-  cursor: pointer;
-`;
 
 const LoginLink = styled.a`
   color: white;
@@ -126,7 +131,7 @@ class Navbar extends Component {
     return (
       <nav style={{ height: "60px" }}>
         <SidebarMenuBg>
-          <Logo src="/images/OIP.jpg" alt="Reactflix Logo" />
+        <Logo>ReactFlix </Logo>
           <HeaderButton onClick={this.toggleSidebar}>
             <FaBars />
           </HeaderButton>
@@ -141,7 +146,7 @@ class Navbar extends Component {
 
           <LoginLink href="/login">
             <FaUser className="user-icon" />
-            <span style={{ margin: "20px" }}>Login</span>
+            <span style={{ marginRight: "100px" }}>Login</span>
           </LoginLink>
         </SidebarMenuBg>
         <SideMenuWrapper isOpen={isSidebarOpen}>
