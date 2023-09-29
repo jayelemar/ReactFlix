@@ -142,6 +142,7 @@ const Navbar = () => {
         <NavLinkItem>
           <NavLink to="/reg">Login</NavLink>
         </NavLinkItem>
+        
       </NavLinks>
 
       <NavLinkItem>
