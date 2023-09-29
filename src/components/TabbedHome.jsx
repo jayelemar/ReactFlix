@@ -28,6 +28,7 @@ const TabsNav = styled.nav`
   display: flex;
   justify-content: flex-end;
   margin-left: auto; /* Push the tabs to the right */
+  color: white;
 `;
 
 const TabsNavButton = styled.button`
