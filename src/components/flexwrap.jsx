@@ -8,7 +8,8 @@ import styled from "styled-components";
 
 const StyledSliderContainer = styled.div`
   margin: 10px;
-  background-color: #f0f0f0; /* Replace with your desired gray color */
+  background: #000000,
+          background: linear-gradient(to top, #000000 50%, #12104A 100%),
 `;
 
 class MultipleRows extends Component {

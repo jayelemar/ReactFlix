@@ -12,6 +12,7 @@ const FooterContainer = styled.footer`
   align-items: center;
   justify-content: center;
   min-height: 100px;
+  border-top: 1px solid white; /* Add the top border here */
 
   /* Media Query for screens with width less than or equal to 600px */
   @media (max-width: 600px) {

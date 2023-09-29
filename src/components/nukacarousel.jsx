@@ -106,6 +106,7 @@ function MyCarousel() {
       slidesToShow={1}
       style={{
         height: "650px",
+        width: "100vw",
         backgroundColor: "#212016",
         marginTop: "-70px",
       }}

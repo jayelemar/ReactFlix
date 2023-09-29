@@ -1,19 +1,27 @@
-import React from 'react';
-import styled from 'styled-components';
-import TrendCard from '../cards/trend-card'; // Import the MovieCard component
+import React from "react";
+import styled from "styled-components";
+import TrendCard from "../cards/trend-card"; // Import the MovieCard component
 
 const Tabs = styled.div`
   background: transparent;
   width: 100%;
   height: 800px;
-  margin: 20px auto;
   padding: 1em;
   margin-left: auto;
+  border-top: 1px solid white;
+  background: linear-gradient(
+    to top,
+    #000000 50%,
+    #12104a 100%
+  ); /* Add the linear gradient background */
 `;
 
 const HeaderContainer = styled.div`
   display: flex;
   align-items: center;
+  font-family: "Gotham", sans-serif; /* Use the Gotham font */
+  font-size: 40px; /* Set the font size */
+  color: white;
 `;
 
 const TabsNav = styled.nav`
@@ -49,7 +57,7 @@ const MontserratTitle = styled.h1`
   font-size: 40px;
   margin-left: 30px;
   color: #000;
-  font-family: 'Montserrat', sans-serif; /* Apply Montserrat font */
+  font-family: "Montserrat", sans-serif; /* Apply Montserrat font */
   border: none;
 `;
 
@@ -59,40 +67,40 @@ class TabsComponent extends React.Component {
     this.state = {
       items: [
         {
-          name: 'Movies',
+          name: "Movies",
           movies: [
             {
-              title: 'Movie 1',
-              imageUrl: '/images/spidey.jpg',
-              year: '2021',
-              duration: '120min',
-              rating: '7.5',
+              title: "Movie 1",
+              imageUrl: "/images/spidey.jpg",
+              year: "2021",
+              duration: "120min",
+              rating: "7.5",
             },
             // Add more movies for the Movies tab here
           ],
         },
         {
-          name: 'Series',
+          name: "Series",
           movies: [
             {
-              title: 'Series 1',
-              imageUrl: 'image2.jpg',
-              year: '2022',
-              duration: '45min',
-              rating: '8.0',
+              title: "Series 1",
+              imageUrl: "image2.jpg",
+              year: "2022",
+              duration: "45min",
+              rating: "8.0",
             },
             // Add more series data for the Series tab here
           ],
         },
         {
-          name: 'Anime',
+          name: "Anime",
           movies: [
             {
-              title: 'Anime 1',
-              imageUrl: 'image3.jpg',
-              year: '2023',
-              duration: '30min',
-              rating: '9.0',
+              title: "Anime 1",
+              imageUrl: "image3.jpg",
+              year: "2023",
+              duration: "30min",
+              rating: "9.0",
             },
             // Add more anime data for the Anime tab here
           ],
@@ -115,7 +123,7 @@ class TabsComponent extends React.Component {
       <TabsNavButton
         key={i}
         onClick={() => this.handleClick(i)}
-        style={activeTab === i ? { color: 'deepskyblue' } : {}}
+        style={activeTab === i ? { color: "deepskyblue" } : {}}
       >
         {item.name}
       </TabsNavButton>
@@ -128,8 +136,12 @@ class TabsComponent extends React.Component {
     return (
       <Tabs>
         <HeaderContainer>
-          <MontserratTitle className="montserrat-font">
-            Trending {items[activeTab].name}
+        <MontserratTitle
+  style={{ fontFamily: 'Gotham, sans-serif', fontSize: "40px", color: "white", marginLeft:"100px",fontWeight:"bold" }}
+  className="montserrat-font"
+>
+
+            | Trending {items[activeTab].name}
           </MontserratTitle>
           <TabsNav>{buttons}</TabsNav>
         </HeaderContainer>

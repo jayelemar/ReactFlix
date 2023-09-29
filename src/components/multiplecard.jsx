@@ -11,15 +11,19 @@ const AppContainer = styled.div`
   align-items: center;
   justify-content: center;
   height: 100vh;
-  border-top: 1px solid white;
+  width:100vw;
+  background: black; /* Add the linear gradient background */
 `;
 
+
 const Header = styled.h1`
-  color: #000;
-  margin-left: -80%;
+  color: white;
+  margin-left: -70%;
   margin-bottom: 30px;
   font-size: 40px;
   margin-top: -100px;
+  font-family: "Gotham", sans-serif; /* Use the Gotham font */
+  font-size: 40px; /* Set the font size */
 `;
 const CardGrid = styled.div`
   display: grid;
