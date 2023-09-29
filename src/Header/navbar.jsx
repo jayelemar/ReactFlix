@@ -4,25 +4,29 @@ import styled from "styled-components";
 
 
 const StyledNavbar = styled.nav`
-display: flex;
-justify-content: space-between;
-align-items: center;
-height: 100px;
-width: 100%;
-font-family: "Gotham", sans-serif;
-font-style: bold;
-color: white; /* Text color */
-border-radius: 10px;
-box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-background-color: rgba(255, 255, 255, 0.1); /* Transparent background color */
-backdrop-filter: blur(10px); /* Glassmorphism effect */
-transition: background-color 0.3s ease; /* Smooth transition for background color */
-backdrop-filter: ${(props) => (props.isScrolled ? "blur(10px)" : "none")}; /* Apply glassmorphism effect on scroll */
+  position: sticky;
+  top: 0;
+  bottom: 0; /* Stick to the bottom */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100px;
+  width: 100%;
+  font-family: "Gotham", sans-serif;
+  font-style: bold;
+  color: white;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  transition: background-color 0.3s ease;
+  backdrop-filter: ${(props) => (props.isScrolled ? "blur(10px)" : "none")};
 
   @media (max-width: 1000px) {
     display: none;
   }
 `;
+
 
 
 const TextLogo = styled.div`
@@ -110,7 +114,6 @@ const Navbar = () => {
     setIsModalOpen(!isModalOpen);
   };
 
-  
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 0) {
@@ -126,7 +129,6 @@ const Navbar = () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
-//
 
   return (
     <>

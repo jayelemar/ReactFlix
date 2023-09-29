@@ -1,10 +1,12 @@
 import React from "react";
 import styled from "styled-components";
-import Navbar from '../Header/navbar';
-import MovieSlider from '../section/reactf'
+import Navbar from "../Header/navbar";
+import MovieSlider from "../section/reactf";
+import Benefit from '../section/benefit'
+import Footer from "../Footer/footer";
 
 const PageWrapper = styled.div`
-  background-image: url('/images/ssa.jpg'); 
+  background-image: url("/images/ssa.jpg");
   background-size: cover;
   background-position: center;
   height: 100vh; /* 100% of the viewport height */
@@ -27,17 +29,17 @@ const ContentWrapper = styled.div`
 const Heading = styled.h1`
   color: white;
   font-size: 50px;
-  margin-top: 20px;
+  margin-top: -20px;
   font-family: "Gotham", sans-serif;
 `;
 
 const GetStartedLink = styled.a`
-  background-color: #E50914;
+  background-color: #e50914;
   color: white;
   font-size: 18px;
   text-decoration: none;
   margin-top: 10px;
-  border: 2px solid #E50914;
+  border: 2px solid #e50914;
   padding: 10px 20px;
   border-radius: 5px;
   cursor: pointer;
@@ -47,15 +49,18 @@ const GetStartedLink = styled.a`
 const IntroPage = () => {
   return (
     <section>
-    <PageWrapper>
-      <Navbar />
-      <ContentWrapper>
-        <Heading>Unlimited movies, TV shows, and <br/> more</Heading>
-        <GetStartedLink href="/home">Get Started</GetStartedLink>
-      </ContentWrapper>
-      
-    </PageWrapper>
-    <MovieSlider /> {/* Render the additional section below the Navbar */}
+      <PageWrapper>
+        <Navbar />
+        <ContentWrapper>
+          <Heading>
+            Unlimited movies, TV shows, and <br /> more
+          </Heading>
+          <GetStartedLink href="/home">Get Started</GetStartedLink>
+        </ContentWrapper>
+      </PageWrapper>
+      <MovieSlider /> 
+      <Benefit />
+      <Footer />
     </section>
   );
 };
