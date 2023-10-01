@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Carousel from "nuka-carousel";
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faArrowLeft,
@@ -53,7 +54,7 @@ function MyCarousel() {
   const carouselData = [
     {
       imageSrc: "/images/spidey.jpg",
-      playLink: "/playing",
+      playLink: "/player",
       trailerLink: "/trailer/spidey",
       text: "The Flash",
       genre: "Action",
@@ -61,35 +62,35 @@ function MyCarousel() {
     },
     {
       imageSrc: "/images/transformer.jpg",
-      playLink: "/playing",
+      playLink: "/player",
       trailerLink: "/trailer/transformer",
       text: "Transformer: Rise of The Beast",
       genre: "Sci-Fi",
     },
     {
       imageSrc: "/images/got.jpg",
-      playLink: "/playing",
+      playLink: "/player",
       trailerLink: "/trailer/got",
       text: "Guardians of the Galaxy Vol. 3",
       genre: "Action",
     },
     {
       imageSrc: "/images/ig.jpg",
-      playLink: "/playing",
+      playLink: "/player",
       trailerLink: "/trailer/ig",
       text: "Indiana Jones and the Dial of Destiny",
       genre: "Adventure",
     },
     {
       imageSrc: "/images/d.jpg",
-      playLink: "/playing",
+      playLink: "/player",
       trailerLink: "/trailer/d",
       text: "The Last Voyage of the Demeter",
       genre: "Horror",
     },
     {
       imageSrc: "/images/s.jpg",
-      playLink: "/playing",
+      playLink: "/player",
       trailerLink: "/trailer/s",
       text: "Spider-Man: Across the Spider-Verse",
       genre: "Animation",

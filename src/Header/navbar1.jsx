@@ -162,6 +162,8 @@ class Navbar extends Component {
               border: "none",
               background: "#666666",
               cursor: "pointer",
+              border:"1px solid black",
+              fontSize:"15px",
             }}
           >
             &larr;
@@ -177,6 +179,7 @@ class Navbar extends Component {
                   color: "black",
                   textDecoration: "none",
                   fontSize: "20px",
+                  marginLeft:"5px",
                 }}
               >
                 <FontAwesomeIcon icon={faHome} /> Home
@@ -190,6 +193,7 @@ class Navbar extends Component {
                   color: "black",
                   textDecoration: "none",
                   fontSize: "20px",
+                  marginLeft:"5px",
                 }}
               >
                 <FontAwesomeIcon icon={faFilm} /> Movies
@@ -203,6 +207,7 @@ class Navbar extends Component {
                   color: "black",
                   textDecoration: "none",
                   fontSize: "20px",
+                  marginLeft:"5px",
                 }}
               >
                 <FontAwesomeIcon icon={faTv} /> TV Shows
@@ -216,6 +221,7 @@ class Navbar extends Component {
                   color: "black",
                   textDecoration: "none",
                   fontSize: "20px",
+                  marginLeft:"5px",
                 }}
               >
                 <FontAwesomeIcon icon={faStar} /> Top Rated
@@ -229,9 +235,10 @@ class Navbar extends Component {
                   color: "black",
                   textDecoration: "none",
                   fontSize: "20px",
+                  marginLeft:"5px",
                 }}
               >
-                <FontAwesomeIcon icon={faMobileAlt} /> Android App
+                <FontAwesomeIcon icon={faMobileAlt} /> Anime
               </a>
             </div>
 

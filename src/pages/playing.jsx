@@ -1,51 +1,42 @@
-import React from 'react';
-import VideoPlayer from '../components/movie';
-import Navbar from '../Header/navbar';
-import FlexWrap from '../components/multiplecard'
-import Footer from '../Footer/footer';
-import { FaDownload, FaShare,FaPlus } from 'react-icons/fa';
+import React from "react";
+import styled from "styled-components";
+import Navbar from "../Header/navbar";
+import MovieDetails from "../section/moviedetails";
+import Footer from "../Footer/footer"
+import { AiFillPlayCircle, AiFillStar } from "react-icons/ai";
+import { BsClock } from "react-icons/bs";
 
-function Movie() {
-  const videoUrl = 'https://example.com/your-video.mp4'; // Replace with your video URL
-  const videoDescription = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.';
+// Define the styled components
+const Container = styled.div`
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  background-color: #000;
+  margin-bottom:10px;
+`;
 
-  const handleDownloadClick = () => {
-    // Implement the download functionality here
-    // You can use the HTML5 download attribute on a link element or fetch the video and trigger a download
-    // Example: window.location.href = videoUrl;
-  };
+const Video = styled.video`
+  width: 100%;
+  height: 100%;
+`;
 
-  const handleShareClick = () => {
-    // Implement the share functionality here
-    // You can open a share dialog or copy the video URL to the clipboard
-    // Example: navigator.clipboard.writeText(videoUrl);
-  };
 
+const FullScreenVideo = ({ videoSrc }) => {
   return (
-    <div className="Movie" style={{ backgroundColor: "#212016",height:"100%" }}>
-    <Navbar />
-    <h1 style={{ fontSize: "40px", marginLeft: "30px", color: "#fff" }}>| Sample Movie</h1>
-  
-    <VideoPlayer videoUrl={videoUrl} />
-    <p style={{ textAlign: "center", maxWidth: "80%", margin: "0 auto",marginTop:"20px", color: "#fff" }}>{videoDescription}</p>
-    
-    <div style={{ display: 'flex', justifyContent: 'center', marginBottom: "50px" }}>
-      <button style={{margin:"10px"}} onClick={handleDownloadClick}>
-        <FaDownload /> Download
-      </button>
-      <button style={{margin:"10px"}} onClick={handleDownloadClick}>
-        <FaPlus /> Add to Watchlist
-      </button>
-      <button style={{margin:"10px"}} onClick={handleShareClick}>
-        <FaShare /> Share
-      </button>
-    </div>
-    
-    <FlexWrap />
-    <Footer />
-  </div>
-  
+    <Container>
+      <Navbar />
+      <Video controls autoPlay>
+        <source src={videoSrc} type="video/mp4" />
+        Your browser does not support the video tag.
+      </Video>
+      <MovieDetails/>
+      <Footer />
+    </Container>
   );
-}
+};
 
-export default Movie;
+export default FullScreenVideo;

@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { FaFacebook, FaTwitter, FaWhatsapp, FaFacebookMessenger,FaTelegram  } from 'react-icons/fa';
-
+import { FaFacebook, FaTwitter, FaWhatsapp, FaFacebookMessenger, FaTelegram } from 'react-icons/fa';
 import styled from 'styled-components';
 
 const PopupContainer = styled.div`
@@ -8,11 +7,11 @@ const PopupContainer = styled.div`
   position: fixed;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%); /* Center horizontally and vertically */
-  width: 800px; /* Set your desired fixed width */
-  height: 800px; /* Set your desired fixed height */
+  transform: translate(-50%, -50%);
+  width: 800px;
+  height: 800px;
   background-color: rgba(0, 0, 0, 0.5);
-  z-index: 999; /* Ensure it's above other content */
+  z-index: 999;
   align-items: center;
   justify-content: center;
 `;
@@ -21,10 +20,9 @@ const PopupContent = styled.div`
   background-color: #fff;
   padding: 20px;
   border-radius: 10px;
-  box-shadow: 0px 0px 0px 100vmax rgba(0, 0, 0, 0.5); /* Increased spread and inset shadow */
-  text-align: center; /* Center the content */
+  text-align: center;
   position: relative;
-  max-width: 80%; /* Limit maximum width */
+  max-width: 80%;
 `;
 
 const CloseButton = styled.button`
@@ -41,7 +39,7 @@ const CloseButton = styled.button`
 const AdImage = styled.img`
   max-width: 100%;
   height: auto;
-  margin: 20px 0; /* Add margin for spacing */
+  margin: 20px 0;
 `;
 
 const AdText = styled.p`
@@ -73,14 +71,13 @@ const ShareButton = styled.div`
   }
 
   display: flex;
-  align-items: center; /* Center the icon and text vertically */
-  justify-content: center; /* Center the icon and text horizontally */
+  align-items: center;
+  justify-content: center;
 
   svg {
-    margin-right: 5px; /* Add spacing between icon and text */
+    margin-right: 5px;
   }
 `;
-
 
 function PopUpAd() {
   const [isOpen, setIsOpen] = useState(false);
@@ -104,7 +101,6 @@ function PopUpAd() {
   const shareUrl = 'https://example.com';
 
   const shareOnFacebook = () => {
-    // Open the Facebook Share dialog
     window.FB.ui({
       method: 'share',
       href: shareUrl,
@@ -132,7 +128,6 @@ function PopUpAd() {
   };
 
   useEffect(() => {
-    // Load Facebook SDK asynchronously
     window.fbAsyncInit = function () {
       window.FB.init({
         appId: 'YOUR_APP_ID',
@@ -158,24 +153,23 @@ function PopUpAd() {
         <AdText>This is a pop-up ad. Add your ad content here.</AdText>
         <CloseButton onClick={handleCloseClick}>X</CloseButton>
         <ShareButtonContainer>
-          <ShareButton onClick={shareOnFacebook}> 
+          <ShareButton onClick={shareOnFacebook}>
             <div className="fb-share-button" data-href={shareUrl} data-layout="button" data-size="large">
-            <FaFacebook /> Share on Facebook
+              <FaFacebook /> Share on Facebook
             </div>
           </ShareButton>
           <ShareButton onClick={shareOnTwitter}>
-  <FaTwitter /> Share on Twitter
-</ShareButton>
-<ShareButton onClick={shareOnWhatsApp}>
-  <FaWhatsapp /> Share on Instagram
-</ShareButton>
-<ShareButton onClick={shareOnMessenger}>
-  <FaFacebookMessenger /> Share on Messenger
-</ShareButton>
-<ShareButton onClick={shareOnMessenger}>
-  <FaTelegram /> Share on Telegram
-</ShareButton>
-
+            <FaTwitter /> Share on Twitter
+          </ShareButton>
+          <ShareButton onClick={shareOnWhatsApp}>
+            <FaWhatsapp /> Share on Instagram
+          </ShareButton>
+          <ShareButton onClick={shareOnMessenger}>
+            <FaFacebookMessenger /> Share on Messenger
+          </ShareButton>
+          <ShareButton onClick={shareOnMessenger}>
+            <FaTelegram /> Share on Telegram
+          </ShareButton>
         </ShareButtonContainer>
       </PopupContent>
     </PopupContainer>

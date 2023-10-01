@@ -2,7 +2,6 @@ import React, { Suspense, lazy } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import LoadingSpinner from "../src/components/loadinganime"; // Import your loading component
 const Users = lazy(() => import("./pages/users"));
-
 const IntroPage = lazy(() => import("./pages/IntroPage"));
 const Home = lazy(() => import("./pages/Home"));
 const Series = lazy(() => import("./pages/series"));
@@ -12,6 +11,7 @@ const Term = lazy(() => import("./pages/term"));
 const Contact = lazy(() => import("./pages/contact"));
 const Login = lazy(() => import("../src/account/login"));
 const Register = lazy(() => import("../src/account/register"));
+const Player = lazy(() => import("../src/pages/playing"));
 
 function App() {
   return (
@@ -90,12 +90,21 @@ function App() {
             </Suspense>
           }
         />
-         <Route
+        <Route
           path="/users"
           element={
             <Suspense fallback={<LoadingSpinner />}>
               {" "}
               <Users />
+            </Suspense>
+          }
+        />
+         <Route
+          path="/player"
+          element={
+            <Suspense fallback={<LoadingSpinner />}>
+              {" "}
+              <Player />
             </Suspense>
           }
         />

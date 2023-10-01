@@ -22,18 +22,14 @@ const Slide = styled.div`
     top: 95%;
     left: 50%;
     transform: translate(-50%, -50%);
-    display: none;
+    display: flex; /* Change display property to flex */
+    align-items: center; /* Align contents vertically */
     font-size: 20px; /* Adjust the size of the play button */
     color:  #e50914; /* Adjust the color */
+    width: 20px; /* Adjust the width as needed */
+    height: 20px; /* Adjust the height as needed */
   }
 
-  &:hover {
-    transform: scale(1.05);
-
-    /* Show the play button on hover */
-    .play-button {
-      display: block;
-    }
   }
 `;
 
@@ -61,7 +57,11 @@ const Heading = styled.h2`
   right: 0;
   z-index: 1;
 `;
-
+const CustomIcon = styled.img`
+  width: 20px; /* Adjust the width as needed */
+  height: 20px; /* Adjust the height as needed */
+  margin-right: 5px;
+`;
 export default class SwipeToSlide extends Component {
   render() {
     const settings = {
@@ -89,29 +89,42 @@ export default class SwipeToSlide extends Component {
         <Slider {...settings}>
           {/* Slides */}
           <Slide>
-            <SlideImage src="/images/lou.jpg" alt="number 1" />
-            <div className="play-button" href="/playing">Watch<FaPlayCircle /></div>
-          </Slide>
-          <Slide>
-            <SlideImage src="/images/lou.jpg" alt="number 1" />
-            <div className="play-button" href="/playing">Watch<FaPlayCircle /></div>
-          </Slide>
-          <Slide>
-            <SlideImage src="/images/lou.jpg" alt="number 1" />
-            <div className="play-button" href="/playing">Watch<FaPlayCircle /></div>
-          </Slide>
-          <Slide>
-            <SlideImage src="/images/lou.jpg" alt="number 1" />
-            <div className="play-button" href="/playing">Watch<FaPlayCircle /></div>
-          </Slide>
-          <Slide>
-            <SlideImage src="/images/lou.jpg" alt="number 1" />
-            <div className="play-button" href="/playing">Watch<FaPlayCircle /></div>
-          </Slide>
-          <Slide>
-            <SlideImage src="/images/lou.jpg" alt="number 1" />
-            <div className="play-button" href="/playing">Watch<FaPlayCircle /></div>
-          </Slide>
+  <SlideImage src="/images/lou.jpg" alt="number 1" />
+  <a href="/player" className="play-button">
+    Watch <CustomIcon src="/images/play.svg" alt="Play Icon" />
+  </a>
+</Slide>
+<Slide>
+  <SlideImage src="/images/lou.jpg" alt="number 1" />
+  <a href="/player" className="play-button">
+    Watch <CustomIcon src="/images/play.svg" alt="Play Icon" />
+  </a>
+</Slide>
+<Slide>
+  <SlideImage src="/images/lou.jpg" alt="number 1" />
+  <a href="/player" className="play-button">
+    Watch <CustomIcon src="/images/play.svg" alt="Play Icon" />
+  </a>
+</Slide>
+<Slide>
+  <SlideImage src="/images/lou.jpg" alt="number 1" />
+  <a href="/player" className="play-button">
+    Watch <CustomIcon src="/images/play.svg" alt="Play Icon" />
+  </a>
+</Slide>
+<Slide>
+  <SlideImage src="/images/lou.jpg" alt="number 1" />
+  <a href="/player" className="play-button">
+    Watch <CustomIcon src="/images/play.svg" alt="Play Icon" />
+  </a>
+</Slide>
+<Slide>
+  <SlideImage src="/images/lou.jpg" alt="number 1" />
+  <a href="/player" className="play-button">
+    Watch <CustomIcon src="/images/play.svg" alt="Play Icon" />
+  </a>
+</Slide>
+
         </Slider>
       </SectionWrapper>
     );
