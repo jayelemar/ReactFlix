@@ -71,7 +71,7 @@ export default class SwipeToSlide extends Component {
         slidesToShow: 3,
         swipeToSlide: true,
         autoplay: true,
-        autoplaySpeed: 4000,
+        autoplaySpeed: 3000,
         afterChange: function (index) {
           console.log(
             `Slider Changed to: ${index + 1}, background: #222; color: #bada55`
