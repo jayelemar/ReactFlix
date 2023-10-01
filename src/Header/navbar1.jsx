@@ -188,7 +188,7 @@ class Navbar extends Component {
 
             <div style={{ marginBottom: "20px" }}>
               <a
-                href="/movies"
+                href="/movie"
                 style={{
                   color: "black",
                   textDecoration: "none",
@@ -202,7 +202,7 @@ class Navbar extends Component {
 
             <div style={{ marginBottom: "20px" }}>
               <a
-                href="/tv-shows"
+                href="/series"
                 style={{
                   color: "black",
                   textDecoration: "none",
@@ -230,7 +230,7 @@ class Navbar extends Component {
 
             <div style={{ marginBottom: "20px" }}>
               <a
-                href="/android-app"
+                href="/anime"
                 style={{
                   color: "black",
                   textDecoration: "none",
