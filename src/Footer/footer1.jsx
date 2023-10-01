@@ -6,11 +6,16 @@ const FooterContainer = styled.footer`
   color: #fff;
   width: 98.8%;
   padding: 10px;
-  margin: 10px auto; /* Center horizontally using margin */
+  margin: 10px auto;
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  text-align: center; /* Center text horizontally */
+  text-align: center;
+  flex-wrap: wrap;
+`;
+
+const FooterColumn = styled.div`
+  flex: 1;
 `;
 
 const FooterLinks = styled.ul`
@@ -21,10 +26,10 @@ const FooterLinks = styled.ul`
 `;
 
 const FooterLink = styled.li`
-  margin: 2px 0; /* Reduce vertical margin */
-  transition: color 0.3s; /* Add transition for smooth color change */
+  margin: 2px 0;
+  transition: color 0.3s;
   &:hover {
-    color: blue; /* Change text color to blue on hover */
+    color: blue;
   }
 `;
 
@@ -36,42 +41,68 @@ const SocialLinks = styled.ul`
 `;
 
 const SocialLink = styled.li`
-  margin: 2px 0; /* Reduce vertical margin */
-  transition: color 0.3s; /* Add transition for smooth color change */
+  margin: 2px 0;
+  transition: color 0.3s;
   &:hover {
-    color: blue; /* Change text color to blue on hover */
+    color: blue;
   }
+`;
+
+const FooterText = styled.p`
+  color: #fff;
+  margin: 10px auto;
+  text-align: center;
+  font-family: 'Gotham', sans-serif; /* Use the Gotham font */
+`;
+
+const Heading = styled.h2`
+  font-family: 'Gotham', sans-serif; /* Use the Gotham font */
+  font-size: 24px;
 `;
 
 const Footer = () => {
   return (
     <FooterContainer>
-      <FooterLinks>
-        <FooterLink><strong>About Us</strong></FooterLink>
-        <FooterLink>Terms of Service</FooterLink>
-        <FooterLink>Contact</FooterLink>
-        <FooterLink>Sitemap</FooterLink>
-      </FooterLinks>
-      <FooterLinks>
-        <FooterLink><strong>Movies</strong></FooterLink>
-        <FooterLink>TV Series</FooterLink>
-        <FooterLink>Top IMDb</FooterLink>
-      </FooterLinks>
-      <FooterLinks>
-        <FooterLink><strong>Genre</strong></FooterLink>
-        <FooterLink>Action</FooterLink>
-        <FooterLink>Comedy</FooterLink>
-        <FooterLink>Drama</FooterLink>
-        <FooterLink>Fantasy</FooterLink>
-        <FooterLink>Horror</FooterLink>
-        <FooterLink>Mystery</FooterLink>
-      </FooterLinks>
-      <SocialLinks>
-        <SocialLink><strong>Connect us</strong></SocialLink>
-        <SocialLink>Join Group Telegram</SocialLink>
-        <SocialLink>Join Group Reddit</SocialLink>
-        <SocialLink>Join Twitter</SocialLink>
-      </SocialLinks>
+       <FooterText>
+        <strong>ReactFlix</strong> is a Free Movies streaming app with zero ads. We let you watch movies online without having to register or pay, with over 10,000 movies and TV-Series. You can also download full movies from MoviesCloud and watch them later if you want.
+      </FooterText><br/>
+      <FooterColumn>
+        <FooterLinks>
+          <FooterLink><Heading>About Us</Heading></FooterLink>
+          <FooterLink to="/term">Terms of Service</FooterLink>
+<FooterLink to="/contact">Contact</FooterLink>
+<FooterLink to="/sitemap">Sitemap</FooterLink>
+        </FooterLinks>
+      </FooterColumn>
+      <FooterColumn>
+        <FooterLinks>
+          <FooterLink  href="/movie"><Heading>Movies</Heading></FooterLink>
+          <FooterLink  href="/series">TV Series</FooterLink>
+          <FooterLink  href="/anime">Anime</FooterLink>
+          <FooterLink  href="#">Top IMDb</FooterLink>
+
+        </FooterLinks>
+      </FooterColumn>
+      <FooterColumn>
+        <FooterLinks>
+          <FooterLink  href="#"><Heading>Genre</Heading></FooterLink>
+          <FooterLink  href="#">Action</FooterLink>
+          <FooterLink  href="#">Comedy</FooterLink>
+          <FooterLink  href="#">Drama</FooterLink>
+          <FooterLink  href="#">Fantasy</FooterLink>
+          <FooterLink  href="#">Horror</FooterLink>
+          <FooterLink  href="#">Mystery</FooterLink>
+        </FooterLinks>
+      </FooterColumn>
+      <FooterColumn>
+        <SocialLinks>
+          <SocialLink><Heading>Connect us</Heading></SocialLink>
+          <SocialLink>Join Group Telegram</SocialLink>
+          <SocialLink>Join Group Reddit</SocialLink>
+          <SocialLink>Join Twitter</SocialLink>
+        </SocialLinks>
+      </FooterColumn>
+     
     </FooterContainer>
   );
 };
