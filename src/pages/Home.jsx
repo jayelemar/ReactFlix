@@ -8,7 +8,7 @@ import Navbar from "../Header/navbar1";
 import Carousel from "../components/nukacarousel";
 import TabbedHome from "../components/TabbedHome";
 import FlexWrap from "../components/multiplecard";
-import Footer from '../Footer/footer';
+import Footer from '../Footer/footer1';
 import Ads from '../ads/adscomp'
 import PopUpAds from '../ads/popup-ads'
 
