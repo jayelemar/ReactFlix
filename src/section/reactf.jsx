@@ -101,31 +101,31 @@ export default class SwipeToSlide extends Component {
         <Slider {...settings}>
           {/* Slides */}
           <Slide>
-  <SlideImage src="/images/lou.jpg" alt="number 1" />
+  <SlideImage src="/images/saw.jpg" alt="number 1" />
   <a href="/player" className="play-button">
     Watch <CustomIcon src="/images/play.svg" alt="Play Icon" />
   </a>
 </Slide>
 <Slide>
-  <SlideImage src="/images/lou.jpg" alt="number 1" />
+  <SlideImage src="/images/mi.jpg" alt="number 1" />
   <a href="/player" className="play-button">
     Watch <CustomIcon src="/images/play.svg" alt="Play Icon" />
   </a>
 </Slide>
 <Slide>
-  <SlideImage src="/images/lou.jpg" alt="number 1" />
+  <SlideImage src="/images/gt.jpg" alt="number 1" />
   <a href="/player" className="play-button">
     Watch <CustomIcon src="/images/play.svg" alt="Play Icon" />
   </a>
 </Slide>
 <Slide>
-  <SlideImage src="/images/lou.jpg" alt="number 1" />
+  <SlideImage src="/images/sm.jpg" alt="number 1" />
   <a href="/player" className="play-button">
     Watch <CustomIcon src="/images/play.svg" alt="Play Icon" />
   </a>
 </Slide>
 <Slide>
-  <SlideImage src="/images/lou.jpg" alt="number 1" />
+  <SlideImage src="/images/fc.jpg" alt="number 1" />
   <a href="/player" className="play-button">
     Watch <CustomIcon src="/images/play.svg" alt="Play Icon" />
   </a>
