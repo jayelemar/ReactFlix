@@ -14,12 +14,12 @@ import styled from "styled-components";
 import Movietabs from '../tabs/Movietabs'
 
 const customDotImages = [
-  "/images/spidey.jpg", // Customize the paths as needed
-  "/images/transformer.jpg",
-  "/images/got.jpg",
-  "/images/ig.jpg",
-  "/images/d.jpg",
-  "/images/s.jpg",
+  "/images/bleach.jpg", // Customize the paths as needed
+  "/images/jjk.jpg",
+  "/images/klk.jpg",
+  "/images/fmab.jpg",
+  "/images/dbs.jpg",
+  "/images/onepiece.jpg",
 ];
 const CarouselButton = styled.a`
   background: #d6d4d4;
@@ -53,47 +53,46 @@ function MyCarousel() {
 
   const carouselData = [
     {
-      imageSrc: "/images/spidey.jpg",
+      imageSrc: "/images/bleach.jpg",
       playLink: "/player",
       trailerLink: "/trailer/spidey",
-      text: "The Flash",
+      text: "Bleach",
       genre: "Action",
-      genre: "Sci-Fi",
     },
     {
-      imageSrc: "/images/transformer.jpg",
+      imageSrc: "/images/jjk.jpg",
       playLink: "/player",
       trailerLink: "/trailer/transformer",
       text: "Transformer: Rise of The Beast",
       genre: "Sci-Fi",
     },
     {
-      imageSrc: "/images/got.jpg",
+      imageSrc: "/images/klk.jpg",
       playLink: "/player",
       trailerLink: "/trailer/got",
-      text: "Guardians of the Galaxy Vol. 3",
+      text: "Kill La Kill",
       genre: "Action",
     },
     {
-      imageSrc: "/images/ig.jpg",
+      imageSrc: "/images/fmab.jpg",
       playLink: "/player",
       trailerLink: "/trailer/ig",
-      text: "Indiana Jones and the Dial of Destiny",
+      text: "Fullmetal Alchemist Brotherhood",
       genre: "Adventure",
     },
     {
-      imageSrc: "/images/d.jpg",
+      imageSrc: "/images/dbs.jpg",
       playLink: "/player",
       trailerLink: "/trailer/d",
-      text: "The Last Voyage of the Demeter",
-      genre: "Horror",
+      text: "Dragon Ball: Super",
+      genre: "Action",
     },
     {
-      imageSrc: "/images/s.jpg",
+      imageSrc: "/images/onepiece.jpg",
       playLink: "/player",
       trailerLink: "/trailer/s",
-      text: "Spider-Man: Across the Spider-Verse",
-      genre: "Animation",
+      text: "One Piece",
+      genre: "Adventure",
     },
     // Add more items with genres as needed
   ];

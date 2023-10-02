@@ -14,12 +14,12 @@ import styled from "styled-components";
 import Movietabs from '../tabs/Movietabs'
 
 const customDotImages = [
-  "/images/spidey.jpg", // Customize the paths as needed
-  "/images/transformer.jpg",
-  "/images/got.jpg",
-  "/images/ig.jpg",
-  "/images/d.jpg",
-  "/images/s.jpg",
+  "/images/peacemaker.jpg", // Customize the paths as needed
+  "/images/st.jpg",
+  "/images/supe.jpg",
+  "/images/bb.jpg",
+  "/images/lou.jpg",
+  "/images/meg2.jpg",
 ];
 const CarouselButton = styled.a`
   background: #d6d4d4;
@@ -53,47 +53,46 @@ function MyCarousel() {
 
   const carouselData = [
     {
-      imageSrc: "/images/spidey.jpg",
+      imageSrc: "/images/peacemaker.jpg",
       playLink: "/player",
       trailerLink: "/trailer/spidey",
-      text: "The Flash",
+      text: "Bleach",
       genre: "Action",
-      genre: "Sci-Fi",
     },
     {
-      imageSrc: "/images/transformer.jpg",
+      imageSrc: "/images/st.jpg",
       playLink: "/player",
       trailerLink: "/trailer/transformer",
       text: "Transformer: Rise of The Beast",
       genre: "Sci-Fi",
     },
     {
-      imageSrc: "/images/got.jpg",
+      imageSrc: "/images/supe.jpg",
       playLink: "/player",
       trailerLink: "/trailer/got",
-      text: "Guardians of the Galaxy Vol. 3",
+      text: "Supernatural",
       genre: "Action",
     },
     {
-      imageSrc: "/images/ig.jpg",
+      imageSrc: "/images/bb.jpg",
       playLink: "/player",
       trailerLink: "/trailer/ig",
-      text: "Indiana Jones and the Dial of Destiny",
+      text: "Breaking Bad",
       genre: "Adventure",
     },
     {
-      imageSrc: "/images/d.jpg",
+      imageSrc: "/images/lou.jpg",
       playLink: "/player",
       trailerLink: "/trailer/d",
-      text: "The Last Voyage of the Demeter",
-      genre: "Horror",
+      text: "Last of Us",
+      genre: "Action",
     },
     {
-      imageSrc: "/images/s.jpg",
+      imageSrc: "/images/meg2.jpg",
       playLink: "/player",
       trailerLink: "/trailer/s",
-      text: "Spider-Man: Across the Spider-Verse",
-      genre: "Animation",
+      text: "One Piece Live Action",
+      genre: "Adventure",
     },
     // Add more items with genres as needed
   ];

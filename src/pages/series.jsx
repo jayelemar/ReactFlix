@@ -5,7 +5,7 @@ import "slick-carousel/slick/slick-theme.css";
 import "aos/dist/aos.css";
 import AOS from "aos";
 import Navbar from "../Header/navbar1";
-import Carousel from "../components/nukacarousel";
+import Carousel from "../Slider/Series-nuka";
 import TabbedHome from "../components/TabbedHome";
 import FlexWrap from "../components/multiplecard";
 import Footer from '../Footer/footer';
