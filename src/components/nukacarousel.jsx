@@ -14,12 +14,12 @@ import styled from "styled-components";
 import Movietabs from '../tabs/Movietabs'
 
 const customDotImages = [
-  "/images/spidey.jpg", // Customize the paths as needed
+  "/images/peacemaker.jpg", // Customize the paths as needed
+  "/images/meg2.jpg",
   "/images/transformer.jpg",
-  "/images/got.jpg",
-  "/images/ig.jpg",
-  "/images/d.jpg",
-  "/images/s.jpg",
+  "/images/opp.jpg",
+  "/images/fmab.jpg",
+  "/images/bleach.jpg",
 ];
 const CarouselButton = styled.a`
   background: #d6d4d4;
@@ -53,47 +53,46 @@ function MyCarousel() {
 
   const carouselData = [
     {
-      imageSrc: "/images/spidey.jpg",
+      imageSrc: "/images/peacemaker.jpg",
       playLink: "/player",
       trailerLink: "/trailer/spidey",
-      text: "The Flash",
-      genre: "Action",
-      genre: "Sci-Fi",
+      text: "Peacemaker",
+      genre: "Action" ,
+    },
+    {
+      imageSrc: "/images/meg2.jpg",
+      playLink: "/player",
+      trailerLink: "/trailer/transformer",
+      text: "One Piece: Live Action",
+      genre: "Adventure",
     },
     {
       imageSrc: "/images/transformer.jpg",
       playLink: "/player",
-      trailerLink: "/trailer/transformer",
-      text: "Transformer: Rise of The Beast",
-      genre: "Sci-Fi",
-    },
-    {
-      imageSrc: "/images/got.jpg",
-      playLink: "/player",
       trailerLink: "/trailer/got",
-      text: "Guardians of the Galaxy Vol. 3",
-      genre: "Action",
+      text: "Transformer: Rise of The Beast",
+      genre: "Sci-fi",
     },
     {
-      imageSrc: "/images/ig.jpg",
+      imageSrc: "/images/opp.jpg",
       playLink: "/player",
       trailerLink: "/trailer/ig",
-      text: "Indiana Jones and the Dial of Destiny",
+      text: "Oppenheimer",
+      genre: "Sci-fi",
+    },
+    {
+      imageSrc: "/images/fmab.jpg",
+      playLink: "/player",
+      trailerLink: "/trailer/d",
+      text: "Fullmetal Alchemist Brotherhood",
       genre: "Adventure",
     },
     {
-      imageSrc: "/images/d.jpg",
-      playLink: "/player",
-      trailerLink: "/trailer/d",
-      text: "The Last Voyage of the Demeter",
-      genre: "Horror",
-    },
-    {
-      imageSrc: "/images/s.jpg",
+      imageSrc: "/images/bleach.jpg",
       playLink: "/player",
       trailerLink: "/trailer/s",
-      text: "Spider-Man: Across the Spider-Verse",
-      genre: "Animation",
+      text: "Bleach: Thousand Year Blood War ",
+      genre: "Action",
     },
     // Add more items with genres as needed
   ];

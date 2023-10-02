@@ -56,7 +56,7 @@ function MyCarousel() {
       imageSrc: "/images/bleach.jpg",
       playLink: "/player",
       trailerLink: "/trailer/spidey",
-      text: "Bleach",
+      text: "Bleach: Thousand Year Blood War",
       genre: "Action",
     },
     {
