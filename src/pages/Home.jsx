@@ -9,7 +9,7 @@ import Carousel from "../components/nukacarousel";
 import TabbedHome from "../components/TabbedHome";
 import FlexWrap from "../components/multiplecard";
 import NewSeries from "../section/Credit";
-import Footer from "../Footer/footer1";
+import Footer from "../Footer/footer";
 import Ads from "../ads/adscomp";
 import PopUpAds from "../ads/popup-ads";
 

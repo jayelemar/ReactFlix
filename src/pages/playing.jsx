@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import Navbar from "../Header/navbar";
 import MovieDetails from "../section/moviedetails";
-import Footer from "../Footer/footer1"
+import Footer from "../Footer/footer"
 import { AiFillPlayCircle, AiFillStar } from "react-icons/ai";
 import { BsClock } from "react-icons/bs";
 

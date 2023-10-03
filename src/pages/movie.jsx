@@ -8,7 +8,7 @@ import Navbar from "../Header/navbar1";
 import Carousel from "../components/nukacarousel";
 import TabbedHome from "../components/TabbedHome";
 import FlexWrap from "../components/multiplecard";
-import Footer from '../Footer/footer1';
+import Footer from '../Footer/footer';
 
 const MySlider = () => {
   // Renamed the locally defined Slider component
