@@ -127,6 +127,13 @@ function App() {
           </SocialMediaItem>
         </SocialMediaList>
       </Column>
+      <Column>
+        <h3>Credit</h3>
+        <ul>
+          <li><a href="/about">About My Team</a></li>
+         
+        </ul>
+      </Column>
     </Container>
   );
 }
