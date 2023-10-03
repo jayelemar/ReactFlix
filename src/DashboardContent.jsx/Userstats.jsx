@@ -50,8 +50,8 @@ const Heading = styled.h1`
 // Styled component for the PieGraph div
 const PieGraph = styled.div`
   position: absolute;
-  top: -1100%; /* Position 10% from the top of the AppContainer */
-  right: 500%; /* Position it at the left end */
+  top: -1200%; /* Position 10% from the top of the AppContainer */
+  right: 1200%; /* Position it at the left end */
 `;
 
 // Define the main React component

@@ -3,7 +3,7 @@ import styled from "styled-components";
 import Navbar from "../Header/navbar";
 import MovieSlider from "../section/reactf";
 import Benefit from '../section/benefit'
-import Footer from "../Footer/footer1";
+import Footer from "../Footer/footer";
 
 const PageWrapper = styled.div`
   background-image: url("/images/ssa.jpg");

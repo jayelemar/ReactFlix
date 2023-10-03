@@ -7,7 +7,8 @@ const StyledModal = styled(Modal)`
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 200px;
+  width: 400px; /* Updated width to 400px */
+  height: 600px; /* Updated height to 500px */
   transform: translate(-50%, -50%);
   background-color: white;
   padding: 20px;
@@ -17,7 +18,17 @@ const StyledModal = styled(Modal)`
   max-width: 80%;
   max-height: 80%;
   overflow-y: auto;
+
+  /* Add margin to all inputs, select boxes, and textareas */
+  & input,
+  & select,
+  & textarea {
+    margin: 5px;
+    height:25px;
+    width:200px;
+  }
 `;
+
 
 const UploadContent = ({ handleUploadClick }) => {
   const [formData, setFormData] = useState({
@@ -34,7 +45,13 @@ const UploadContent = ({ handleUploadClick }) => {
     country: "",
     production: "",
   });
-
+  const CenteredContent = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+`
   const [modalIsOpen, setModalIsOpen] = useState(false);
 
   const openModal = () => {
@@ -75,7 +92,7 @@ const UploadContent = ({ handleUploadClick }) => {
   };
 
   return (
-    <div>
+    <CenteredContent>
       <div style={{marginTop:"-450%"}}>
         <h4>Upload Movies</h4>
         <button onClick={openModal}>Upload</button>
@@ -202,7 +219,7 @@ const UploadContent = ({ handleUploadClick }) => {
         <button onClick={handleSubmit}>Submit</button>
         <button onClick={closeModal}>Cancel</button>
       </StyledModal>
-    </div>
+    </CenteredContent>
   );
 };
 
