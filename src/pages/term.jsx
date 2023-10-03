@@ -23,6 +23,9 @@ const Paragraph = styled.p`
 `;
 
 const TermsOfServicePage = () => {
+  useEffect(() => {
+    document.title = "ReactFlix | Terms";
+  }, []);
   return (
     <PageContainer>
       <Navbar />

@@ -5,7 +5,7 @@ import TrendCard from "../cards/trend-card"; // Import the MovieCard component
 const Tabs = styled.div`
   background: transparent;
   width: 100%;
-  height: 800px;
+  height: 120vh;
   padding: 1em;
   margin-left: auto;
   border-top: 1px solid white;
@@ -85,7 +85,7 @@ class TabsComponent extends React.Component {
           movies: [
             {
               title: "Series 1",
-              imageUrl: "image2.jpg",
+              imageUrl: "/images/spidey.jpg",
               year: "2022",
               duration: "45min",
               rating: "8.0",
@@ -98,7 +98,7 @@ class TabsComponent extends React.Component {
           movies: [
             {
               title: "Anime 1",
-              imageUrl: "image3.jpg",
+              imageUrl: "/images/lou.jpg",
               year: "2023",
               duration: "30min",
               rating: "9.0",
@@ -135,19 +135,26 @@ class TabsComponent extends React.Component {
     ));
 
     return (
+      <section >
       <Tabs>
         <HeaderContainer>
-        <MontserratTitle
-  style={{ fontFamily: 'Gotham, sans-serif', fontSize: "40px", color: "white", marginLeft:"100px",fontWeight:"bold" }}
-  className="montserrat-font"
->
-
+          <MontserratTitle
+            style={{
+              fontFamily: "Gotham, sans-serif",
+              fontSize: "40px",
+              color: "white",
+              marginLeft: "100px",
+              fontWeight: "bold",
+            }}
+            className="montserrat-font"
+          >
             | Trending {items[activeTab].name}
           </MontserratTitle>
           <TabsNav>{buttons}</TabsNav>
         </HeaderContainer>
         <div>{cards}</div>
       </Tabs>
+      </section>
     );
   }
 }

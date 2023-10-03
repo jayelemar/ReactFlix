@@ -13,6 +13,8 @@ const Login = lazy(() => import("../src/account/login"));
 const Register = lazy(() => import("../src/account/register"));
 const Player = lazy(() => import("../src/pages/playing"));
 const Dashboard = lazy(() => import("../src/pages/dashboard"));
+const Credit = lazy(() => import("./section/Credit"));
+
 
 function App() {
   return (
@@ -115,6 +117,15 @@ function App() {
             <Suspense fallback={<LoadingSpinner />}>
               {" "}
               <Dashboard />
+            </Suspense>
+          }
+        />
+        <Route
+          path="credit"
+          element={
+            <Suspense fallback={<LoadingSpinner />}>
+              {" "}
+              <Credit />
             </Suspense>
           }
         />

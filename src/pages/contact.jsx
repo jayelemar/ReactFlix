@@ -47,6 +47,9 @@ const Button = styled.button`
 `;
 
 const ContactPage = () => {
+  useEffect(() => {
+    document.title = "ReactFlix | Contact";
+  }, []);
   return (
     <PageContainer>
       <Navbar />

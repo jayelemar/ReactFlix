@@ -161,94 +161,11 @@ const CardList = () => {
             <div className="duration">2:15:0 minutes</div>
           </CardContent>
         </CardItem>
-        <CardItem>
-          <CardImage src="/images/spidey.jpg" alt="Card 5 Image" />
-          <CardTitle>Card 5</CardTitle>
-          <CardContent>
-            <div className="rating-button">
-              <i className="fa fa-star"></i> Rating
-            </div>
-            <div className="hd-button">HD</div>
-            <div className="duration">2:15:0 minutes</div>
-          </CardContent>
-        </CardItem>
-        <CardItem>
-          <CardImage src="/images/spidey.jpg" alt="Card 5 Image" />
-          <CardTitle>Card 5</CardTitle>
-          <CardContent>
-            <div className="rating-button">
-              <i className="fa fa-star"></i> Rating
-            </div>
-            <div className="hd-button">HD</div>
-            <div className="duration">2:15:0 minutes</div>
-          </CardContent>
-        </CardItem>
-        <CardItem>
-          <CardImage src="/images/spidey.jpg" alt="Card 5 Image" />
-          <CardTitle>Card 5</CardTitle>
-          <CardContent>
-            <div className="rating-button">
-              <i className="fa fa-star"></i> Rating
-            </div>
-            <div className="hd-button">HD</div>
-            <div className="duration">2:15:0 minutes</div>
-          </CardContent>
-        </CardItem>
-        <CardItem>
-          <CardImage src="/images/spidey.jpg" alt="Card 5 Image" />
-          <CardTitle>Card 5</CardTitle>
-          <CardContent>
-            <div className="rating-button">
-              <i className="fa fa-star"></i> Rating
-            </div>
-            <div className="hd-button">HD</div>
-            <div className="duration">2:15:0 minutes</div>
-          </CardContent>
-        </CardItem>
-        <CardItem>
-          <CardImage src="/images/spidey.jpg" alt="Card 5 Image" />
-          <CardTitle>Card 5</CardTitle>
-          <CardContent>
-            <div className="rating-button">
-              <i className="fa fa-star"></i> Rating
-            </div>
-            <div className="hd-button">HD</div>
-            <div className="duration">2:15:0 minutes</div>
-          </CardContent>
-        </CardItem>
-        <CardItem>
-          <CardImage src="/images/spidey.jpg" alt="Card 5 Image" />
-          <CardTitle>Card 5</CardTitle>
-          <CardContent>
-            <div className="rating-button">
-              <i className="fa fa-star"></i> Rating
-            </div>
-            <div className="hd-button">HD</div>
-            <div className="duration">2:15:0 minutes</div>
-          </CardContent>
-        </CardItem>
-        <CardItem>
-          <CardImage src="/images/spidey.jpg" alt="Card 5 Image" />
-          <CardTitle>Card 5</CardTitle>
-          <CardContent>
-            <div className="rating-button">
-              <i className="fa fa-star"></i> Rating
-            </div>
-            <div className="hd-button">HD</div>
-            <div className="duration">2:15:0 minutes</div>
-          </CardContent>
-        </CardItem>
-        <CardItem>
-          <CardImage src="/images/spidey.jpg" alt="Card 5 Image" />
-          <CardTitle>Card 5</CardTitle>
-          <CardContent>
-            <div className="rating-button">
-              <i className="fa fa-star"></i> Rating
-            </div>
-            <div className="hd-button">HD</div>
-            <div className="duration">2:15:0 minutes</div>
-          </CardContent>
-        </CardItem>
+      
+       
+        
+       
+       
       </CardsList>
     </Wrapper>
   );

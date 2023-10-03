@@ -8,9 +8,10 @@ import Navbar from "../Header/navbar1";
 import Carousel from "../components/nukacarousel";
 import TabbedHome from "../components/TabbedHome";
 import FlexWrap from "../components/multiplecard";
-import Footer from '../Footer/footer1';
-import Ads from '../ads/adscomp'
-import PopUpAds from '../ads/popup-ads'
+import NewSeries from "../section/Credit";
+import Footer from "../Footer/footer1";
+import Ads from "../ads/adscomp";
+import PopUpAds from "../ads/popup-ads";
 
 const MySlider = () => {
   // Renamed the locally defined Slider component
@@ -30,22 +31,18 @@ const MySlider = () => {
     cssEase: "linear",
   };
 
-  return (
-    <SlickSlider {...settings}>
-      
-    </SlickSlider>
-  );
+  return <SlickSlider {...settings}></SlickSlider>;
 };
 
 const Home = () => {
   useEffect(() => {
-    document.title = "ReactFlix | Watch Movies";
+    document.title = "ReactFlix | Home";
   }, []);
 
   return (
     <section
       className="slider4 mbr-embla cid-tEzwvrEiry"
-      style={{ backgroundColor: "#8E95A5" }}
+      style={{ backgroundColor: "#8E95A5",width:"100vw" }}
       id="slider4-2j"
     >
       <Navbar />
@@ -55,13 +52,12 @@ const Home = () => {
         speed={1000}
         slidesToShow={1}
       ></Carousel>
-      
-     <TabbedHome />
-     <FlexWrap />
-     <PopUpAds />
+      <TabbedHome />
+      <FlexWrap />
+      <NewSeries />
+      <PopUpAds />
       <Ads />
       <Footer />
-     
     </section>
   );
 };

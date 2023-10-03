@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import { FaPlay } from 'react-icons/fa'; // Import the play icon
 
@@ -82,20 +82,18 @@ const Pagination = styled.div`
 
 `;
 
-
 const PageButton = styled.button`
   background-color: transparent;
   border: none;
   cursor: pointer;
   margin: 0 5px;
   border: 1px solid black;
-background-color: white;
+color: green;
   font-size: 18px;
   color: ${(props) => (props.active ? 'blue' : 'black')};
 `;
-// Rest of your styled-components and the App component
 
-function App() {
+function Card() {
   const [currentPage, setCurrentPage] = useState(1);
   const cardsPerPage = 12; // Number of cards to display per page
 
@@ -179,7 +177,7 @@ function App() {
   };
 
   return (
-    <div style={{backgroundColor: "black",height:"140vh" ,marginBottom:"20px" ,width:"100vw"}}>
+    <div style={{height:"120vh",width:"100vw",backgroundColor:"blue"}}>
         <Heading>| New Series</Heading>
       <FlexContainer>
         {displayedCards.map((card, index) => (
@@ -206,4 +204,4 @@ function App() {
   );
 }
 
-export default App;
+export default Card;

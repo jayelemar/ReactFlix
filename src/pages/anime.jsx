@@ -37,7 +37,7 @@ const MySlider = () => {
 
 const Home = () => {
   useEffect(() => {
-    document.title = "ReactFlix | Watch Movies";
+    document.title = "ReactFlix | Watch Anime";
   }, []);
 
   return (

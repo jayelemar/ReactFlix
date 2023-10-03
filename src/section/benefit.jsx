@@ -9,11 +9,12 @@ const CardContainer = styled.div`
   align-items: center;
   height: 100vh;
   background-color: white;
+  
 `;
 
 // Create a styled component for each card
 const Card = styled.div`
-  margin: -150px 20px 0;
+margin:5px;
   position: relative;
   width: 370px;
   max-width: calc(100vw - 48px);
@@ -28,6 +29,8 @@ const Card = styled.div`
   border-radius: 20px;
   text-align: left;
   transition: all 0.2s linear;
+  border:0.1px solid black;
+  bottom :50px;
 `;
 
 // Create a styled component for the headings
@@ -44,7 +47,7 @@ const CardParagraph = styled.p`
 `;
 const SectionWithMargin = styled.section`
   margin-top: -60px;
-  height: 100vh;
+  height: 120vh;
   width: 100vw;
   border-top: 1px solid white; /* Add a 1px solid white border to the top */
   display: flex;
