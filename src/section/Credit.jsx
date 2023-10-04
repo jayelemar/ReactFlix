@@ -5,7 +5,7 @@ import { FaPlay } from 'react-icons/fa'; // Import the play icon
 const Heading = styled.h1`
   text-align: center;
   font-family: 'Gotham', sans-serif;
-  color: white;
+  color: black;
   font-size: 40px; /* Set the font size */
   margin-left: -70%;
 `;
@@ -83,14 +83,28 @@ const Pagination = styled.div`
 `;
 
 const PageButton = styled.button`
-  background-color: transparent;
-  border: none;
+  background-color: white;
+  border: 1px solid white;
+  color: black;
   cursor: pointer;
   margin: 0 5px;
-  border: 1px solid black;
-color: green;
   font-size: 18px;
-  color: ${(props) => (props.active ? 'blue' : 'black')};
+  font-family: "Gotham", sans-serif; /* Use the Gotham font */
+  padding: 5px 10px;
+  border-radius: 5px;
+  outline: none;
+  
+  &:hover {
+    background-color: transparent;
+    color: blue;
+  }
+
+  ${(props) =>
+    props.active &&
+    `
+    background-color: transparent;
+    color: blue;
+  `}
 `;
 
 function Card() {
@@ -177,7 +191,7 @@ function Card() {
   };
 
   return (
-    <div style={{height:"120vh",width:"100vw",backgroundColor:"blue"}}>
+    <div style={{height:"120vh",width:"100vw",backgroundColor:"white"}}>
         <Heading>| New Series</Heading>
       <FlexContainer>
         {displayedCards.map((card, index) => (

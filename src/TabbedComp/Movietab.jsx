@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import { FaPlay } from 'react-icons/fa'; // Import the play icon
 
@@ -82,7 +82,6 @@ const Pagination = styled.div`
 
 `;
 
-
 const PageButton = styled.button`
   background-color: white;
   border: 1px solid white;
@@ -107,7 +106,8 @@ const PageButton = styled.button`
     color: blue;
   `}
 `;
-function App() {
+
+function Card() {
   const [currentPage, setCurrentPage] = useState(1);
   const cardsPerPage = 12; // Number of cards to display per page
 
@@ -191,8 +191,8 @@ function App() {
   };
 
   return (
-    <div style={{backgroundColor: "black",height:"140vh" ,marginBottom:"20px" ,width:"100vw"}}>
-        <Heading>| New Series</Heading>
+    <div style={{height:"120vh",width:"100vw",backgroundColor:"transparent",marginTop:"-10%",marginLeft:"-2%"}}>
+        <Heading>| Trending Movies</Heading>
       <FlexContainer>
         {displayedCards.map((card, index) => (
           <CardWrapper key={index} imageUrl={card.imageUrl}>
@@ -218,4 +218,4 @@ function App() {
   );
 }
 
-export default App;
+export default Card;

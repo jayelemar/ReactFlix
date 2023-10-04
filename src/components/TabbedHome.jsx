@@ -1,33 +1,31 @@
 import React from "react";
 import styled from "styled-components";
-import TrendCard from "../cards/trend-card"; // Import the MovieCard component
-
+import MovieTabs from "../TabbedComp/Movietab"
+import Seriestabs from "../TabbedComp/Seriestab"
+import Animetabs from "../TabbedComp/Animetab"
 const Tabs = styled.div`
   background: transparent;
   width: 100%;
-  height: 120vh;
+  height: 140vh;
   padding: 1em;
   margin-left: auto;
+  margin-right:20px;
   border-top: 1px solid white;
-  background: linear-gradient(
-    to top,
-    #000000 50%,
-    #12104a 100%
-  ); /* Add the linear gradient background */
+  background: linear-gradient(to top, #000000 50%, #12104a 100%);
 `;
 
 const HeaderContainer = styled.div`
   display: flex;
   align-items: center;
-  font-family: "Gotham", sans-serif; /* Use the Gotham font */
-  font-size: 40px; /* Set the font size */
+  font-family: "Gotham", sans-serif;
+  font-size: 40px;
   color: white;
 `;
 
 const TabsNav = styled.nav`
   display: flex;
   justify-content: flex-end;
-  margin-left: auto; /* Push the tabs to the right */
+  margin-left: auto;
   color: white;
 `;
 
@@ -38,10 +36,11 @@ const TabsNavButton = styled.button`
   padding: 1em 2em;
   text-align: center;
   cursor: pointer;
-  color:white,
+  color: white;
   transition: background-color 0.3s, color 0.3s;
   height: 70px;
-  font-size: 20px; /* Set the font size to 20px */
+  font-size: 20px;
+  margin: 10% 0; /* Margin values: top and bottom */
 
   &:hover {
     background-color: #212016;
@@ -49,18 +48,43 @@ const TabsNavButton = styled.button`
     text-decoration: underline;
   }
 
+  &:last-child {
+    margin-right: 10%; /* Margin only for the last tab on the right side */
+  }
+
   & + & {
     margin-left: -1px;
   }
 `;
 
-const MontserratTitle = styled.h1`
-  font-size: 40px;
-  margin-left: 30px;
-  color: #000;
-  font-family: "Montserrat", sans-serif; /* Apply Montserrat font */
-  border: none;
-`;
+
+
+// Create a component for Movies content
+class MoviesContent extends React.Component {
+  render() {
+    return (
+      <MovieTabs />
+    );
+  }
+}
+
+// Create a component for Series content
+class SeriesContent extends React.Component {
+  render() {
+    return (
+     <Seriestabs />
+    );
+  }
+}
+
+// Create a component for Anime content
+class AnimeContent extends React.Component {
+  render() {
+    return (
+      <Animetabs />
+    );
+  }
+}
 
 class TabsComponent extends React.Component {
   constructor(props) {
@@ -69,42 +93,15 @@ class TabsComponent extends React.Component {
       items: [
         {
           name: "Movies",
-          movies: [
-            {
-              title: "Movie 1",
-              imageUrl: "/images/spidey.jpg",
-              year: "2021",
-              duration: "120min",
-              rating: "7.5",
-            },
-            // Add more movies for the Movies tab here
-          ],
+          content: <MoviesContent />,
         },
         {
           name: "Series",
-          movies: [
-            {
-              title: "Series 1",
-              imageUrl: "/images/spidey.jpg",
-              year: "2022",
-              duration: "45min",
-              rating: "8.0",
-            },
-            // Add more series data for the Series tab here
-          ],
+          content: <SeriesContent />,
         },
         {
           name: "Anime",
-          movies: [
-            {
-              title: "Anime 1",
-              imageUrl: "/images/lou.jpg",
-              year: "2023",
-              duration: "30min",
-              rating: "9.0",
-            },
-            // Add more anime data for the Anime tab here
-          ],
+          content: <AnimeContent />,
         },
       ],
       activeTab: 0,
@@ -130,30 +127,14 @@ class TabsComponent extends React.Component {
       </TabsNavButton>
     ));
 
-    const cards = items[activeTab].movies.map((movie, i) => (
-      <TrendCard key={i} {...movie} />
-    ));
-
     return (
-      <section >
-      <Tabs>
-        <HeaderContainer>
-          <MontserratTitle
-            style={{
-              fontFamily: "Gotham, sans-serif",
-              fontSize: "40px",
-              color: "white",
-              marginLeft: "100px",
-              fontWeight: "bold",
-            }}
-            className="montserrat-font"
-          >
-            | Trending {items[activeTab].name}
-          </MontserratTitle>
-          <TabsNav>{buttons}</TabsNav>
-        </HeaderContainer>
-        <div>{cards}</div>
-      </Tabs>
+      <section>
+        <Tabs>
+          <HeaderContainer>
+            <TabsNav>{buttons}</TabsNav>
+          </HeaderContainer>
+          <div>{items[activeTab].content}</div>
+        </Tabs>
       </section>
     );
   }
