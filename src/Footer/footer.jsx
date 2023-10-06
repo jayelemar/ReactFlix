@@ -8,13 +8,32 @@ const Container = styled.div`
   justify-content: space-between;
   gap: 10px;
   background-color: black;
+
+  @media (max-width: 300px) {
+    flex-direction: row; /* Change flex-direction to "row" to display columns in the same line */
+    align-items: center; /* Align columns vertically in the center */
+    flex-wrap: nowrap; /* Prevent columns from wrapping */
+    overflow-x: auto; /* Add horizontal scrolling for small screens */
+    height:250px;
+  }
+  @media (min-width: 600px) and (max-width: 800px) {
+    flex-direction: row; /* Change flex-direction to "row" for columns */
+    align-items: center; /* Align columns vertically in the center */
+    flex-wrap: wrap; /* Allow columns to wrap to the next line */
+    height: 130px; /* Reset height */
+  }
 `;
 
 const Column = styled.div`
   flex: 1;
   max-width: calc(20% - 20px);
-  padding: 20px;
+  padding: 10px;
   margin: 10px;
+  font-size: 18px; /* Default font size */
+
+  &:first-child {
+    margin-left: 30px; /* Add left margin to the first column */
+  }
   
   h2,
   h3 {
@@ -38,23 +57,106 @@ const Column = styled.div`
   a {
     text-decoration: none;
     color: #fff;
-    @hover{
+
+    &:hover {
       text-decoration: underline green;
     }
   }
+
+  @media (max-width: 400px) and (min-width: 300px) {
+    max-width: 100%; /* Remove max-width to fit all columns in the same line */
+    width: 100%;
+    margin: -10px;
+    
+    h2 {
+      font-size: 5px; /* Adjust the font size for h2 on smaller screens */
+      margin-top:10px;
+    }
+    h3 {
+      font-size: 6px; /* Adjust font size for h2 and h3 on smaller screens */
+      margin-bottom: -25px;
+      margin-top: 10px;
+    
+      &:last-child {
+        margin-right: 20px; /* Corrected the property name */
+      }
+    }
+    
+   li{
+    margin-bottom: -10px;
+   }
+    p {
+      font-size: 5px; /* Adjust font size for p on smaller screens */
+    }
+    a{
+      font-size: 5px;
+    }
+  }
+  @media (min-width: 600px) and (max-width: 800px) {
+    max-width: 100%;
+    width: 100%;
+    margin: -10px;
+    margin-right:-15px;
+
+    h2 {
+      font-size: 5px;
+      margin-top: 10px;
+    }
+    h3 {
+      font-size: 10px;
+      margin-bottom: -25px;
+      margin-top: 10px;
+
+      &:nth-child(2) {
+        margin-right: 5px;
+      }
+    }
+
+    li {
+      margin-bottom: -10px;
+    }
+    p {
+      font-size: 6px;
+    }
+    a {
+      font-size: 5px;
+    }
+  }
+  
 `;
 
 const SocialMediaList = styled.ul`
   list-style: none;
   padding: 0;
   margin: 0;
+
+  @media (max-width: 400px) {
+    display: flex; /* Change to flex layout on small screens */
+    flex-direction: column; /* Display icons vertically on small screens */
+    align-items: center; /* Center-align icons vertically */
+    margin-top:5px;
+  }
+  @media (min-width: 600px) and (max-width: 800px) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 5px;
+  }
 `;
 
 const SocialMediaItem = styled.li`
-  display: inline-block;
-  margin-right: 10px; /* Add some spacing between icons */
-`;
+  margin-bottom: 10px; /* Add spacing between icons */
 
+  @media (max-width: 400px) {
+    margin-bottom: 5px; 
+    margin-right:35px;
+  }
+
+  &:first-child {
+    margin-top: 25px;
+     /* Add margin-top to the first social media icon */
+  }
+`;
 function App() {
   // Define social media URLs
   const facebookUrl = "https://www.facebook.com/";
@@ -74,7 +176,7 @@ function App() {
         </p>
       </Column>
       <Column>
-        <h3>About</h3>
+        <h3><strong>About</strong></h3>
         <ul>
           <li><a href="/about">About ReactFlix</a></li>
           <li><a href="/term">Terms & Conditions</a></li>
@@ -106,7 +208,7 @@ function App() {
         <h3>Social Media:</h3>
         <SocialMediaList>
           <SocialMediaItem>
-            <a href={facebookUrl} target="_blank" rel="noopener noreferrer">
+          <li></li>  <a href={facebookUrl} target="_blank" rel="noopener noreferrer">
               <FaFacebook />
             </a>
           </SocialMediaItem>
@@ -130,8 +232,7 @@ function App() {
       <Column>
         <h3>Credit</h3>
         <ul>
-          <li><a href="/about">About My Team</a></li>
-         
+          <li><a href="/credit">About My Team</a></li>
         </ul>
       </Column>
     </Container>

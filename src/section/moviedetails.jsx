@@ -12,11 +12,13 @@ const Wrapper = styled.div`
 `;
 
 const Poster = styled.div`
-  margin: 100px;
+  margin: 100px 100px 0 100px; /* 100px top margin, 20px right and left margins, 0 bottom margin */
 `;
+
 
 const Details = styled.div`
   margin: 50px;
+
   h2 {
     font-size: 24px;
   }

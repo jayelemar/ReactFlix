@@ -13,7 +13,7 @@ const Login = lazy(() => import("../src/account/login"));
 const Register = lazy(() => import("../src/account/register"));
 const Player = lazy(() => import("../src/pages/playing"));
 const Dashboard = lazy(() => import("../src/pages/dashboard"));
-const Credit = lazy(() => import("./section/Credit"));
+const Credit = lazy(() => import("./pages/credit"));
 
 
 function App() {
@@ -121,7 +121,7 @@ function App() {
           }
         />
         <Route
-          path="credit"
+          path="/credit"
           element={
             <Suspense fallback={<LoadingSpinner />}>
               {" "}

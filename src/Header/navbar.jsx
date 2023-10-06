@@ -1,12 +1,10 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
 import styled from "styled-components";
-
+import { Link } from "react-router-dom";
 
 const StyledNavbar = styled.nav`
   position: sticky;
   top: 0;
-  bottom: 0; /* Stick to the bottom */
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -14,20 +12,14 @@ const StyledNavbar = styled.nav`
   width: 100%;
   font-family: "Gotham", sans-serif;
   font-style: bold;
-  color: white;
+  color: ${(props) => (props.isBlack ? "white" : "black")};
+  background-color: ${(props) =>
+    props.isBlack ? "black" : "rgba(255, 255, 255, 0.1)"};
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-  background-color: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(10px);
-  transition: background-color 0.3s ease;
-  backdrop-filter: ${(props) => (props.isScrolled ? "blur(10px)" : "none")};
-
-  @media (max-width: 1000px) {
-    display: none;
-  }
+  transition: background-color 0.3s ease, color 0.3s ease;
 `;
-
-
 
 const TextLogo = styled.div`
   font-size: 24px;
@@ -50,9 +42,9 @@ const NavLinkItem = styled.li`
   margin-left: 30px;
   position: relative;
   font-family: "Montserrat", sans-serif;
-  background-color: transparent; /* Set background color to transparent */
-  border-radius: 25%; /* Add border-radius */
-  padding: 5px 10px; /* Add padding */
+  background-color: transparent;
+  border-radius: 25%;
+  padding: 5px 10px;
 `;
 
 const NavLink = styled(Link)`
@@ -64,17 +56,18 @@ const NavLink = styled(Link)`
 const SubscribeButton = styled(NavLink)`
   background-color: #e50914;
   border-radius: 25px;
-  height: 40px; /* Adjust the height */
-  width: 120px; /* Adjust the width */
+  height: 40px;
+  width: 120px;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 10px; /* Adjust the margin */
+  margin: 10px;
 `;
+
 const Modal = styled.div`
-display: ${(props) => (props.isOpen ? "block" : "none")};
+  display: ${(props) => (props.isOpen ? "block" : "none")};
   position: fixed;
-  height:80px;
+  height: 80px;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -83,7 +76,6 @@ display: ${(props) => (props.isOpen ? "block" : "none")};
   padding: 20px;
   z-index: 1000;
   border-radius: 10px;
-  
 `;
 
 const CloseButton = styled.button`
@@ -96,6 +88,7 @@ const CloseButton = styled.button`
   font-size: 20px;
   cursor: pointer;
 `;
+
 const SubscribeModalButton = styled.button`
   background-color: #e50914;
   border: none;
@@ -107,7 +100,7 @@ const SubscribeModalButton = styled.button`
 `;
 
 const Navbar = () => {
-  const [isScrolled, setIsScrolled] = useState(false);
+  const [isBlack, setIsBlack] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const toggleModal = () => {
@@ -117,9 +110,9 @@ const Navbar = () => {
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 0) {
-        setIsScrolled(true);
+        setIsBlack(true);
       } else {
-        setIsScrolled(false);
+        setIsBlack(false);
       }
     };
 
@@ -132,31 +125,28 @@ const Navbar = () => {
 
   return (
     <>
-    <StyledNavbar isScrolled={isScrolled}>
-      <TextLogo>ReactFlix</TextLogo>
-      <NavLinks>
-        <NavLinkItem>
-          <NavLink to="/home">Browse</NavLink>
-        </NavLinkItem>
+      <StyledNavbar isBlack={isBlack}>
+        <TextLogo>ReactFlix</TextLogo>
+        <NavLinks>
+          <NavLinkItem>
+            <NavLink to="/home">Browse</NavLink>
+          </NavLinkItem>
+
+          <NavLinkItem>
+            <NavLink to="/reg">Login</NavLink>
+          </NavLinkItem>
+        </NavLinks>
 
         <NavLinkItem>
-          <NavLink to="/reg">Login</NavLink>
+          <SubscribeButton onClick={toggleModal}>Subscribe</SubscribeButton>
+          <Modal isOpen={isModalOpen}>
+            <CloseButton onClick={toggleModal}>&times;</CloseButton>
+            <p>Want to Avail 5$ Lifetime No Ads?</p>
+            <SubscribeModalButton>Subscribe Now</SubscribeModalButton>
+          </Modal>
         </NavLinkItem>
-        
-      </NavLinks>
-
-      <NavLinkItem>
-        <SubscribeButton onClick={toggleModal}>Subscribe</SubscribeButton>
-        <Modal isOpen={isModalOpen}>
-          <CloseButton onClick={toggleModal}>&times;</CloseButton>
-          <p>Want to Avail 5$ Lifetime No Ads?</p>
-          <SubscribeModalButton>Subscribe Now</SubscribeModalButton>
-        </Modal>
-      </NavLinkItem>
-    </StyledNavbar>
-
-   
-  </>
+      </StyledNavbar>
+    </>
   );
 };
 
