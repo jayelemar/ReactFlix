@@ -115,68 +115,68 @@ function Card() {
   const cardData = [
     
     {
-        title: 'Stranger Things 1',
-        imageUrl: 'https://television.mxdwn.com/wp-content/uploads/2016/08/stranger-things1-770x470.jpeg',
+        title: 'FullMetal Alchemist',
+        imageUrl: 'images/fmab.jpg',
       },
       {
-        title: 'Card 2',
-        imageUrl: 'https://television.mxdwn.com/wp-content/uploads/2016/08/stranger-things1-770x470.jpeg',
+        title: 'FullMetal Alchemist',
+        imageUrl: 'images/fmab.jpg',
       },
       {
-        title: 'Stranger Things 1',
-        imageUrl: 'https://television.mxdwn.com/wp-content/uploads/2016/08/stranger-things1-770x470.jpeg',
+        title: 'FullMetal Alchemist',
+        imageUrl: 'images/fmab.jpg',
       },
       {
-        title: 'Card 2',
-        imageUrl: 'https://television.mxdwn.com/wp-content/uploads/2016/08/stranger-things1-770x470.jpeg',
+        title: 'FullMetal Alchemist',
+        imageUrl: 'images/fmab.jpg',
       },
       {
-        title: 'Stranger Things 1',
-        imageUrl: 'https://television.mxdwn.com/wp-content/uploads/2016/08/stranger-things1-770x470.jpeg',
+        title: 'FullMetal Alchemist',
+        imageUrl: 'images/fmab.jpg',
       },
       {
-        title: 'Card 2',
-        imageUrl: 'https://television.mxdwn.com/wp-content/uploads/2016/08/stranger-things1-770x470.jpeg',
+        title: 'FullMetal Alchemist',
+        imageUrl: 'images/fmab.jpg',
       },
       {
-        title: 'Stranger Things 1',
-        imageUrl: 'https://television.mxdwn.com/wp-content/uploads/2016/08/stranger-things1-770x470.jpeg',
+        title: 'FullMetal Alchemist',
+        imageUrl: 'images/fmab.jpg',
       },
       {
-        title: 'Card 2',
-        imageUrl: 'https://television.mxdwn.com/wp-content/uploads/2016/08/stranger-things1-770x470.jpeg',
+        title: 'FullMetal Alchemist',
+        imageUrl: 'images/fmab.jpg',
       },
       {
-        title: 'Stranger Things 1',
-        imageUrl: 'https://television.mxdwn.com/wp-content/uploads/2016/08/stranger-things1-770x470.jpeg',
+        title: 'FullMetal Alchemist',
+        imageUrl: 'images/fmab.jpg',
       },
       {
-        title: 'Card 2',
-        imageUrl: 'https://television.mxdwn.com/wp-content/uploads/2016/08/stranger-things1-770x470.jpeg',
+        title: 'FullMetal Alchemist',
+        imageUrl: 'images/fmab.jpg',
       },
       {
-        title: 'Stranger Things 1',
-        imageUrl: 'https://television.mxdwn.com/wp-content/uploads/2016/08/stranger-things1-770x470.jpeg',
+        title: 'FullMetal Alchemist',
+        imageUrl: 'images/fmab.jpg',
       },
       {
-        title: 'Card 2',
-        imageUrl: 'https://television.mxdwn.com/wp-content/uploads/2016/08/stranger-things1-770x470.jpeg',
+        title: 'FullMetal Alchemist',
+        imageUrl: 'images/fmab.jpg',
       },
       {
-        title: 'Stranger Things 1',
-        imageUrl: 'https://television.mxdwn.com/wp-content/uploads/2016/08/stranger-things1-770x470.jpeg',
+        title: 'FullMetal Alchemist',
+        imageUrl: 'images/fmab.jpg',
       },
       {
-        title: 'Card 2',
-        imageUrl: 'https://television.mxdwn.com/wp-content/uploads/2016/08/stranger-things1-770x470.jpeg',
+        title: 'FullMetal Alchemist',
+        imageUrl: 'images/fmab.jpg',
       },
       {
-        title: 'Stranger Things 1',
-        imageUrl: 'https://television.mxdwn.com/wp-content/uploads/2016/08/stranger-things1-770x470.jpeg',
+        title: 'FullMetal Alchemist',
+        imageUrl: 'images/fmab.jpg',
       },
       {
-        title: 'Card 2',
-        imageUrl: 'https://television.mxdwn.com/wp-content/uploads/2016/08/stranger-things1-770x470.jpeg',
+        title: 'FullMetal Alchemist',
+        imageUrl: 'images/fmab.jpg',
       },
   ];
 

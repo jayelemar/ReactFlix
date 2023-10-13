@@ -15,6 +15,7 @@ const AdContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  z-index: 998;
 `;
 
 const AdContent = styled.div`
@@ -108,7 +109,7 @@ function Ad() {
           <AdContent>
           <AdText>
   <FaAd style={{ margin:"10px" }} /> {/* Add the icon here */}
-  This is an ad
+  Promote Your Ads/Products Here
 </AdText>
 
 

@@ -5,6 +5,8 @@ import {
   FaCloudUploadAlt,
   FaBullhorn,
   FaCog,
+  FaUsers,
+  FaComment,
   FaSignOutAlt,
 } from "react-icons/fa";
 import Profile from "../Header/dashnav";
@@ -13,7 +15,9 @@ import  UserStatsContent  from '../DashboardContent.jsx/Userstats';
 import UploadContent from "../DashboardContent.jsx/Upload";
 import AdsContent from "../DashboardContent.jsx/Ads";
 import SettingsContent from "../DashboardContent.jsx/Settings";
+import Roles from'../DashboardContent.jsx/Roles';
 import LogoutContent from "../DashboardContent.jsx/Log-Out";
+import Feedback from "../DashboardContent.jsx/Feedback";
 
 const Container = styled.div`
   display: flex;
@@ -160,6 +164,24 @@ const TabbedMenu = () => {
               Settings
             </TabItem>
             <TabItem
+              active={activeTab === "roles"}
+              onClick={() => handleTabClick("roles")}
+            >
+              <IconWrapper>
+                <FaUsers />
+              </IconWrapper>
+              Roles
+            </TabItem>
+            <TabItem
+              active={activeTab === "feedback"}
+              onClick={() => handleTabClick("feedback")}
+            >
+              <IconWrapper>
+              <FaComment />
+              </IconWrapper>
+              Feedback
+            </TabItem>
+            <TabItem
               active={activeTab === "log-out"}
               onClick={() => handleTabClick("log-out")}
             >
@@ -176,6 +198,8 @@ const TabbedMenu = () => {
           {activeTab === "upload" && <UploadContent handleUploadClick={handleUploadClick} />}
           {activeTab === "ads" && <AdsContent />}
           {activeTab === "settings" && <SettingsContent />}
+          {activeTab === "roles" && <Roles />}
+          {activeTab === "feedback" && <Feedback />}
           {activeTab === "log-out" && <LogoutContent />}
         </Content>
       </Container>

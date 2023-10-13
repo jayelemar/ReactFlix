@@ -24,6 +24,10 @@ const Card = styled.div`
   display: flex;
   flex-direction: column;
   margin: 20px;
+
+  @media screen and (max-width: 400px) {
+    width: 150px; /* Adjust the width as needed for screens between 300px and 400px */
+  }
 `;
 
 const CardImage = styled.img`
@@ -162,7 +166,7 @@ const CardContainer = () => {
               </IconLink>
             </div>
           </CardContent>
-        </Card>
+        </Card> 
         {/* ... other cards */}
       </Container>
       <Footer />

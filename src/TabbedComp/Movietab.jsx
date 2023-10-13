@@ -4,7 +4,7 @@ import { FaPlay } from 'react-icons/fa'; // Import the play icon
 
 const Heading = styled.h1`
   text-align: center;
-  font-family: 'Gotham', sans-serif;
+  font-fapeacemakerly: 'Gotham', sans-serif;
   color: white;
   font-size: 40px; /* Set the font size */
   margin-left: -70%;
@@ -89,7 +89,7 @@ const PageButton = styled.button`
   cursor: pointer;
   margin: 0 5px;
   font-size: 18px;
-  font-family: "Gotham", sans-serif; /* Use the Gotham font */
+  font-fapeacemakerly: "Gotham", sans-serif; /* Use the Gotham font */
   padding: 5px 10px;
   border-radius: 5px;
   outline: none;
@@ -115,68 +115,68 @@ function Card() {
   const cardData = [
     
     {
-        title: 'Stranger Things 1',
-        imageUrl: 'https://television.mxdwn.com/wp-content/uploads/2016/08/stranger-things1-770x470.jpeg',
+        title: 'The Simpsons: The Good, the Bart, and the Loki',
+        imageUrl: 'https://img.sflix.to/xxrz/250x400/224/36/0c/360ca298ad78b581c8f7fdfe17eae96f/360ca298ad78b581c8f7fdfe17eae96f.jpg',
       },
       {
-        title: 'Card 2',
-        imageUrl: 'https://television.mxdwn.com/wp-content/uploads/2016/08/stranger-things1-770x470.jpeg',
+        title: 'The Simpsons: The Good, the Bart, and the Loki',
+        imageUrl: 'https://img.sflix.to/xxrz/250x400/224/36/0c/360ca298ad78b581c8f7fdfe17eae96f/360ca298ad78b581c8f7fdfe17eae96f.jpg',
       },
       {
-        title: 'Stranger Things 1',
-        imageUrl: 'https://television.mxdwn.com/wp-content/uploads/2016/08/stranger-things1-770x470.jpeg',
+        title: 'The Simpsons: The Good, the Bart, and the Loki',
+        imageUrl: 'https://img.sflix.to/xxrz/250x400/224/36/0c/360ca298ad78b581c8f7fdfe17eae96f/360ca298ad78b581c8f7fdfe17eae96f.jpg',
       },
       {
-        title: 'Card 2',
-        imageUrl: 'https://television.mxdwn.com/wp-content/uploads/2016/08/stranger-things1-770x470.jpeg',
+        title: 'The Simpsons: The Good, the Bart, and the Loki',
+        imageUrl: 'https://img.sflix.to/xxrz/250x400/224/36/0c/360ca298ad78b581c8f7fdfe17eae96f/360ca298ad78b581c8f7fdfe17eae96f.jpg',
       },
       {
-        title: 'Stranger Things 1',
-        imageUrl: 'https://television.mxdwn.com/wp-content/uploads/2016/08/stranger-things1-770x470.jpeg',
+        title: 'The Simpsons: The Good, the Bart, and the Loki',
+        imageUrl: 'https://img.sflix.to/xxrz/250x400/224/36/0c/360ca298ad78b581c8f7fdfe17eae96f/360ca298ad78b581c8f7fdfe17eae96f.jpg',
       },
       {
-        title: 'Card 2',
-        imageUrl: 'https://television.mxdwn.com/wp-content/uploads/2016/08/stranger-things1-770x470.jpeg',
+        title: 'The Simpsons: The Good, the Bart, and the Loki',
+        imageUrl: 'https://img.sflix.to/xxrz/250x400/224/36/0c/360ca298ad78b581c8f7fdfe17eae96f/360ca298ad78b581c8f7fdfe17eae96f.jpg',
       },
       {
-        title: 'Stranger Things 1',
-        imageUrl: 'https://television.mxdwn.com/wp-content/uploads/2016/08/stranger-things1-770x470.jpeg',
+        title: 'The Simpsons: The Good, the Bart, and the Loki',
+        imageUrl: 'https://img.sflix.to/xxrz/250x400/224/36/0c/360ca298ad78b581c8f7fdfe17eae96f/360ca298ad78b581c8f7fdfe17eae96f.jpg',
       },
       {
-        title: 'Card 2',
-        imageUrl: 'https://television.mxdwn.com/wp-content/uploads/2016/08/stranger-things1-770x470.jpeg',
+        title: 'The Simpsons: The Good, the Bart, and the Loki',
+        imageUrl: 'https://img.sflix.to/xxrz/250x400/224/36/0c/360ca298ad78b581c8f7fdfe17eae96f/360ca298ad78b581c8f7fdfe17eae96f.jpg',
       },
       {
-        title: 'Stranger Things 1',
-        imageUrl: 'https://television.mxdwn.com/wp-content/uploads/2016/08/stranger-things1-770x470.jpeg',
+        title: 'The Simpsons: The Good, the Bart, and the Loki',
+        imageUrl: 'https://img.sflix.to/xxrz/250x400/224/36/0c/360ca298ad78b581c8f7fdfe17eae96f/360ca298ad78b581c8f7fdfe17eae96f.jpg',
       },
       {
-        title: 'Card 2',
-        imageUrl: 'https://television.mxdwn.com/wp-content/uploads/2016/08/stranger-things1-770x470.jpeg',
+        title: 'The Simpsons: The Good, the Bart, and the Loki',
+        imageUrl: 'https://img.sflix.to/xxrz/250x400/224/36/0c/360ca298ad78b581c8f7fdfe17eae96f/360ca298ad78b581c8f7fdfe17eae96f.jpg',
       },
       {
-        title: 'Stranger Things 1',
-        imageUrl: 'https://television.mxdwn.com/wp-content/uploads/2016/08/stranger-things1-770x470.jpeg',
+        title: 'The Simpsons: The Good, the Bart, and the Loki',
+        imageUrl: 'https://img.sflix.to/xxrz/250x400/224/36/0c/360ca298ad78b581c8f7fdfe17eae96f/360ca298ad78b581c8f7fdfe17eae96f.jpg',
       },
       {
-        title: 'Card 2',
-        imageUrl: 'https://television.mxdwn.com/wp-content/uploads/2016/08/stranger-things1-770x470.jpeg',
+        title: 'The Simpsons: The Good, the Bart, and the Loki',
+        imageUrl: 'https://img.sflix.to/xxrz/250x400/224/36/0c/360ca298ad78b581c8f7fdfe17eae96f/360ca298ad78b581c8f7fdfe17eae96f.jpg',
       },
       {
-        title: 'Stranger Things 1',
-        imageUrl: 'https://television.mxdwn.com/wp-content/uploads/2016/08/stranger-things1-770x470.jpeg',
+        title: 'The Simpsons: The Good, the Bart, and the Loki',
+        imageUrl: 'https://img.sflix.to/xxrz/250x400/224/36/0c/360ca298ad78b581c8f7fdfe17eae96f/360ca298ad78b581c8f7fdfe17eae96f.jpg',
       },
       {
-        title: 'Card 2',
-        imageUrl: 'https://television.mxdwn.com/wp-content/uploads/2016/08/stranger-things1-770x470.jpeg',
+        title: 'The Simpsons: The Good, the Bart, and the Loki',
+        imageUrl: 'https://img.sflix.to/xxrz/250x400/224/36/0c/360ca298ad78b581c8f7fdfe17eae96f/360ca298ad78b581c8f7fdfe17eae96f.jpg',
       },
       {
-        title: 'Stranger Things 1',
-        imageUrl: 'https://television.mxdwn.com/wp-content/uploads/2016/08/stranger-things1-770x470.jpeg',
+        title: 'The Simpsons: The Good, the Bart, and the Loki',
+        imageUrl: 'https://img.sflix.to/xxrz/250x400/224/36/0c/360ca298ad78b581c8f7fdfe17eae96f/360ca298ad78b581c8f7fdfe17eae96f.jpg',
       },
       {
-        title: 'Card 2',
-        imageUrl: 'https://television.mxdwn.com/wp-content/uploads/2016/08/stranger-things1-770x470.jpeg',
+        title: 'The Simpsons: The Good, the Bart, and the Loki',
+        imageUrl: 'https://img.sflix.to/xxrz/250x400/224/36/0c/360ca298ad78b581c8f7fdfe17eae96f/360ca298ad78b581c8f7fdfe17eae96f.jpg',
       },
   ];
 

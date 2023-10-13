@@ -13,6 +13,8 @@ const Login = lazy(() => import("../src/account/login"));
 const Register = lazy(() => import("../src/account/register"));
 const Player = lazy(() => import("../src/pages/playing"));
 const Dashboard = lazy(() => import("../src/pages/dashboard"));
+const MovieRecommendations = lazy(() => import("../src/pages/MovieReco"));
+
 const Credit = lazy(() => import("./pages/credit"));
 
 
@@ -126,6 +128,15 @@ function App() {
             <Suspense fallback={<LoadingSpinner />}>
               {" "}
               <Credit />
+            </Suspense>
+          }
+        />
+         <Route
+          path="/movie-reco"
+          element={
+            <Suspense fallback={<LoadingSpinner />}>
+              {" "}
+              <MovieRecommendations />
             </Suspense>
           }
         />

@@ -1,226 +1,203 @@
-import React, { useState } from "react";
-import Modal from "react-modal";
-import styled from "styled-components";
+import React, { useState } from 'react';
+import styled from 'styled-components';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faEdit, faTrash, faInfoCircle } from '@fortawesome/free-solid-svg-icons';
 
-// Styled modal component
-const StyledModal = styled(Modal)`
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 400px; /* Updated width to 400px */
-  height: 600px; /* Updated height to 500px */
-  transform: translate(-50%, -50%);
-  background-color: white;
-  padding: 20px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
-  max-width: 80%;
-  max-height: 80%;
-  overflow-y: auto;
+// Import your DeleteModal component here
+import DeleteModal from '../Modal/Delete'; // Replace with the actual path
 
-  /* Add margin to all inputs, select boxes, and textareas */
-  & input,
-  & select,
-  & textarea {
-    margin: 5px;
-    height:25px;
-    width:200px;
-  }
+const MovieTableWrapper = styled.div`
+  margin: 0 20px;
+  width: 100%;
+  margin-bottom: 55%;
+  position: sticky;
 `;
 
+const TableContainer = styled.div`
+  overflow: auto;
+`;
 
-const UploadContent = ({ handleUploadClick }) => {
-  const [formData, setFormData] = useState({
-    movieFile: "",
-    movieTitle: "",
-    movieStory: "",
-    HD: "",
-    genre: "",
-    ratings: "",
-    duration: "",
-    trailer: "",
-    cast: "",
-    release: "",
-    country: "",
-    production: "",
-  });
-  const CenteredContent = styled.div`
+const Table = styled.table`
+  width: 100%;
+  border-collapse: collapse;
+`;
+
+const TableHead = styled.thead`
+  background-color: #333;
+  color: white;
+`;
+
+const TableBody = styled.tbody``;
+
+const TableRow = styled.tr`
+  &:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+  border-bottom: 1px solid #ccc;
+`;
+
+const TableCell = styled.td`
+  padding: 10px;
+  text-align: center;
+  position: sticky;
+  top: 0;
+  background-color: #fff;
+  z-index: 2;
+`;
+
+const TableHeaderCell = styled.th`
+  padding: 10px;
+  text-align: center;
+  position: sticky;
+  top: 0;
+  background-color: #333;
+  color: white;
+  z-index: 2;
+  width: 8%;
+`;
+
+const ActionIcons = styled.div`
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 100%;
-`
-  const [modalIsOpen, setModalIsOpen] = useState(false);
+  justify-content: space-around;
+  margin: 5px;
+`;
 
-  const openModal = () => {
-    setModalIsOpen(true);
+const EditButton = styled.button`
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  color: #333;
+`;
+
+const DeleteButton = styled.button`
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  color: #333;
+`;
+
+const DetailsButton = styled.button`
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  color: #333;
+`;
+
+const MovieTable = () => {
+  const [isDeleteModalOpen, setIsDeleteModalOpen] = useState(false);
+  const [deletingRowIndex, setDeletingRowIndex] = useState(null);
+  const handleEditClick = (index) => {
+    // Implement your edit logic here
+    console.log('Edit clicked for index:', index);
   };
 
-  const closeModal = () => {
-    setModalIsOpen(false);
+  const handleDeleteClick = (index) => {
+    // Implement your delete logic here
+    console.log('Delete clicked for index:', index);
+    setDeletingRowIndex(index); // Set the index of the row to delete
+    setIsDeleteModalOpen(true);
   };
 
-  const handleInputChange = (event) => {
-    const { name, value } = event.target;
-    setFormData({ ...formData, [name]: value });
+  const handleDetailsClick = (index) => {
+    // Implement your details logic here
+    console.log('Details clicked for index:', index);
   };
 
-  const handleSubmit = () => {
-    // You can handle form submission logic here
-    console.log("Form Data:", formData);
-
-    // Clear the form fields after submission
-    setFormData({
-        id: "",
-        movieFile: "",
-        movieTitle: "",
-        movieStory: "",
-        HD: "HD",
-        genre: "Horror",
-        ratings: "",
-        duration: "",
-        trailer: "",
-        cast: "",
-        release: "",
-        country: "USA",
-        production: "",
-    });
-
-    closeModal(); // Close the modal after submission
+  const handleCancelDelete = () => {
+    setIsDeleteModalOpen(false);
   };
 
+  const handleConfirmDelete = () => {
+    // Implement your delete confirmation logic here
+    setIsDeleteModalOpen(false);
+  };
+
+  const [movies, setMovies] = useState([
+    {
+      name: 'Movie 1',
+      releaseDate: '2023-01-01',
+      genre: 'Action',
+      country: 'USA',
+      details: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit...',
+      duration: '2h 30min',
+      cast: 'Actor 1, Actor 2, Actor 3',
+      quality: 'HD',
+    },
+    {
+      name: 'Movie 2',
+      releaseDate: '2023-02-15',
+      genre: 'Comedy',
+      country: 'UK',
+      details: 'A hilarious comedy movie',
+      duration: '1h 45min',
+      cast: 'Actor A, Actor B, Actor C',
+      quality: 'Full HD',
+    },
+    // Add more movie data here
+  ]);
   return (
-    <CenteredContent>
-      <div style={{marginTop:"-450%"}}>
-        <h4>Upload Movies</h4>
-        <button onClick={openModal}>Upload</button>
-      </div>
-
-      {/* Styled Modal */}
-      <StyledModal
-        isOpen={modalIsOpen}
-        onRequestClose={closeModal}
-        ariaHideApp={false}
-      >
-        <h2>Upload Movie Content</h2>
-        <input
-          type="file"
-          name="movieFile"
-          value={formData.movieFile}
-          onChange={handleInputChange}
-        />
-        <br />
-        <input
-          type="text"
-          name="movieTitle"
-          placeholder="Movie Title"
-          value={formData.movieTitle}
-          onChange={handleInputChange}
-        />
-        <br /><input
-          type="text"
-          name="id"
-          placeholder="ID Number"
-          value={formData.id}
-          onChange={handleInputChange}
-        /><br />
-        <textarea
-          name="movieStory"
-          placeholder="Movie Details"
-          value={formData.movieStory}
-          onChange={handleInputChange}
-        ></textarea>
-        <br />
-        <select
-          name="HD"
-          value={formData.HD}
-          onChange={handleInputChange}
-        >
-          <option value="non">n/a</option>
-          <option value="HD">HD</option>
-          <option value="SD">SD</option>
-        </select>
-        <br />
-        <select
-          name="genre"
-          value={formData.genre}
-          onChange={handleInputChange}
-        >
-          <option value="none">n/a</option>
-          <option value="Horror">Horror</option>
-          <option value="Sci-Fi">Sci-Fi</option>
-          <option value="Romance">Romance</option>
-          <option value="Musical">Musical</option>
-          <option value="Animation">Animation</option>
-          <option value="Action">Action</option>
-          <option value="Adventure">Adventure</option>
-        </select>
-        <br />
-        <input
-          type="text"
-          name="ratings"
-          placeholder="Ratings"
-          value={formData.ratings}
-          onChange={handleInputChange}
-        />
-        <br />
-        <input
-          type="text"
-          name="duration"
-          placeholder="Duration"
-          value={formData.duration}
-          onChange={handleInputChange}
-        />
-        <br />
-        <input
-          type="text"
-          name="trailer"
-          placeholder="Trailer"
-          value={formData.trailer}
-          onChange={handleInputChange}
-        />
-        <br />
-        <input
-          type="text"
-          name="cast"
-          placeholder="Cast"
-          value={formData.cast}
-          onChange={handleInputChange}
-        />
-        <br />
-        <input
-          type="text"
-          name="release"
-          placeholder="Release Date"
-          value={formData.release}
-          onChange={handleInputChange}
-        />
-        <br />
-        <select name="country" value={formData.country} onChange={handleInputChange}>
-        <option value="n/a">n/a</option>
-          <option value="USA">USA</option>
-          <option value="India">India</option>
-          <option value="China">China</option>
-          <option value="UK">UK</option>
-          <option value="Canada">Canada</option>
-          {/* Add more countries */}
-        </select>
-        <br />
-        <input
-          type="text"
-          name="production"
-          placeholder="Production"
-          value={formData.production}
-          onChange={handleInputChange}
-        />
-        <br />
-        <button onClick={handleSubmit}>Submit</button>
-        <button onClick={closeModal}>Cancel</button>
-      </StyledModal>
-    </CenteredContent>
+    <MovieTableWrapper>
+      <TableContainer>
+        <Table>
+          <TableHead>
+            <TableRow>
+              <TableHeaderCell>Movie Name</TableHeaderCell>
+              <TableHeaderCell>Release Date</TableHeaderCell>
+              <TableHeaderCell>Genre</TableHeaderCell>
+              <TableHeaderCell>Country</TableHeaderCell>
+              <TableHeaderCell>Movie Details</TableHeaderCell>
+              <TableHeaderCell>Duration</TableHeaderCell>
+              <TableHeaderCell>Cast</TableHeaderCell>
+              <TableHeaderCell>Movie Quality</TableHeaderCell>
+              <TableHeaderCell>Action</TableHeaderCell>
+            </TableRow>
+          </TableHead>
+          <TableBody>
+            {movies.map((movie, index) => (
+              <TableRow key={index}>
+                <TableCell>{movie.name}</TableCell>
+                <TableCell>{movie.releaseDate}</TableCell>
+                <TableCell>{movie.genre}</TableCell>
+                <TableCell>{movie.country}</TableCell>
+                <TableCell>{movie.details}</TableCell>
+                <TableCell>{movie.duration}</TableCell>
+                <TableCell>{movie.cast}</TableCell>
+                <TableCell>{movie.quality}</TableCell>
+                <TableCell>
+                  <ActionIcons>
+                    <EditButton onClick={() => handleEditClick(index)}>
+                      <FontAwesomeIcon icon={faEdit} title="Edit" />
+                    </EditButton>
+                    <DeleteButton onClick={() => handleDeleteClick(index)}>
+                <FontAwesomeIcon icon={faTrash} title="Delete" />
+              </DeleteButton>
+                    <DetailsButton onClick={() => handleDetailsClick(index)}>
+                      <FontAwesomeIcon icon={faInfoCircle} title="Details" />
+                    </DetailsButton>
+                  </ActionIcons>
+                </TableCell>
+              </TableRow>
+            ))}
+          </TableBody>
+        </Table>
+      </TableContainer>
+      <DeleteModal
+        isOpen={isDeleteModalOpen}
+        onRequestClose={handleCancelDelete}
+        onDelete={() => {
+          // Delete the row with the corresponding index
+          if (deletingRowIndex !== null) {
+            const updatedMovies = [...movies];
+            updatedMovies.splice(deletingRowIndex, 1);
+            setDeletingRowIndex(null); // Reset the deletingRowIndex
+            setMovies(updatedMovies); // Update the movies state
+          }
+          handleConfirmDelete();
+        }}
+      />
+      
+    </MovieTableWrapper>
   );
 };
 
-export default UploadContent;
+export default MovieTable;
