@@ -9,6 +9,8 @@ import {
   faStar,
   faMobileAlt,
 } from "@fortawesome/free-solid-svg-icons";
+import { Link } from 'react-router-dom'; 
+import Sidenav from "../Header/sidenav";
 
 const SidebarMenuBg = styled.div`
   position: fixed; /* Make the navigation bar sticky */
@@ -26,8 +28,6 @@ const SidebarMenuBg = styled.div`
   border-bottom: 1px solid black; /* Add the 1px solid black border at the bottom */
 `;
 
-
-
 const Logo = styled.div`
   font-family: "Gotham", sans-serif; /* Use the Gotham font */
   font-size: 24px; /* Set the font size */
@@ -35,7 +35,6 @@ const Logo = styled.div`
   display: flex;
   align-items: center;
   margin-right: auto;
-  border-radius: 10px;
   padding: 0 20px;
   font-weight: bold;
   color: white;
@@ -60,8 +59,11 @@ const HeaderButton = styled.div`
   cursor: pointer;
   display: flex;
   align-items: center;
-  margin: 20px;
-  margin-left: 100px;
+  margin: 5%;
+  margin-right:18%;
+  border: 1px solid black;
+  height: 30px;
+  border-radius:5px;
 `;
 
 const Search = styled.div`
@@ -73,22 +75,22 @@ const Search = styled.div`
 
 const SearchInput = styled.input`
   background-color: #fff;
-  color: white;
+  color: black;
   padding: 5px;
   border: none;
   border-radius: 0;
   cursor: pointer;
   height: 20px;
-  width: 800px;
-  margin: 20px;
+  width: 900px;
+  margin: 10% 30% 10% 0;
 `;
-
 
 const LoginLink = styled.a`
   color: white;
   text-decoration: none;
   display: flex;
   align-items: center;
+  margin-right:15%;
 `;
 
 const GenreGridContainer = styled.div`
@@ -104,6 +106,37 @@ const GenreTag = styled.a`
   border-radius: 5px;
   text-decoration: none;
   border: 1px solid black;
+`;
+const NavButton = styled.div`
+  color: white;
+  display: flex;
+  align-items: center;
+  margin: 20px;
+  font-family: "Gotham", sans-serif;
+  font-size: 16px;
+  margin-right: 23%;
+
+  ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    margin: 0;
+    justify-content: space-between;
+  }
+
+  li {
+    margin: 0 25px;
+    font-size:20px;
+    cursor: pointer;
+    &:last-child {
+      margin-right: 0;
+    }
+
+    a {
+      text-decoration: none; /* Remove underline */
+      color: white; /* Set text color to white */
+    }
+  }
 `;
 
 class Navbar extends Component {
@@ -131,22 +164,29 @@ class Navbar extends Component {
     return (
       <nav style={{ height: "60px" }}>
         <SidebarMenuBg>
-        <Logo>ReactFlix </Logo>
+          <Logo>ReactFlix </Logo>
           <HeaderButton onClick={this.toggleSidebar}>
-            <FaBars />
+            <FaBars  style={{width:"40px"}}/>
           </HeaderButton>
-          <Search>
-            <SearchInput
-              type="text"
-              placeholder="Search..."
-              value={searchTerm}
-              onChange={this.handleSearchChange}
-            />
-          </Search>
-
+          <NavButton>
+  <ul>
+    <li>
+      <Link to="/home">Home</Link>
+    </li>
+    <li>
+      <Link to="/movie">Movies</Link>
+    </li>
+    <li>
+      <Link to="/series">Series</Link>
+    </li>
+    <li>
+      <Link to="/anime">Anime</Link>
+    </li>
+  </ul>
+</NavButton>
           <LoginLink href="/login">
-            <FaUser className="user-icon" />
-            <span style={{ marginRight: "100px" }}>Login</span>
+            <FaUser className="user-icon" style={{margin:"10px"}}/>
+            <span >Login</span>
           </LoginLink>
         </SidebarMenuBg>
         <SideMenuWrapper isOpen={isSidebarOpen}>
@@ -162,8 +202,8 @@ class Navbar extends Component {
               border: "none",
               background: "#666666",
               cursor: "pointer",
-              border:"1px solid black",
-              fontSize:"15px",
+              border: "1px solid black",
+              fontSize: "15px",
             }}
           >
             &larr;
@@ -179,7 +219,7 @@ class Navbar extends Component {
                   color: "black",
                   textDecoration: "none",
                   fontSize: "20px",
-                  marginLeft:"5px",
+                  marginLeft: "5px",
                 }}
               >
                 <FontAwesomeIcon icon={faHome} /> Home
@@ -193,7 +233,7 @@ class Navbar extends Component {
                   color: "black",
                   textDecoration: "none",
                   fontSize: "20px",
-                  marginLeft:"5px",
+                  marginLeft: "5px",
                 }}
               >
                 <FontAwesomeIcon icon={faFilm} /> Movies
@@ -207,7 +247,7 @@ class Navbar extends Component {
                   color: "black",
                   textDecoration: "none",
                   fontSize: "20px",
-                  marginLeft:"5px",
+                  marginLeft: "5px",
                 }}
               >
                 <FontAwesomeIcon icon={faTv} /> TV Shows
@@ -221,7 +261,7 @@ class Navbar extends Component {
                   color: "black",
                   textDecoration: "none",
                   fontSize: "20px",
-                  marginLeft:"5px",
+                  marginLeft: "5px",
                 }}
               >
                 <FontAwesomeIcon icon={faStar} /> Top Rated
@@ -235,11 +275,19 @@ class Navbar extends Component {
                   color: "black",
                   textDecoration: "none",
                   fontSize: "20px",
-                  marginLeft:"5px",
+                  marginLeft: "5px",
                 }}
               >
                 <FontAwesomeIcon icon={faMobileAlt} /> Anime
               </a>
+              <Search>
+                <SearchInput
+                  type="text"
+                  placeholder="Search..."
+                  value={searchTerm}
+                  onChange={this.handleSearchChange}
+                />
+              </Search>
             </div>
 
             <h3 style={{ color: "black" }}>GENRE</h3>
@@ -275,6 +323,7 @@ class Navbar extends Component {
             </GenreGridContainer>
           </ul>
         </SideMenuWrapper>
+        <Sidenav />
       </nav>
     );
   }

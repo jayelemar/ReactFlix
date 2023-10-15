@@ -5,14 +5,15 @@ import Seriestabs from "../TabbedComp/Seriestab"
 import Animetabs from "../TabbedComp/Animetab"
 const Tabs = styled.div`
   background: transparent;
-  width: 100%;
+  width: 100vw; /* Set the width to 100vw */
   height: 140vh;
   padding: 1em;
   margin-left: auto;
-  margin-right:20px;
+  margin-right: 20px;
   border-top: 1px solid white;
   background: linear-gradient(to top, #000000 50%, #12104a 100%);
 `;
+
 
 const HeaderContainer = styled.div`
   display: flex;
