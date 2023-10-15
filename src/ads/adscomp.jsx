@@ -34,11 +34,13 @@ const AdText = styled.p`
   margin: 0;
   display: flex;
   align-items: center; /* Center the icon and text vertically */
-
+  justify-content: center; /* Center the content horizontally */
+  
   svg {
     margin-right: 5px; /* Add spacing between the icon and text */
   }
 `;
+
 
 const CloseButton = styled.button`
   background-color: transparent;
@@ -79,11 +81,11 @@ function Ad() {
         clearInterval(autoCloseInterval);
       };
     } else if (isAutoReopenEnabled) {
-      // Reopen the ad after 5 minutes (300,000 milliseconds)
+      // Reopen the ad after 2 minutes (120,000 milliseconds)
       const autoReopenTimeout = setTimeout(() => {
         setIsOpen(true);
         setTimeRemaining(180); // Reset the timer
-      }, 300000);
+      }, 120000);
 
       return () => {
         clearTimeout(autoReopenTimeout);

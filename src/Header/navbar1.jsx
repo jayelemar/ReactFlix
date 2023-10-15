@@ -9,7 +9,7 @@ import {
   faStar,
   faMobileAlt,
 } from "@fortawesome/free-solid-svg-icons";
-import { Link } from 'react-router-dom'; 
+import { Link } from "react-router-dom";
 import Sidenav from "../Header/sidenav";
 
 const SidebarMenuBg = styled.div`
@@ -60,10 +60,10 @@ const HeaderButton = styled.div`
   display: flex;
   align-items: center;
   margin: 5%;
-  margin-right:18%;
+  margin-right: 18%;
   border: 1px solid black;
   height: 30px;
-  border-radius:5px;
+  border-radius: 5px;
 `;
 
 const Search = styled.div`
@@ -90,7 +90,7 @@ const LoginLink = styled.a`
   text-decoration: none;
   display: flex;
   align-items: center;
-  margin-right:15%;
+  margin-right: 15%;
 `;
 
 const GenreGridContainer = styled.div`
@@ -192,27 +192,27 @@ class Navbar extends Component {
         <SidebarMenuBg>
           <Logo>ReactFlix </Logo>
           <HeaderButton onClick={this.toggleSidebar}>
-            <FaBars  style={{width:"40px"}}/>
+            <FaBars style={{ width: "40px" }} />
           </HeaderButton>
           <NavButton>
-  <ul>
-    <li>
-      <Link to="/home">Home</Link>
-    </li>
-    <li>
-      <Link to="/movie">Movies</Link>
-    </li>
-    <li>
-      <Link to="/series">Series</Link>
-    </li>
-    <li>
-      <Link to="/anime">Anime</Link>
-    </li>
-  </ul>
-</NavButton>
+            <ul>
+              <li>
+                <Link to="/home">Home</Link>
+              </li>
+              <li>
+                <Link to="/movie">Movies</Link>
+              </li>
+              <li>
+                <Link to="/series">Series</Link>
+              </li>
+              <li>
+                <Link to="/anime">Anime</Link>
+              </li>
+            </ul>
+          </NavButton>
           <LoginLink href="/login">
-            <FaUser className="user-icon" style={{margin:"10px"}}/>
-            <span >Login</span>
+            <FaUser className="user-icon" style={{ margin: "10px" }} />
+            <span>Login</span>
           </LoginLink>
         </SidebarMenuBg>
         <SideMenuWrapper isOpen={isSidebarOpen}>
