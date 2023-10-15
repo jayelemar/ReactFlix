@@ -135,7 +135,33 @@ const NavButton = styled.div`
     a {
       text-decoration: none; /* Remove underline */
       color: white; /* Set text color to white */
+      position: relative; /* Create space for the underline effect */
+      transition: color 0.3s, transform 0.3s; /* Add transition for smooth effect */
+
+      &:before {
+        content: "";
+        position: absolute;
+        bottom: -3px; /* Adjust the distance of the underline from text */
+        left: 0;
+        width: 100%;
+        height: 3px; /* Adjust the underline thickness */
+        background: rgb(2,0,36);
+background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 50%, rgba(0,212,255,1) 100%);
+        transform: scaleX(0); /* Initially, set the width to 0 */
+        transform-origin: left; /* Make it expand from the left */
+        transition: transform 0.3s; /* Add transition for the expand effect */
+      }
+
+      &:hover {
+        color: #ffff;
+       
+        &:before {
+          transform: scaleX(1);
+        }
+      }
     }
+  }
+
   }
 `;
 
