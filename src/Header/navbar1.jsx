@@ -82,7 +82,7 @@ const SearchInput = styled.input`
   cursor: pointer;
   height: 20px;
   width: 900px;
-  margin: 10% 30% 10% 0;
+  margin: 10% 10% 10% 0;
 `;
 
 const LoginLink = styled.a`
@@ -247,7 +247,15 @@ class Navbar extends Component {
                   fontSize: "20px",
                   marginLeft: "5px",
                 }}
-              >
+              > 
+              <Search>
+                <SearchInput
+                  type="text"
+                  placeholder="Search..."
+                  value={searchTerm}
+                  onChange={this.handleSearchChange}
+                />
+              </Search>
                 <FontAwesomeIcon icon={faHome} /> Home
               </a>
             </div>
@@ -306,14 +314,7 @@ class Navbar extends Component {
               >
                 <FontAwesomeIcon icon={faMobileAlt} /> Anime
               </a>
-              <Search>
-                <SearchInput
-                  type="text"
-                  placeholder="Search..."
-                  value={searchTerm}
-                  onChange={this.handleSearchChange}
-                />
-              </Search>
+             
             </div>
 
             <h3 style={{ color: "black" }}>GENRE</h3>

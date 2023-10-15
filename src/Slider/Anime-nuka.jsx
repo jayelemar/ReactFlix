@@ -11,7 +11,7 @@ import {
   faShare,
 } from "@fortawesome/free-solid-svg-icons";
 import styled from "styled-components";
-import Movietabs from '../tabs/Movietabs'
+import Movietabs from '../Tabs/Movietabs'
 
 const customDotImages = [
   "/images/bleach.jpg", // Customize the paths as needed
