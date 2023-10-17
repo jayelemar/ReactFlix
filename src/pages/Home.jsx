@@ -10,7 +10,7 @@ import TabbedHome from "../components/TabbedHome";
 import FlexWrap from "../components/multiplecard";
 import NewSeries from "../section/Credit";
 import Footer from "../Footer/footer";
-import Ads from "../Ads/adscomp";
+import Ads from "../Ads/bottom-ads";
 import PopUpAds from "../Ads/popup-ads";
 
 const MySlider = () => {

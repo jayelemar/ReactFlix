@@ -8,6 +8,8 @@ import Navbar from "../Header/navbar1";
 import Carousel from "../Slider/Anime-nuka";
 import TabbedHome from "../components/TabbedHome";
 import FlexWrap from "../components/multiplecard";
+import Ads from "../Ads/bottom-ads";
+import PopUpAds from "../Ads/popup-ads";
 import Footer from '../Footer/footer';
 
 const MySlider = () => {
@@ -57,6 +59,8 @@ const Home = () => {
      <TabbedHome />
      <FlexWrap />
       <Footer />
+      <PopUpAds />
+      <Ads />
     </section>
   );
 };
