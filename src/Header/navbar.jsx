@@ -19,6 +19,7 @@ const StyledNavbar = styled.nav`
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   backdrop-filter: blur(10px);
   transition: background-color 0.3s ease, color 0.3s ease;
+  z-index:999;
 `;
 
 const TextLogo = styled.div`
@@ -65,39 +66,49 @@ const SubscribeButton = styled(NavLink)`
 `;
 
 const Modal = styled.div`
-  display: ${(props) => (props.isOpen ? "block" : "none")};
+  display: ${props => (props.isOpen ? 'block' : 'none')};
   position: fixed;
-  height: 80px;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: white;
-  color: black;
+  top: 50;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 1;
+`;
+
+const ModalContent = styled.div`
+  background: #fff;
+  width: 300px;
+  margin: 0 auto;
   padding: 20px;
-  z-index: 1000;
-  border-radius: 10px;
+  text-align: center;
+  position: relative;
 `;
 
 const CloseButton = styled.button`
   position: absolute;
   top: 10px;
   right: 10px;
-  background: transparent;
-  border: none;
-  color: black;
-  font-size: 20px;
-  cursor: pointer;
+`;
+
+const Line = styled.div`
+  border-top: 1px solid #ccc;
+  margin: 20px 0;
 `;
 
 const SubscribeModalButton = styled.button`
-  background-color: #e50914;
+  background: #007bff;
+  color: #fff;
   border: none;
-  border-radius: 5px;
-  color: white;
-  font-size: 16px;
   padding: 10px 20px;
   cursor: pointer;
 `;
+
+const ModalContentCentered = styled.div`
+  text-align: center;
+`;
+
+
 
 const Navbar = () => {
   const [isBlack, setIsBlack] = useState(false);
@@ -125,8 +136,8 @@ const Navbar = () => {
 
   return (
     <>
-      <StyledNavbar isBlack={isBlack}>
-        <TextLogo>ReactFlix</TextLogo>
+      <StyledNavbar isBlack={isBlack} >
+        <TextLogo style={{ marginLeft: "3%",color:"white" }}>ReactFlix</TextLogo>
         <NavLinks>
           <NavLinkItem>
             <NavLink to="/home">Browse</NavLink>
@@ -136,15 +147,24 @@ const Navbar = () => {
             <NavLink to="/reg">Login</NavLink>
           </NavLinkItem>
         </NavLinks>
+        <NavLinkItem style={{ marginRight: "3%" }}>
+  <SubscribeButton onClick={toggleModal}>Subscribe</SubscribeButton>
+  <Modal isOpen={isModalOpen}>
+  <ModalContent>
+    <CloseButton onClick={toggleModal}>&times;</CloseButton>
+    <ModalContentCentered>
+      <p>Want to Avail 5$ Lifetime No Ads?</p>
+      <Line />
+      <p>Or</p>
+      <Line />
+      <p>Want to Avail 1$ 1 Month No Ads?</p>
+    </ModalContentCentered>
+    <Line />
+    <SubscribeModalButton>Subscribe Now</SubscribeModalButton>
+  </ModalContent>
+</Modal>
 
-        <NavLinkItem>
-          <SubscribeButton onClick={toggleModal}>Subscribe</SubscribeButton>
-          <Modal isOpen={isModalOpen}>
-            <CloseButton onClick={toggleModal}>&times;</CloseButton>
-            <p>Want to Avail 5$ Lifetime No Ads?</p>
-            <SubscribeModalButton>Subscribe Now</SubscribeModalButton>
-          </Modal>
-        </NavLinkItem>
+</NavLinkItem>
       </StyledNavbar>
     </>
   );

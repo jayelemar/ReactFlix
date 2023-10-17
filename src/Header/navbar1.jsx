@@ -10,7 +10,7 @@ import {
   faMobileAlt,
 } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
-import Sidenav from "../Header/sidenav";
+
 
 const SidebarMenuBg = styled.div`
   position: fixed; /* Make the navigation bar sticky */
@@ -350,7 +350,7 @@ class Navbar extends Component {
             </GenreGridContainer>
           </ul>
         </SideMenuWrapper>
-        <Sidenav />
+       
       </nav>
     );
   }
