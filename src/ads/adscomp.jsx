@@ -54,7 +54,12 @@ const CloseButton = styled.button`
 const Timer = styled.div`
   font-size: 15px;
   color: #999;
+  display: flex;
+  align-items: center; /* Center vertically */
+  justify-content: center; /* Center horizontally */
+  margin-right:200px
 `;
+
 
 const AdImage = styled.img`
   width: 100%;

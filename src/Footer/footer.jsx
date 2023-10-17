@@ -2,27 +2,37 @@ import React from "react";
 import styled from "styled-components";
 import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin } from 'react-icons/fa';
 
+import backgroundImage from '/images/op1.jpg';
+
+
 const Container = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  gap: 10px;
+  gap: 5px;
+  /* Add background image styles */
+  background-image: url(${backgroundImage});
+  background-size: cover;
+  background-position: 80% center; /* Move the image to the right end and center vertically */
+  background-repeat: no-repeat;
   background-color: black;
 
+
   @media (max-width: 300px) {
-    flex-direction: row; /* Change flex-direction to "row" to display columns in the same line */
-    align-items: center; /* Align columns vertically in the center */
-    flex-wrap: nowrap; /* Prevent columns from wrapping */
-    overflow-x: auto; /* Add horizontal scrolling for small screens */
-    height:250px;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    height: 250px;
   }
+
   @media (min-width: 600px) and (max-width: 800px) {
-    flex-direction: row; /* Change flex-direction to "row" for columns */
-    align-items: center; /* Align columns vertically in the center */
-    flex-wrap: wrap; /* Allow columns to wrap to the next line */
-    height: 130px; /* Reset height */
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    height: 130px;
   }
-`;
+`;;
 
 const Column = styled.div`
   flex: 1;
@@ -38,8 +48,8 @@ const Column = styled.div`
   h2,
   h3 {
     font-size: 18px;
-    margin-bottom: 10px;
-    color: white;
+    margin-top: 15px;
+    color: black;
   }
 
   ul {
@@ -48,15 +58,20 @@ const Column = styled.div`
   }
 
   li {
-    margin-bottom: 5px;
-    color: #fff;
-  }
-  p {
-    color: #fff;
-  }
-  a {
+    margin-bottom: 15px;
+    color: black;
+    font-weight: bold; /* Use font-weight to make text bold */
+}
+
+p {
+    color: black;
+    font-weight: bold; /* Use font-weight to make text bold */
+}
+
+a {
     text-decoration: none;
-    color: #fff;
+    color: black;
+    font-weight: bold; /* Use font-weight to make text bold */
 
     &:hover {
       text-decoration: underline green;
@@ -131,11 +146,12 @@ const SocialMediaList = styled.ul`
   margin: 0;
 
   @media (max-width: 400px) {
-    display: flex; /* Change to flex layout on small screens */
-    flex-direction: column; /* Display icons vertically on small screens */
+    display: flex;
+    flex-direction: row; /* Display icons horizontally on small screens */
     align-items: center; /* Center-align icons vertically */
-    margin-top:5px;
+    margin-top: 5px;
   }
+
   @media (min-width: 600px) and (max-width: 800px) {
     display: flex;
     flex-direction: column;
@@ -143,6 +159,7 @@ const SocialMediaList = styled.ul`
     margin-top: 5px;
   }
 `;
+
 
 const SocialMediaItem = styled.li`
   margin-bottom: 10px; /* Add spacing between icons */
