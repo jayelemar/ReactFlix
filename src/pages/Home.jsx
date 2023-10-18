@@ -10,8 +10,8 @@ import TabbedHome from "../components/TabbedHome";
 import FlexWrap from "../components/multiplecard";
 import NewSeries from "../section/Credit";
 import Footer from "../Footer/footer";
-import Ads from "../Ads/bottom-ads";
-import PopUpAds from "../Ads/popup-ads";
+import Ads from "../components/Ads/bottom-ads";
+import PopUpAds from "../components/Ads/popup-ads";
 
 const MySlider = () => {
   // Renamed the locally defined Slider component
