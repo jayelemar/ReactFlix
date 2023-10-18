@@ -1,185 +1,233 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 
+// Styled components for layout
 const Wrapper = styled.div`
   display: flex;
   font-family: Gotham, sans-serif;
-  margin: 0; /* Reset margin to center content */
-  justify-content: center; /* Center content horizontally */
-  align-items: center; /* Center content vertically */
+  margin-top: -100px;
+  justify-content: center;
+  align-items: center;
   width: 100vw;
-  height: 120vh;
+  height: 100vh;
   background-image: url("/images/lou1.jpg");
   background-size: 100% 100%;
 `;
 
-const Poster = styled.div`
-  margin: 100px 100px 0 100px; /* 100px top margin, 20px right and left margins, 0 bottom margin */
+const Column = styled.div`
+  padding: 20px;
+  flex: 1;
 `;
 
-const Details = styled.div`
-  margin: 50px;
-
-  h2 {
-    font-size: 24px;
-  }
-`;
-
-const CustomIcon = styled.img`
-  width: 20px; /* Adjust the width as needed */
-  height: 20px; /* Adjust the height as needed */
-  margin-right: 5px;
-`;
-
-const StyledStrong = styled.strong`
-  display: inline;
-  font-weight: bold;
-`;
-
-const StyledP = styled.p`
-  display: inline;
-  margin: 5px;
-  color: black;
-`;
-
-const MovieInfoGrid = styled.div`
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-gap: 1rem;
-  text-align: left;
-  align-items: flex-start; /* Align the content to the top within columns */
-  h3 {
-    margin-bottom: 0.5rem;
-  }
-`;
-
-const StyledMovieDescription = styled.div`
-  font-family: Arial, sans-serif;
-  color: #000;
-`;
-
-const StyledAnchor = styled.a`
-  text-decoration: none;
-  color: inherit;
-`;
-
-const MovieButtons = styled.div`
+const Poster = styled(Column)`
   display: flex;
-  flex-direction: row; /* Change to 'column' if you want them in a column */
-  margin-top: 10px;
-  
+  justify-content: center;
+  align-items: center;
+  flex: 1;
 `;
 
-const Button = styled.button`
-  height: 50px;
-  border: 1px solid #000;
-  border-radius: 5px;
-  padding: 5px 10px;
+const DetailsContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  margin: 5px 0;
+  padding: 10px;
   background-color: transparent;
-  cursor: pointer;
+  flex:2;
+`;
+
+const Content = styled.div`
+  text-align: left;
+  margin-bottom: 10px;
+`;
+
+const Title = styled.h2`
+  margin: 0;
+`;
+
+const Information = styled.p`
+  margin: 0;
+`;
+
+const Strong = styled.strong`
+  margin: 0;
+`;
+
+const EpisodeList = styled(Column)`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  flex: 1;
+  margin-right:50px;
+  border:1px solid black;
+  background-color:#404757;
+  max-width:250px;
+  max-height: 500px;
+  overflow-y: auto;
+`;
+
+const EpisodeItem = styled.div`
   display: flex;
   align-items: center;
-  margin-right: 10px;
-background-color:white;
-
-  &:last-child {
-    margin-right: 0;
-  }
-
-  .icon {
-    margin-right: 5px;
-  }
+  margin: 5px 0;
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #AAAAAA;
+  text-decoration: none;
 `;
 
+const EpisodeImage = styled.img`
+  width: 80px;
+  height: 80px;
+  margin-right: 10px;
+`;
 
+const PlayButton = styled.button`
+  background-color: #0073e6;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+`;
 
+const episodes = [
+  { season: 'season1', episodeNumber: 1, imageSrc: '/images/lou.jpg', link: '/player' },
+  { season: 'season1', episodeNumber: 2, imageSrc: '/images/lou.jpg', link: '/player' },
+  { season: 'season2', episodeNumber: 1, imageSrc: '/images/lou.jpg', link: '/player' },
+  { season: 'season2', episodeNumber: 2, imageSrc: '/images/lou.jpg', link: '/player' },
+  { season: 'season2', episodeNumber: 3, imageSrc: '/images/lou.jpg', link: '/player' },
+  { season: 'season3', episodeNumber: 1, imageSrc: '/images/lou.jpg', link: '/player' },
+  { season: 'season3', episodeNumber: 2, imageSrc: '/images/lou.jpg', link: '/player' },
+  { season: 'season3', episodeNumber: 3, imageSrc: '/images/lou.jpg', link: '/player' },
+  // Add more episode data as needed
+];
 
 const MovieDetails = () => {
-  return (
-    <Wrapper>
-      {/* Movie Poster */}
-      <Poster>
-        <img
-          style={{ height: "300px", width: "200px" }}
-          src="/images/lou.jpg"
-          alt="Movie Poster"
-        />
-      </Poster>
+  const [selectedSeason, setSelectedSeason] = useState('season1');
 
-      {/* Movie Details */}
-      <Details>
-        <h2>Expend4bles</h2>
-        <div>
-          <StyledP>
-            <StyledStrong>
-              <CustomIcon src="/images/hd.svg" alt="HD Icon" />
-            </StyledStrong>
-          </StyledP>
-          <StyledP>
-            <StyledStrong>
-              <CustomIcon src="/images/genre.svg" alt="Genre Icon" />
-            </StyledStrong>
-            Action, Adventure, Thriller
-          </StyledP>
-          <StyledP>
-            <StyledStrong>
-              <CustomIcon src="/images/star.svg" alt="Star Icon" />
-            </StyledStrong>
-            PG-13
-          </StyledP>
-          <StyledP>
-            <CustomIcon src="/images/duration.svg" alt="Duration Icon" />
-            <StyledStrong>103 m</StyledStrong>
-          </StyledP>
-          <StyledP>
-            <StyledAnchor href="#">
-              <CustomIcon src="/images/play.svg" alt="Play Icon" />
-              Trailer
-            </StyledAnchor>
-          </StyledP>
-        </div>
+  const text = `HD Trailer | IMDB | 1:20:60
+    Overview: At America's only college for superheroes, gifted students put their moral boundaries to the test, competing for the university's top ranking, and a chance to join The Seven, Vought International's elite superhero team. When the school's dark secrets come to light, they must decide what kind of heroes they want to become.
+    Released: 2023-09-28
+    Genre: Sci-Fi & Fantasy, Action & Adventure, Comedy, Drama
+    Casts: Jaz Sinclair, Chance Perdomo, Lizze Broadway, Shelley Conn, Maddie Phillips
+    Duration: 50 min
+    Country: United States of America
+    Production: Sony Pictures Television Studios, Amazon Studios, Kripke Enterprises, Point Grey Pictures, Original Film, Sony Pictures Television`;
 
-        <StyledMovieDescription>
-          <h3>Movie Description</h3>
-          Armed with every weapon they can get their hands on and the skills to use them, The Expendables are the world’s last line of defense and the team that gets called when all other options are off the table. But new team members with new styles and tactics are going to give “new blood” a whole new meaning.
-        </StyledMovieDescription>
-
-        <MovieInfoGrid>
-          <div>
-            <h3>Cast</h3>
-            <StyledP>Jason Statham, Megan Fox, Iko Uwais, Eddie Hall, Nicole Andrews</StyledP>
-            <h3>Production:</h3>
-            <StyledP>Millennium Films, Nu Image, Campbell Grobman Films, Lionsgate</StyledP>
-            <h3>Country:</h3>
-            <StyledP>United States of America</StyledP>
-          </div>
-          <div>
-            <h3>Duration:</h3>
-            <StyledP>103 m</StyledP>
-            <h3>Rating:</h3>
-            {/* Add a rating component here */}
-            <MovieButtons>
-              <Button>
-                <CustomIcon src="/images/download.svg" alt="Download Icon" />
-                Share
-              </Button>
-              <Button>
-                <CustomIcon src="/images/share.svg" alt="Share Icon" />
-                Download
-              </Button>
-              {/* New Button */}
-              <Button>
-                <CustomIcon src="/images/star.svg" alt="Your Button Icon" />
-                Rate
-              </Button>
-            </MovieButtons>
-          </div>
-        </MovieInfoGrid>
-      </Details>
-
-      {/* Episode List */}
+    const Overview = styled.p`
+    font-weight: bold;
+    margin: 0;
+  `;
   
-    </Wrapper>
+  const Released = styled.p`
+    font-weight: bold;
+    margin: 0;
+  `;
+  
+  const Genre = styled.p`
+    font-weight: bold;
+    margin: 0;
+  `;
+  
+  const Casts = styled.p`
+    font-weight: bold;
+    margin: 0;
+  `;
+  
+  const Duration = styled.p`
+    font-weight: bold;
+    margin: 0;
+  `;
+  
+  const Country = styled.p`
+    font-weight: bold;
+    margin: 0;
+  `;
+  
+  const Production = styled.p`
+    font-weight: bold;
+    margin: 0;
+  `;
+  const lines = text.split('\n');
+
+  return (
+    <section style={{backgroundColor:"#404757"}}>
+      <Wrapper>
+        {/* Movie Poster */}
+        <Poster>
+          <img
+            style={{ height: "300px", width: "200px" }}
+            src="/images/lou.jpg"
+            alt="Movie Poster"
+          />
+        </Poster>
+
+        {/* Movie Details */}
+        <DetailsContainer>
+          <Title><Strong>Expend4bles</Strong></Title>
+          <Content>
+            {lines.map((line, index) => {
+              const parts = line.split(':');
+              if (parts.length === 2) {
+                const label = parts[0].trim();
+                const value = parts[1].trim();
+                if (label === 'HD Trailer') {
+                  return (
+                    <div key={index}>
+                      <a href={value} target="_blank" rel="noopener noreferrer">
+                        <button>{label}</button>
+                      </a>
+                    </div>
+                  );
+                }
+                return (
+                  <div key={index}>
+                    {label === 'Overview' && <Overview>{label}:</Overview>}
+                    {label === 'Released' && <Released>{label}:</Released>}
+                    {label === 'Genre' && <Genre>{label}:</Genre>}
+                    {label === 'Casts' && <Casts>{label}:</Casts>}
+                    {label === 'Duration' && <Duration>{label}:</Duration>}
+                    {label === 'Country' && <Country>{label}:</Country>}
+                    {label === 'Production' && <Production>{label}:</Production>}
+                    {label !== 'HD Trailer' && label !== 'Overview' && label !== 'Released' && label !== 'Genre' && label !== 'Casts' && label !== 'Duration' && label !== 'Country' && label !== 'Production' && <Information>{label}:</Information>}
+                    {value}
+                  </div>
+                );
+              } else {
+                return <Information key={index}>{line}</Information>;
+              }
+            })}
+          </Content>
+        </DetailsContainer>
+
+        <EpisodeList>
+          <select
+            value={selectedSeason}
+            onChange={(e) => setSelectedSeason(e.target.value)}
+          >
+            <option value="season1">Season 1</option>
+            <option value="season2">Season 2</option>
+            <option value="season3">Season 3</option>
+            {/* Add more season options as needed */}
+          </select>
+          {episodes.map((episode, index) => {
+            if (episode.season === selectedSeason) {
+              return (
+                <a key={index} href={episode.link}>
+                  <EpisodeItem>
+                    <EpisodeImage src={episode.imageSrc} alt={`Episode ${episode.episodeNumber}`} />
+                    Episode {episode.episodeNumber}
+                    
+                  </EpisodeItem>
+                </a>
+              );
+            }
+            return null;
+          })}
+        </EpisodeList>
+      </Wrapper>
+    </section>
   );
 };
 

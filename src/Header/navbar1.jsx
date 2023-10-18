@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import styled from "styled-components";
-import { FaBars, FaUser } from "react-icons/fa";
+import { FaBars, FaUser,FaSearch } from "react-icons/fa";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faHome,
@@ -10,7 +10,6 @@ import {
   faMobileAlt,
 } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
-
 
 const SidebarMenuBg = styled.div`
   position: fixed; /* Make the navigation bar sticky */
@@ -28,16 +27,17 @@ const SidebarMenuBg = styled.div`
   border-bottom: 1px solid black; /* Add the 1px solid black border at the bottom */
 `;
 
-const Logo = styled.div`
-  font-family: "Gotham", sans-serif; /* Use the Gotham font */
-  font-size: 24px; /* Set the font size */
-  height: 80px; /* Set the height */
+const Logo = styled(Link)`
+  font-family: "Gotham", sans-serif;
+  font-size: 24px;
+  height: 80px;
   display: flex;
   align-items: center;
   margin-right: auto;
   padding: 0 20px;
   font-weight: bold;
   color: white;
+  text-decoration: none; // Remove the underline
 `;
 
 const SideMenuWrapper = styled.div`
@@ -69,20 +69,15 @@ const HeaderButton = styled.div`
 const Search = styled.div`
   display: flex;
   align-items: center;
-  flex-grow: 1;
-  margin: 0 20px;
 `;
 
-const SearchInput = styled.input`
-  background-color: #fff;
-  color: black;
-  padding: 5px;
-  border: none;
-  border-radius: 0;
+const SearchIcon = styled(FontAwesomeIcon)`
+  background-color: #007bff;
+  color: white;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
   cursor: pointer;
-  height: 20px;
-  width: 900px;
-  margin: 10% 10% 10% 0;
 `;
 
 const LoginLink = styled.a`
@@ -190,10 +185,14 @@ class Navbar extends Component {
     return (
       <nav style={{ height: "60px" }}>
         <SidebarMenuBg>
-          <Logo>ReactFlix </Logo>
+          <Logo to="/">ReactFlix </Logo>
+
           <HeaderButton onClick={this.toggleSidebar}>
             <FaBars style={{ width: "40px" }} />
           </HeaderButton>
+          <Search>
+        <FaSearch />
+      </Search>
           <NavButton>
             <ul>
               <li>
@@ -247,15 +246,7 @@ class Navbar extends Component {
                   fontSize: "20px",
                   marginLeft: "5px",
                 }}
-              > 
-              <Search>
-                <SearchInput
-                  type="text"
-                  placeholder="Search..."
-                  value={searchTerm}
-                  onChange={this.handleSearchChange}
-                />
-              </Search>
+              >
                 <FontAwesomeIcon icon={faHome} /> Home
               </a>
             </div>
@@ -314,7 +305,6 @@ class Navbar extends Component {
               >
                 <FontAwesomeIcon icon={faMobileAlt} /> Anime
               </a>
-             
             </div>
 
             <h3 style={{ color: "black" }}>GENRE</h3>
@@ -350,7 +340,6 @@ class Navbar extends Component {
             </GenreGridContainer>
           </ul>
         </SideMenuWrapper>
-       
       </nav>
     );
   }

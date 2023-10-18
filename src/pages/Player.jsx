@@ -3,9 +3,8 @@ import styled, { css } from "styled-components";
 import Navbar from "../Header/navbar";
 import VideoPlayer from "../section/VideoPlayer"
 import MovieDetails from "../section/moviedetails";
-import NewSeries from "../section/Credit"
+import Similar from "../section/Similar"
 import Footer from "../Footer/footer";
-import EpisodeList from "../section/EpisodeList";
 
 const StyledContainer = styled.div`
   position: relative;
@@ -26,9 +25,8 @@ const FullScreenVideo = ({ videoSrc }) => {
     <StyledContainer>
       <Navbar />
      <VideoPlayer/>
-     <EpisodeList/>
       <MovieDetails />
-      <NewSeries/>
+      <Similar/>
       <Footer />
     </StyledContainer>
   );

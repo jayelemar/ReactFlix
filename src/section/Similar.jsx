@@ -137,7 +137,6 @@ function Card() {
   };
 
   return (
-    <section>
     <div style={{ height: "120vh", width: "100vw", backgroundColor: "white" }}>
     <Heading>| Similar </Heading>
     <FlexContainer>
@@ -164,7 +163,6 @@ function Card() {
       ))}
     </Pagination>
   </div>
-  </section>
   );
 }
 
