@@ -4,6 +4,7 @@ import Navbar from "../Header/navbar";
 import VideoPlayer from "../section/VideoPlayer"
 import MovieDetails from "../section/moviedetails";
 import Similar from "../section/Similar"
+import Parallax from "../section/Parallax"
 import Footer from "../Footer/footer";
 
 const StyledContainer = styled.div`
@@ -27,6 +28,7 @@ const FullScreenVideo = ({ videoSrc }) => {
      <VideoPlayer/>
       <MovieDetails />
       <Similar/>
+      <Parallax/>
       <Footer />
     </StyledContainer>
   );

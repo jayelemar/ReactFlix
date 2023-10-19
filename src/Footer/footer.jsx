@@ -198,7 +198,7 @@ function App() {
           <li><a href="/about">About ReactFlix</a></li>
           <li><a href="/term">Terms & Conditions</a></li>
           <li><a href="/legal">Legal</a></li>
-          <li><a href="/faq">FAQ</a></li>
+          <li><a href="/faq">FAQs</a></li>
         </ul>
       </Column>
       <Column>
@@ -207,7 +207,6 @@ function App() {
           <li><a href="/movie">Movies</a></li>
           <li><a href="/series">TV Shows</a></li>
           <li><a href="/anime">Anime</a></li>
-          <li><a href="/more">And Many More</a></li>
         </ul>
       </Column>
       <Column>
@@ -218,7 +217,6 @@ function App() {
           <li><a href="/romance">Romance</a></li>
           <li><a href="/actions">Actions</a></li>
           <li><a href="/adventure">Adventure</a></li>
-          <li><a href="/other-genres">...</a></li>
         </ul>
       </Column>
       <Column>

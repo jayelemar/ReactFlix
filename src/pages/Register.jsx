@@ -1,53 +1,90 @@
-import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
-import {
-  getAuth,
-  createUserWithEmailAndPassword,
-  signInWithEmailAndPassword,
-} from "firebase/auth";
+import React, { useState } from "react";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
+function Signup() {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password,setPassword] = useState(""); // Remove password state if not needed
+  const navigate =useNavigate()
+  const buttonStyle = { width: "100%" }; // Button width style
 
-// Your web app's Firebase configuration
-const firebaseConfig = {
-  apiKey: "YOUR_API_KEY",
-  authDomain: "YOUR_AUTH_DOMAIN",
-  projectId: "YOUR_PROJECT_ID",
-  storageBucket: "YOUR_STORAGE_BUCKET",
-  messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
-  appId: "YOUR_APP_ID",
-  measurementId: "YOUR_MEASUREMENT_ID" // This is optional, used for analytics
-};
+  const handleSubmit =(e) =>{
+    e.preventDefault()
+    axios.post('http://localhost:3000/register',{name,email,password})
+    .then(result =>console.log(result))
+    .catch(err=> console.log(err))
+    navigate('/login')
+  }
+  return (
+    <div className="d-flex justify-content-center align-items-center bg-secondary vh-100">
+      <div className="bg-white p-3 rounded w-25">
+        <h2>Register</h2>
+        <form onSubmit={handleSubmit}>
+          <div className="mb-3">
+            <label htmlFor="name" style={{ width: "100%" }}>
+              <strong>Name</strong>
+              <input
+                type="text"
+                id="name"
+                placeholder="Enter Name"
+                autoComplete="on"
+                name="name"
+                className="form-control rounded-0"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+              />
+            </label>
+          </div>
+          <div className="mb-3">
+            <label htmlFor="email" style={{ width: "100%" }}>
+              <strong>Email</strong>
+              <input
+                type="email"
+                id="email"
+                placeholder="Enter Email"
+                autoComplete="on"
+                name="email"
+                className="form-control rounded-0"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+              />
+            </label>
+          </div>
+          <div className="mb-3">
+            <label htmlFor="password" style={{ width: "100%" }}>
+              <strong>Password</strong>
+              <input
+                type="password"
+                id="password"
+                placeholder="Enter Password"
+                autoComplete="on"
+                name="password"
+                className="form-control rounded-0"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+              />
+            </label>
+          </div>
+          <button type="submit" className="btn btn-primary" style={buttonStyle}>
+            Register
+          </button>
+        </form>
+        <div className="mt-3">
+        <p>
+  Already have an account? 
+</p>
 
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
+        </div>
+        <div className="mt-3">
+          <button className="btn btn-outline-primary" style={buttonStyle}>
+            <a href="/login" style={{ textDecoration: "none", color: "inherit" }}>
+              Login
+            </a>
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+}
 
-// Initialize Firebase Authentication
-const auth = getAuth(app);
-
-// Function to handle login
-const handleLogin = (email, password) => {
-  signInWithEmailAndPassword(auth, email, password)
-    .then((userCredential) => {
-      // Login successful
-      const user = userCredential.user;
-      console.log('Logged in as:', user.email);
-    })
-    .catch((error) => {
-      // Handle login error
-      console.error('Login error:', error);
-    });
-};
-
-// Function to handle registration
-const handleRegister = (email, password) => {
-  createUserWithEmailAndPassword(auth, email, password)
-    .then((userCredential) => {
-      // Registration successful
-      const user = userCredential.user;
-      console.log('Registered and logged in as:', user.email);
-    })
-    .catch((error) => {
-      // Handle registration error
-      console.error('Registration error:', error);
-    });
-};
+export default Signup;

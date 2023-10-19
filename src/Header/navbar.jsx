@@ -12,14 +12,13 @@ const StyledNavbar = styled.nav`
   width: 100%;
   font-family: "Gotham", sans-serif;
   font-style: bold;
-  color: ${(props) => (props.isBlack ? "white" : "black")};
-  background-color: ${(props) =>
-    props.isBlack ? "black" : "rgba(255, 255, 255, 0.1)"};
+  color: white; /* Set the color to white */
+  background-color: rgba(0, 0, 0, 0.1); /* Set the background color to the desired color */
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   backdrop-filter: blur(10px);
   transition: background-color 0.3s ease, color 0.3s ease;
-  z-index:999;
+  z-index: 999;
 `;
 
 const TextLogo = styled.div`
@@ -28,6 +27,7 @@ const TextLogo = styled.div`
   margin: 20px;
   margin-right: auto;
   border-radius: 10px;
+  color: white; /* Set the color to white */
 `;
 
 const NavLinks = styled.ul`
@@ -68,7 +68,7 @@ const SubscribeButton = styled(NavLink)`
 const Modal = styled.div`
   display: ${props => (props.isOpen ? 'block' : 'none')};
   position: fixed;
-  top: 50;
+  top: 0; /* Fixed position from the top */
   left: 0;
   width: 100%;
   height: 100%;
@@ -108,36 +108,17 @@ const ModalContentCentered = styled.div`
   text-align: center;
 `;
 
-
-
 const Navbar = () => {
-  const [isBlack, setIsBlack] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const toggleModal = () => {
     setIsModalOpen(!isModalOpen);
   };
 
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 0) {
-        setIsBlack(true);
-      } else {
-        setIsBlack(false);
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
-
   return (
     <>
-      <StyledNavbar isBlack={isBlack} >
-        <TextLogo style={{ marginLeft: "3%",color:"white" }}>ReactFlix</TextLogo>
+      <StyledNavbar>
+        <TextLogo style={{ marginLeft: "3%" }}>ReactFlix</TextLogo>
         <NavLinks>
           <NavLinkItem>
             <NavLink to="/home">Browse</NavLink>
@@ -148,23 +129,22 @@ const Navbar = () => {
           </NavLinkItem>
         </NavLinks>
         <NavLinkItem style={{ marginRight: "3%" }}>
-  <SubscribeButton onClick={toggleModal}>Subscribe</SubscribeButton>
-  <Modal isOpen={isModalOpen}>
-  <ModalContent>
-    <CloseButton onClick={toggleModal}>&times;</CloseButton>
-    <ModalContentCentered>
-      <p>Want to Avail 5$ Lifetime No Ads?</p>
-      <Line />
-      <p>Or</p>
-      <Line />
-      <p>Want to Avail 1$ 1 Month No Ads?</p>
-    </ModalContentCentered>
-    <Line />
-    <SubscribeModalButton>Subscribe Now</SubscribeModalButton>
-  </ModalContent>
-</Modal>
-
-</NavLinkItem>
+          <SubscribeButton onClick={toggleModal}>Subscribe</SubscribeButton>
+          <Modal isOpen={isModalOpen}>
+            <ModalContent>
+              <CloseButton onClick={toggleModal}>&times;</CloseButton>
+              <ModalContentCentered>
+                <p>Want to Avail 5$ Lifetime No Ads?</p>
+                <Line />
+                <p>Or</p>
+                <Line />
+                <p>Want to Avail 1$ 1 Month No Ads?</p>
+              </ModalContentCentered>
+              <Line />
+              <SubscribeModalButton>Subscribe Now</SubscribeModalButton>
+            </ModalContent>
+          </Modal>
+        </NavLinkItem>
       </StyledNavbar>
     </>
   );

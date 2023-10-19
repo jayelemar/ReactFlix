@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import { FaPlay } from 'react-icons/fa'; // Import the play icon
 
+
 const Heading = styled.h1`
   text-align: center;
   font-family: 'Gotham', sans-serif;
@@ -11,12 +12,12 @@ const Heading = styled.h1`
 `;
 const CardWrapper = styled.div`
   position: relative;
-  width: 200px;
-  height: 300px;
+  width: 150px;
+  height: 200px;
   background: url(${(props) => props.imageUrl}) no-repeat center/cover;
   border-radius: 10px;
   box-shadow: 0 10px 25px 0 rgba(0, 0, 0, 0.5);
-  margin: 10px;
+  margin: 5px;
   transition: 0.5s;
 
   &:hover {
@@ -30,7 +31,9 @@ const CardWrapper = styled.div`
     .watch-button {
       opacity: 1;
       transition: 0.5s;
-      font-size: 10px;
+      font-size: 15px;
+      color:red;
+      margin-bottom:-13px;
     }
   }
 
@@ -39,7 +42,7 @@ const CardWrapper = styled.div`
     width: 100%;
     bottom: 0;
     left: 0;
-    font-size: 26px;
+    font-size: 20px;
     font-weight: 300;
     padding: 30px 0;
     background: linear-gradient(to top, #000, transparent);
@@ -109,18 +112,98 @@ const PageButton = styled.button`
 
 function Card() {
   const [currentPage, setCurrentPage] = useState(1);
-  const cardsPerPage = 6; // Number of cards to display per page
+  const cardsPerPage = 18; // Number of cards to display per page
 
   // Sample card data (contains 14 cards)
   const cardData = [
     
+    {
+      title: 'Stranger Things',
+      imageUrl: 'https://television.mxdwn.com/wp-content/uploads/2016/08/stranger-things1-770x470.jpeg',
+      url: '/player', // Add a URL property
+    },
+    {
+      title: 'Stranger Things',
+      imageUrl: 'https://television.mxdwn.com/wp-content/uploads/2016/08/stranger-things1-770x470.jpeg',
+      url: '/player', // Add a URL property
+    },
+    {
+      title: 'Stranger Things',
+      imageUrl: 'https://television.mxdwn.com/wp-content/uploads/2016/08/stranger-things1-770x470.jpeg',
+      url: '/player', // Add a URL property
+    },
+    {
+      title: 'Stranger Things',
+      imageUrl: 'https://television.mxdwn.com/wp-content/uploads/2016/08/stranger-things1-770x470.jpeg',
+      url: '/player', // Add a URL property
+    },
+    {
+      title: 'Stranger Things',
+      imageUrl: 'https://television.mxdwn.com/wp-content/uploads/2016/08/stranger-things1-770x470.jpeg',
+      url: '/player', // Add a URL property
+    },
+    {
+      title: 'Stranger Things',
+      imageUrl: 'https://television.mxdwn.com/wp-content/uploads/2016/08/stranger-things1-770x470.jpeg',
+      url: '/player', // Add a URL property
+    },
+    {
+      title: 'Stranger Things',
+      imageUrl: 'https://television.mxdwn.com/wp-content/uploads/2016/08/stranger-things1-770x470.jpeg',
+      url: '/player', // Add a URL property
+    },
+    {
+      title: 'Stranger Things',
+      imageUrl: 'https://television.mxdwn.com/wp-content/uploads/2016/08/stranger-things1-770x470.jpeg',
+      url: '/player', // Add a URL property
+    },
+    {
+      title: 'Stranger Things',
+      imageUrl: 'https://television.mxdwn.com/wp-content/uploads/2016/08/stranger-things1-770x470.jpeg',
+      url: '/player', // Add a URL property
+    },
+    {
+      title: 'Stranger Things',
+      imageUrl: 'https://television.mxdwn.com/wp-content/uploads/2016/08/stranger-things1-770x470.jpeg',
+      url: '/player', // Add a URL property
+    },
     {
       title: 'Stranger Things 1',
       imageUrl: 'https://television.mxdwn.com/wp-content/uploads/2016/08/stranger-things1-770x470.jpeg',
       url: '/player', // Add a URL property
     },
     {
-      title: 'Card 2',
+      title: 'Stranger Things 1',
+      imageUrl: 'https://television.mxdwn.com/wp-content/uploads/2016/08/stranger-things1-770x470.jpeg',
+      url: '/player', // Add a URL property
+    },
+    {
+      title: 'Stranger Things 1',
+      imageUrl: 'https://television.mxdwn.com/wp-content/uploads/2016/08/stranger-things1-770x470.jpeg',
+      url: '/player', // Add a URL property
+    },
+    {
+      title: 'Stranger Things 1',
+      imageUrl: 'https://television.mxdwn.com/wp-content/uploads/2016/08/stranger-things1-770x470.jpeg',
+      url: '/player', // Add a URL property
+    },
+    {
+      title: 'Stranger Things 1',
+      imageUrl: 'https://television.mxdwn.com/wp-content/uploads/2016/08/stranger-things1-770x470.jpeg',
+      url: '/player', // Add a URL property
+    },
+    {
+      title: 'Stranger Things 1',
+      imageUrl: 'https://television.mxdwn.com/wp-content/uploads/2016/08/stranger-things1-770x470.jpeg',
+      url: '/player', // Add a URL property
+    },
+    {
+      title: 'Stranger Things 1',
+      imageUrl: 'https://television.mxdwn.com/wp-content/uploads/2016/08/stranger-things1-770x470.jpeg',
+      url: '/player', // Add a URL property
+    },
+    {
+      title: 'Stranger Things 1',
       imageUrl: 'https://television.mxdwn.com/wp-content/uploads/2016/08/stranger-things1-770x470.jpeg',
       url: '/player', // Add a URL property
     },

@@ -1,99 +1,49 @@
-import React, { Component } from "react";
-import styled from "styled-components";
+import React from 'react';
+import styled from 'styled-components';
+import { FaFacebook, FaTwitter, FaInstagram, FaGithub } from 'react-icons/fa';
 
-const Container = styled.div`
+
+const SidebarWrapper = styled.div`
+  position: fixed;
+  top: 73%;
+  left: 94%;
   display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  width: 50px;
+  background-color: transparent;
+  padding: 10px;
+  z-index: 999;
 `;
 
-const MobileSidebar = styled.div`
-  width: 0;
-  height: 100%;
-  position: fixed;
-  top: 0;
-  left: -250px;
-  background-color: #333;
-  transition: 0.3s;
-  overflow-x: hidden;
-  
-  &.open {
-    width: 250px;
-    left: 0;
-  }
-`;
 
-const SidebarHeader = styled.div`
+
+const SocialIcon = styled.a`
+  display: block;
   text-align: center;
-  padding: 15px;
-  background-color: #222;
-`;
-
-const SidebarMenu = styled.ul`
-  list-style: none;
-  padding: 0;
-`;
-
-const SidebarMenuItem = styled.li`
-  padding: 15px;
-  text-align: center;
-`;
-
-const SidebarMenuLink = styled.a`
+  margin-bottom: 10px;
+  font-size: 24px;
+  color: #fff; /* Change the color to match the social media icon color */
   text-decoration: none;
-  color: white;
 `;
 
-const Content = styled.div`
-  margin-left: 0;
-  padding: 20px;
-  transition: margin-left 0.3s;
-`;
+const StickySidebar = () => {
+  return (
+    <SidebarWrapper>
+    <SocialIcon href="#">
+      <FaFacebook />
+    </SocialIcon>
+    <SocialIcon href="#">
+      <FaTwitter />
+    </SocialIcon>
+    <SocialIcon href="#">
+      <FaInstagram />
+    </SocialIcon>
+    <SocialIcon href="#">
+      <FaGithub />
+    </SocialIcon>
+  </SidebarWrapper>
+  );
+};
 
-const OpenButton = styled.button`
-  position: fixed;
-  left: 10px;
-  top: 10px;
-`;
-
-class Navbar extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      searchTerm: "",
-      isSidebarOpen: false,
-    };
-  }
-
-  toggleSidebar = () => {
-    this.setState((prevState) => ({
-      isSidebarOpen: !prevState.isSidebarOpen,
-    }));
-  };
-
-  render() {
-    return (
-      <Container>
-        <MobileSidebar className={this.state.isSidebarOpen ? "open" : ""}>
-          <SidebarHeader>
-            <h2>Sidebar Menu</h2>
-          </SidebarHeader>
-          <SidebarMenu>
-            <SidebarMenuItem><SidebarMenuLink href="#">Home</SidebarMenuLink></SidebarMenuItem>
-            <SidebarMenuItem><SidebarMenuLink href="#">About</SidebarMenuLink></SidebarMenuItem>
-            <SidebarMenuItem><SidebarMenuLink href="#">Services</SidebarMenuLink></SidebarMenuItem>
-            <SidebarMenuItem><SidebarMenuLink href="#">Contact</SidebarMenuLink></SidebarMenuItem>
-          </SidebarMenu>
-        </MobileSidebar>
-
-        <OpenButton onClick={this.toggleSidebar}>Open Sidebar</OpenButton>
-
-        <Content>
-          {/* Your page content goes here */}
-          <h1>Welcome to my website</h1>
-          <p>This is the main content of your page.</p>
-        </Content>
-      </Container>
-    );
-  }
-}
-
-export default Navbar;
+export default StickySidebar;
