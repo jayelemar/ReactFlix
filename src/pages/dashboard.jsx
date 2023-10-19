@@ -9,15 +9,14 @@ import {
   FaComment,
   FaSignOutAlt,
 } from "react-icons/fa";
-import Profile from "../Header/dashnav";
-import  UserStatsContent  from '../DashboardContent.jsx/Userstats';
-
-import UploadContent from "../DashboardContent.jsx/Upload";
-import AdsContent from "../DashboardContent.jsx/Ads";
-import SettingsContent from "../DashboardContent.jsx/Settings";
-import Roles from'../DashboardContent.jsx/Roles';
-import LogoutContent from "../DashboardContent.jsx/Log-Out";
-import Feedback from "../DashboardContent.jsx/Feedback";
+import UserStatsContent from '../DashboardContent.jsx/Userstats';
+import UploadContent from '../DashboardContent.jsx/Upload';
+import AdsContent from '../DashboardContent.jsx/Ads';
+import SettingsContent from '../DashboardContent.jsx/Settings';
+import Roles from '../DashboardContent.jsx/Roles';
+import LogoutContent from '../DashboardContent.jsx/Log-Out';
+import Feedback from '../DashboardContent.jsx/Feedback';
+import profileImage from '/images/lou.jpg'; // Import your profile image
 
 const Container = styled.div`
   display: flex;
@@ -27,7 +26,7 @@ const Container = styled.div`
 
 const Navbar = styled.div`
   width: 200px;
-  background-color: #f0f0f0;
+  background-color: #212016;
   padding: 20px;
   display: flex;
   flex-direction: column;
@@ -41,6 +40,7 @@ const TabMenu = styled.div`
 `;
 
 const TabItem = styled.div`
+color:white;
   padding: 10px;
   height: 50px;
   text-align: center;
@@ -52,8 +52,9 @@ const TabItem = styled.div`
   ${(props) =>
     props.active &&
     `
-    background-color: #007bff;
-    color: #fff;
+    background-color: white;
+width:100%;
+    color: #000;
   `}
 `;
 
@@ -69,11 +70,23 @@ const Content = styled.div`
   justify-content: center;
   align-items: center;
   margin-top: 10%;
+`;
 
-  h3 {
-    text-align: center; /* Center the text horizontally */
-    margin-top: -450px; /* Add top margin */
-  }
+const ProfileImage = styled.img`
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 2px solid black; /* Add a 1px solid black border */
+`;
+
+
+const ProfileButton = styled.button`
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
 `;
 
 const TabbedMenu = () => {
@@ -82,50 +95,17 @@ const TabbedMenu = () => {
   const handleTabClick = (tabId) => {
     setActiveTab(tabId);
   };
-  const data1 = {
-    labels: ['Label 1', 'Label 2', 'Label 3'],
-    datasets: [
-      {
-        data: [30, 40, 30],
-        backgroundColor: ['#FF6384', '#36A2EB', '#FFCE56'],
-      },
-    ],
-  };
-
-  const data2 = {
-    labels: ['Label A', 'Label B', 'Label C'],
-    datasets: [
-      {
-        data: [25, 50, 25],
-        backgroundColor: ['#FF6384', '#36A2EB', '#FFCE56'],
-      },
-    ],
-  };
-
-  const data3 = {
-    labels: ['Category X', 'Category Y', 'Category Z'],
-    datasets: [
-      {
-        data: [20, 30, 50],
-        backgroundColor: ['#FF6384', '#36A2EB', '#FFCE56'],
-      },
-    ],
-  };
-  const [showPopup, setShowPopup] = useState(false);
 
   const handleUploadClick = () => {
-    setShowPopup(true);
-  };
-
-  const handleClosePopup = () => {
-    setShowPopup(false);
+    // Implement your upload logic here
   };
 
   return (
     <section>
-      <Profile />
       <Container>
         <Navbar>
+          <ProfileImage src={profileImage} alt="Profile" />
+          <ProfileButton>Profile</ProfileButton>
           <TabMenu>
             <TabItem
               active={activeTab === "user-stats"}
@@ -177,7 +157,7 @@ const TabbedMenu = () => {
               onClick={() => handleTabClick("feedback")}
             >
               <IconWrapper>
-              <FaComment />
+                <FaComment />
               </IconWrapper>
               Feedback
             </TabItem>
