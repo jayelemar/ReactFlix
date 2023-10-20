@@ -191,7 +191,7 @@ function Card() {
   };
 
   return (
-    <div style={{height:"120vh",width:"100vw",backgroundColor:"transparent",marginTop:"-10%",marginLeft:"-2%"}}>
+    <div style={{height:"120vh",width:"100vw",backgroundColor:"transparent",marginTop:"-6%",marginLeft:"-2%"}}>
         <Heading>| Trending Anime</Heading>
       <FlexContainer>
         {displayedCards.map((card, index) => (

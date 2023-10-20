@@ -115,7 +115,7 @@ function MyCarousel() {
         onClick={previousSlide}
         className="carousel-button"
         style={{
-          margin:"10px",
+          margin: "10px",
           left: "70px",
           background: "transparent",
           border: "none",
@@ -128,16 +128,17 @@ function MyCarousel() {
           width: "40px", // Adjust the width as needed
           height: "60px", // Adjust the height as needed
           boxShadow: "0 0 10px rgba(0, 0, 0, 0.5)", // Glassmorphism effect
-          border: "1px solid white", // Glassmorphism border
+          border: "1px solid black", // Fix this line by using ":" instead of ";"
         }}
       >
-          <FontAwesomeIcon
-            icon={faArrowLeft}
-            size="2x"
-            color="white"
-            style={{ fontSize: "30px" }}
-          />
-        </button>
+        <FontAwesomeIcon
+          icon={faArrowLeft}
+          size="2x"
+          color="white"
+          style={{ fontSize: "30px" }}
+        />
+      </button>
+      
       )}
       renderCenterRightControls={({ nextSlide }) => (
         <button

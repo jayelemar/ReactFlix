@@ -1,72 +1,130 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import React, { useState } from 'react';
+import { FaEdit, FaTrash, FaSave } from 'react-icons/fa';
+import styled from 'styled-components';
 
-function App() {
-  const [name, setName] = useState('');
-  const [password, setPassword] = useState('');
-  const [registeredUsers, setRegisteredUsers] = useState([]);
+const Container = styled.div`
+  position: relative;
+  margin-bottom:300%;
+  margin-left:-200%;
+`;
 
-  useEffect(() => {
-    fetchRegisteredUsers();
-  }, []);
+const Table = styled.table`
+  width: 80vw;
+  position: absolute;
+  top: 10;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  z-index: 1;
 
-  const fetchRegisteredUsers = async () => {
-    try {
-      const response = await axios.get('http://localhost:3001/users');
-      setRegisteredUsers(response.data);
-    } catch (error) {
-      console.error('Error fetching users:', error);
-    }
+  th {
+    width: 25%;
+  }
+`;
+
+
+function MyTable() {
+  const [users, setUsers] = useState([
+    { id: 1, username: 'user1', password: 'password1' },
+    { id: 2, username: 'user2', password: 'password2' },
+    { id: 3, username: 'user3', password: 'password3' },
+  ]);
+
+  const [editingUserId, setEditingUserId] = useState(null);
+  const [newUser, setNewUser] = useState({ username: '', password: '' });
+
+  const handleDelete = (id) => {
+    // Handle delete logic here
+    setUsers(users.filter((user) => user.id !== id));
   };
 
-  const registerUser = async () => {
-    try {
-      const response = await axios.post('http://localhost:3001/register', { name, password });
-      setRegisteredUsers([...registeredUsers, response.data]);
-    } catch (error) {
-      console.error('Error registering user:', error);
-    }
+  const handleEdit = (id) => {
+    setEditingUserId(id);
   };
 
+  const handleSave = (id, username, password) => {
+    // Handle save/edit logic here
+    const updatedUsers = users.map((user) =>
+      user.id === id ? { id, username, password } : user
+    );
+    setUsers(updatedUsers);
+    setEditingUserId(null);
+  };
+
+  const handleAdd = () => {
+    // Handle add user logic here
+    const newId = users.length + 1;
+    setUsers([...users, { id: newId, ...newUser }]);
+    setNewUser({ username: '', password: '' });
+  };
+
+  
   return (
-    <div className="App">
-      <h1>User Registration</h1>
-      <div>
-        <input
-          type="text"
-          placeholder="Name"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-        />
-        <input
-          type="text"
-          placeholder="Password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-        />
-        <button onClick={registerUser}>Register</button>
-      </div>
-      <h2>Registered Users</h2>
-      <table>
-        <thead>
-          <tr>
-            <th>Name</th>
-            <th>Hashed Password</th>
-            <th>Registration Date & Time</th>
-          </tr>
-        </thead>
-        <tbody>
-          {registeredUsers.map((user) => (
-            <tr key={user._id}>
-              <td>{user.name}</td>
-              <td>{user.password}</td>
-              <td>{new Date(user.registrationDate).toLocaleString()}</td>
+    <section>
+      <Container>
+        <div style={{ marginRight: 0, marginLeft: "auto" }}>
+          <h1>Users & Roles</h1>
+          <button onClick={handleAdd}>Add</button>
+        </div>
+        <Table className="table">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Username</th>
+              <th scope="col">Password</th>
+              <th scope="col">Actions</th>
             </tr>
-          ))}
-        </tbody>
-      </table>
-    </div>
+          </thead>
+          <tbody>
+            {users.map((user) => (
+              <tr key={user.id}>
+                <th scope="row">{user.id}</th>
+                <td>
+                  {editingUserId === user.id ? (
+                    <input
+                      type="text"
+                      value={user.username}
+                      onChange={(e) =>
+                        handleSave(user.id, e.target.value, user.password)
+                      }
+                    />
+                  ) : (
+                    user.username
+                  )}
+                </td>
+                <td>
+                  {editingUserId === user.id ? (
+                    <input
+                      type="text"
+                      value={user.password}
+                      onChange={(e) =>
+                        handleSave(user.id, user.username, e.target.value)
+                      }
+                    />
+                  ) : (
+                    user.password
+                  )}
+                </td>
+                <td>
+                  {editingUserId === user.id ? (
+                    <button onClick={() => handleSave(user.id, user.username, user.password)}>
+                      <FaSave />
+                    </button>
+                  ) : (
+                    <button onClick={() => handleEdit(user.id)}>
+                      <FaEdit />
+                    </button>
+                  )}
+                  <button onClick={() => handleDelete(user.id)}>
+                    <FaTrash />
+                  </button>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </Table>
+      </Container>
+    </section>
   );
 }
 
-export default App;
+export default MyTable;
