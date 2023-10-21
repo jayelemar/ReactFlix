@@ -33,7 +33,6 @@ function App() {
         <Route  path="/contact"  element={<Suspense fallback={<LoadingSpinner />}>{" "}<Contact /></Suspense>}/>
         <Route  path="/login"  element={<Suspense fallback={<LoadingSpinner />}>{" "}<Login /></Suspense>}/>
         <Route  path="/reg"  element={<Suspense fallback={<LoadingSpinner />}>{" "}    <Register /></Suspense>}/>
-        <Route  path="/users"  element={<Suspense fallback={<LoadingSpinner />}>{" "}<Users /></Suspense>}/>
          <Route path="/player" element={<Suspense fallback={<LoadingSpinner />}>{" "}<Player /></Suspense>}/>
          <Route path="/dashboard" element={<Suspense fallback={<LoadingSpinner />}>{" "}<Dashboard /></Suspense>}/>
          <Route  path="/credit"  element={<Suspense fallback={<LoadingSpinner />}>{" "}    <Credit /></Suspense>}/>

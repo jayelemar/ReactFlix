@@ -6,7 +6,7 @@ import { MdOutlineNotificationsNone } from 'react-icons/md'
 import { BsArrowRightShort, BsQuestionCircle } from 'react-icons/bs'
 import img from '../../../../Assets/enso.jpg'
 import img2 from '../../../../Assets/images (2).png'
-import video from '../../../../Assets/video.mp4'
+import video from '../../../../Assets/images/movie.mp4'
 
 const Top = () => {
   return (
