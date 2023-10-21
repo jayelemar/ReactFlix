@@ -191,7 +191,7 @@ class Navbar extends Component {
             <FaBars style={{ width: "40px" }} />
           </HeaderButton>
           <Search>
-        <FaSearch />
+        <FaSearch style={{color:"white"}}/>
       </Search>
           <NavButton>
             <ul>

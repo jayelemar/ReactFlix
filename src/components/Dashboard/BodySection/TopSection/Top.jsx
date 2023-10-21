@@ -4,9 +4,9 @@ import { BiSearchAlt } from 'react-icons/bi'
 import { TbMessageCircle } from 'react-icons/tb'
 import { MdOutlineNotificationsNone } from 'react-icons/md'
 import { BsArrowRightShort, BsQuestionCircle } from 'react-icons/bs'
-import img from '../../../../Assets/enso.jpg'
-import img2 from '../../../../Assets/images (2).png'
-import video from '../../../../Assets/images/movie.mp4'
+import img from '/images/enso.jpg'
+import img2 from '/images/images (2).png'
+import video from '/images/movie.mp4'
 
 const Top = () => {
   return (
