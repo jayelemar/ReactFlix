@@ -3,7 +3,6 @@ import './App.css';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import LoadingSpinner from "../src/components/compo/loadinganime"; 
-const Users = lazy(() => import("./pages/users"));
 const IntroPage = lazy(() => import("./pages/IntroPage"));
 const Home = lazy(() => import("./pages/Home"));
 const Series = lazy(() => import("./pages/series"));
