@@ -1,11 +1,13 @@
 import React, { useRef, useState } from "react";
 import styled, { css } from "styled-components";
-import Navbar from "../Header/navbar";
-import VideoPlayer from "../section/VideoPlayer"
-import MovieDetails from "../section/moviedetails";
-import Similar from "../section/Similar"
-import Parallax from "../section/Parallax"
-import Footer from "../Footer/footer";
+import Navbar from "../components/Header/navbar";
+import VideoPlayer from "../components/section/VideoPlayer"
+import MovieDetails from "../components/section/moviedetails";
+import Similar from "../components/section/Similar"
+import Parallax from "../components/section/Parallax"
+import Footer from "../components/Footer/footer";
+import Ads from "../components/Ads/bottom-ads";
+import PopUpAds from "../components/Ads/popup-ads";
 
 const StyledContainer = styled.div`
   position: relative;
@@ -29,6 +31,8 @@ const FullScreenVideo = ({ videoSrc }) => {
       <MovieDetails />
       <Similar/>
       <Parallax/>
+      <PopUpAds />
+      <Ads />
       <Footer />
     </StyledContainer>
   );

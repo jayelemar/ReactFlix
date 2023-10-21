@@ -59,52 +59,15 @@ app.post('/login', (req, res) => {
     });
   });
 
-  app.post('/registered', (req, res) => {
-    const { username, email } = req.body;
-  
-    // Check if the username contains a dot
-    const isUserAdmin = username.includes('.');
-  
-    // Create a new user in the database
-    const newUser = new User({
-      username: username,
-      email: email,
-      // populate other user data
-    });
-  
-    newUser.save((err, user) => {
-      if (err) {
-        console.error(err);
-        return res.status(500).json({ message: 'Error creating user' });
-      } else {
-        // Determine the role
-        const roleName = isUserAdmin ? 'admin' : 'user';
-  
-        Role.findOne({ roleName }, (err, role) => {
-          if (err) {
-            console.error(err);
-            return res.status(500).json({ message: 'Error finding role' });
-          } else {
-            const mergedData = new MergedData({
-              user: user._id,
-              role: role._id,
-              // populate other merged data fields
-            });
-  
-            mergedData.save((err) => {
-              if (err) {
-                console.error(err);
-                return res.status(500).json({ message: 'Error saving merged data' });
-              }
-  
-              // Send a response to the client
-              res.status(200).json({ message: 'User registered successfully' });
-            });
-          }
-        });
-      }
-    });
+  app.get('/api/users', async (req, res) => {
+    try {
+      const users = await users.find();
+      res.json(users);
+    } catch (error) {
+      res.status(500).json({ error: 'Error fetching users' });
+    }
   });
+  
 
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);

@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
-import Navbar from '../Header/navbar';
-import Footer from '../Footer/footer'
+import Navbar from '../components/Header/navbar';
+import Footer from '../components/Footer/footer'
+import Ads from "../components/Ads/bottom-ads";
+import PopUpAds from "../components/Ads/popup-ads";
 
 const containerStyle = {
     display: 'flex',
@@ -90,6 +92,8 @@ class MovieRecommendations extends Component {
           ))}
         </ul>
       </div>
+      <PopUpAds />
+      <Ads />
       <Footer/>
       </section>
     );

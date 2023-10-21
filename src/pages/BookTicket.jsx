@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
-import Navbar from '../Header/navbar';
-import Footer from '../Footer/footer';
+import Navbar from '../components/Header/navbar';
+import Footer from '../components/Footer/footer';
 import styled from 'styled-components';
+import Ads from "../components/Ads/bottom-ads";
+import PopUpAds from "../components/Ads/popup-ads";
 
 const CenteredContainer = styled.div`
   display: flex;
@@ -91,6 +93,8 @@ const CinemaTicketPurchase = () => {
       <br />
       <p>Total Price: ${calculateTotalPrice()}</p>
       <button onClick={purchaseTicket}>Purchase Ticket</button>
+      <PopUpAds />
+      <Ads />
       <Footer />
     </CenteredContainer>
   );

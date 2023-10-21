@@ -4,15 +4,15 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "aos/dist/aos.css";
 import AOS from "aos";
-import Navbar from "../Header/navbar1";
-import SideBar from "../Header/sidenav"
-import Carousel from "../components/nukacarousel";
-import TabbedHome from "../components/TabbedHome";
-import FlexWrap from "../components/multiplecard";
-import NewSeries from "../section/Credit";
-import Footer from "../Footer/footer";
-import Ads from "../Ads/bottom-ads";
-import PopUpAds from "../Ads/popup-ads";
+import Navbar from "../components/Header/navbar1";
+import SideBar from "../components/Header/sidenav"
+import Carousel from "../components/compo/nukacarousel";
+import TabbedHome from "../components/compo/TabbedHome";
+import FlexWrap from "../components/compo/multiplecard";
+import NewSeries from "../components/section/Credit";
+import Footer from "../components/Footer/footer";
+import Ads from "../components/Ads/bottom-ads";
+import PopUpAds from "../components/Ads/popup-ads";
 
 const MySlider = () => {
   // Renamed the locally defined Slider component

@@ -1,7 +1,9 @@
 import React from 'react';
-import Navbar from "../Header/navbar";
-import Footer from '../Footer/footer';
+import Navbar from "../components/Header/navbar";
+import Footer from '../components/Footer/footer';
 import styled from 'styled-components';
+import Ads from "../components/Ads/bottom-ads";
+import PopUpAds from "../components/Ads/popup-ads";
 
 const PageContainer = styled.div`
   background-color: #212016;
@@ -68,6 +70,8 @@ const ContactPage = () => {
           <Button type="submit">Submit</Button>
         </ContactForm>
       </ContentContainer>
+      <PopUpAds />
+      <Ads />
       <Footer />
     </PageContainer>
   );
