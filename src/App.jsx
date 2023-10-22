@@ -10,10 +10,11 @@ const Movie = lazy(() => import("./pages/movie"));
 const Anime = lazy(() => import("./pages/anime"));
 const Term = lazy(() => import("./pages/term"));
 const Contact = lazy(() => import("./pages/contact"));
-const Login = lazy(() => import("../src/components/Login/Login"));
-const Register = lazy(() => import("./components/Register/Register"));
+const Login = lazy(() => import("./pages/login"));
+const Register = lazy(() => import("./pages/Register"));
 const Player = lazy(() => import("../src/pages/Player"));
-const Dashboard = lazy(() => import("../src/components/Dashboard/Dashboard"));
+
+const Dashboard = lazy(() => import("./pages/dashboard"));
 const MovieRecommendations = lazy(() => import("../src/pages/MovieReco"));
 const BookTicket = lazy(() => import("../src/pages/BookTicket"));
 const Credit = lazy(() => import("./pages/credit"));

@@ -1,74 +1,95 @@
+// Our Dependecies
 const express = require('express');
-const mongoose = require('mongoose');
-const cors = require('cors');
-const bcrypt = require('bcrypt'); 
-const cookieParser = require('cookie-parser');
-const ReactFlixModel = require('./models/ReactFlix')
-
 const app = express();
-const port = process.env.PORT || 3000;
+const mysql = require('mysql');
+const cors = require('cors');
+const bcrypt = require('bcrypt');
 
-// Middleware
 app.use(express.json());
-app.use(cookieParser());
 app.use(cors());
 
-mongoose.connect("mongodb://127.0.0.1:27017/ReactFlix", {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
+// Let us run the server. So its running
+app.listen(3002, () => {
+    console.log('Server is running on port 3002');
 });
-app.post('/login', (req, res) => {
-    const { email, password } = req.body;
-  
-    ReactFlixModel.findOne({ email: email })
-      .then(users => {
-        if (users) {
-          if (user.password === password) {
-            // Password is correct, so you can consider this a successful login
-            res.json("Success");
-          } else {
-            // Password is incorrect
-            res.json("The password is incorrect");
-          }
+
+// Let us create our database (mysql)
+const db = mysql.createConnection({
+    user: 'root',
+    host: 'localhost',
+    password: '', //If you have set xampp password please enter it here
+    database: 'reactflix', // Specify the database name here
+});
+
+
+// let us now create a route to the server that will register a user
+
+app.post('/register', (req, res) => {
+    const sentEmail = req.body.Email;
+    const sentUserName = req.body.UserName;
+    const sentPassword = req.body.Password;
+
+    // Check if the email already exists in the database
+    const checkEmailQuery = 'SELECT * FROM users WHERE email = ?';
+    db.query(checkEmailQuery, [sentEmail], (err, results) => {
+        if (err) {
+            res.status(500).send({ message: 'Error checking email' });
+        } else if (results.length > 0) {
+            // Email already exists, return an error message
+            res.send({ message: 'Email already exists in the database.' });
         } else {
-          // No user with this email exists
-          res.json("No Account Existed");
+            // Email is not in the database, proceed with user registration
+            bcrypt.hash(sentPassword, 10, (err, hashedPassword) => {
+                if (err) {
+                    res.status(500).send({ message: 'Error hashing password' });
+                } else {
+                    // Insert the user into the database
+                    const insertUserQuery = 'INSERT INTO reactflix.users (email, username, password) VALUES (?,?,?)';
+                    const values = [sentEmail, sentUserName, hashedPassword];
+                    db.query(insertUserQuery, values, (err, results) => {
+                        if (err) {
+                            res.status(500).send({ message: 'Error inserting user' });
+                        } else {
+                            console.log('User inserted successfully!');
+                            res.send({ message: 'User added!' });
+                        }
+                    });
+                }
+            });
         }
-      })
-      .catch(err => {
-        // Handle any errors that occur during the database query
-        console.error("Error during login:", err);
-        res.status(500).json("An error occurred during login");
-      });
-  });
-  
-
-  app.post('/register', (req, res) => {
-    const { username, password } = req.body;
-  
-    // Hash the password
-    bcrypt.hash(password, 10, (err, hash) => {
-      if (err) {
-        return res.status(500).json({ error: err.message });
-      }
-  
-      // Create a new user with the hashed password
-      ReactFlixModel.create({ username, password: hash })
-        .then(user => res.json(user))
-        .catch(err => res.status(500).json({ error: err.message }));
     });
-  });
+});
 
-  app.get('/api/users', async (req, res) => {
-    try {
-      const users = await users.find();
-      res.json(users);
-    } catch (error) {
-      res.status(500).json({ error: 'Error fetching users' });
-    }
-  });
-  
 
-app.listen(port, () => {
-  console.log(`Server is running on port ${port}`);
+app.post('/login', (req, res) => {
+    const sentLoginUserName = req.body.LoginUserName;
+    const sentLoginPassword = req.body.LoginPassword;
+    const sentEmail = req.body.Email; // Assuming "gmail" means email
+
+    // Let's create an SQL statement to check the user's credentials
+    const selectUserSQL = 'SELECT id FROM users WHERE username = ? AND password = ? AND email = ?';
+    const selectUserValues = [sentLoginUserName, sentLoginPassword, sentEmail];
+
+    db.query(selectUserSQL, selectUserValues, (err, results) => {
+        if (err) {
+            res.send({ error: err });
+        } else if (results.length > 0) {
+            const userId = results[0].id;
+
+            // Insert a login log entry with the user's ID and current date and time
+            const insertLoginLogSQL = 'INSERT INTO login_log (user_id, login_time) VALUES (?, NOW())';
+            const insertLoginLogValues = [userId];
+
+            db.query(insertLoginLogSQL, insertLoginLogValues, (logErr) => {
+                if (logErr) {
+                    console.error('Error inserting login log:', logErr);
+                    res.send({ error: 'Login log insertion failed' });
+                } else {
+                    res.send({ message: 'Login successful' });
+                }
+            });
+        } else {
+            res.send({ message: 'Credentials Don\'t match!' });
+        }
+    });
 });
