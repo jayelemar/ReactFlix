@@ -10,10 +10,12 @@ const Movie = lazy(() => import("./pages/movie"));
 const Anime = lazy(() => import("./pages/anime"));
 const Term = lazy(() => import("./pages/term"));
 const Contact = lazy(() => import("./pages/contact"));
-const Login = lazy(() => import("./pages/Login"));
-const Register = lazy(() => import("./pages/Register"));
+const Login = lazy(() => import("../src/components/Login/Login"));
+const Register = lazy(() => import("./components/Register/Register"));
+const Forgot = lazy(() => import("./components/ForgotPass/Forgot_Pass"));
 const Player = lazy(() => import("../src/pages/Player"));
-const Dashboard = lazy(() => import("./pages/dashboard"));
+
+const Dashboard = lazy(() => import("../src/components/Dashboard/Dashboard"));
 const MovieRecommendations = lazy(() => import("../src/pages/MovieReco"));
 const BookTicket = lazy(() => import("../src/pages/BookTicket"));
 const Credit = lazy(() => import("./pages/credit"));
@@ -32,7 +34,8 @@ function App() {
         <Route  path="/term"  element={<Suspense fallback={<LoadingSpinner />}>{" "}<Term /></Suspense>}/>
         <Route  path="/contact"  element={<Suspense fallback={<LoadingSpinner />}>{" "}<Contact /></Suspense>}/>
         <Route  path="/login"  element={<Suspense fallback={<LoadingSpinner />}>{" "}<Login /></Suspense>}/>
-        <Route  path="/reg"  element={<Suspense fallback={<LoadingSpinner />}>{" "}    <Register /></Suspense>}/>
+        <Route  path="/reg"  element={<Suspense fallback={<LoadingSpinner />}>{" "}    <Forgot /></Suspense>}/>
+        <Route  path="/forgot"  element={<Suspense fallback={<LoadingSpinner />}>{" "}    <Register /></Suspense>}/>
          <Route path="/player" element={<Suspense fallback={<LoadingSpinner />}>{" "}<Player /></Suspense>}/>
          <Route path="/dashboard" element={<Suspense fallback={<LoadingSpinner />}>{" "}<Dashboard /></Suspense>}/>
          <Route  path="/credit"  element={<Suspense fallback={<LoadingSpinner />}>{" "}    <Credit /></Suspense>}/>
