@@ -9,13 +9,13 @@ import {
   FaComment,
   FaSignOutAlt,
 } from "react-icons/fa";
-import UserStatsContent from '../DashboardContent.jsx/Userstats';
-import UploadContent from '../DashboardContent.jsx/Upload';
-import AdsContent from '../DashboardContent.jsx/Ads';
-import SettingsContent from '../DashboardContent.jsx/Settings';
-import Roles from '../DashboardContent.jsx/Roles';
-import LogoutContent from '../DashboardContent.jsx/Log-Out';
-import Feedback from '../DashboardContent.jsx/Feedback';
+import UserStatsContent from '../components/DashboardContent/Userstats';
+import UploadContent from '../components/DashboardContent/Upload';
+import AdsContent from '../components/DashboardContent/Ads';
+import SettingsContent from '../components/DashboardContent/Settings';
+import Roles from '../components/DashboardContent/Roles';
+import LogoutContent from '../components/DashboardContent/Log-Out';
+import Feedback from '../components/DashboardContent/Feedback';
 import profileImage from '/images/lou.jpg'; // Import your profile image
 
 const Container = styled.div`
