@@ -14,7 +14,6 @@ const Login = lazy(() => import("../src/components/Login/Login"));
 const Register = lazy(() => import("./components/Register/Register"));
 const Forgot = lazy(() => import("./components/ForgotPass/Forgot_Pass"));
 const Player = lazy(() => import("../src/pages/Player"));
-
 const Dashboard = lazy(() => import("../src/components/Dashboard/Dashboard"));
 const MovieRecommendations = lazy(() => import("../src/pages/MovieReco"));
 const BookTicket = lazy(() => import("../src/pages/BookTicket"));

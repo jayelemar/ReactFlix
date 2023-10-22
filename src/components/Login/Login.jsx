@@ -3,8 +3,8 @@ import './Login.css';
 import '../../App.css'
 import { Link, useNavigate } from 'react-router-dom';
 import Axios from 'axios'
-import video from '../../Assets/video.mp4'
-import logo from '../../Assets/logo.png'
+import video from '/images/movie.mp4'
+import logo from '/images/logo.png'
 import { FaUserShield } from 'react-icons/fa'
 import { BsFillShieldLockFill } from 'react-icons/bs'
 import { AiOutlineSwapRight } from 'react-icons/ai'
@@ -26,7 +26,7 @@ const Login = () => {
         }).then((response) => {
             console.log();
             if (response.data.message || loginUserName == '' || loginPassword ==  '') {
-                navigateTo('/') 
+                navigateTo('/login') 
                 setLoginStatus(`Credentials Don't Exist!`)
             }
             else {
@@ -63,7 +63,7 @@ const Login = () => {
 
                     <div className="footerDiv flex">
                         <span className="text">Don't have an account?</span>
-                        <Link to={'/register'}>
+                        <Link to={'/reg'}>
                             <button className="btn">Sign Up</button>
                         </Link>
                     </div>
