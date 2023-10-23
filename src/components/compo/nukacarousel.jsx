@@ -11,7 +11,6 @@ import {
   faShare,
 } from "@fortawesome/free-solid-svg-icons";
 import styled from "styled-components";
-import Movietabs from '../TabbedComp/Movietab'
 
 const customDotImages = [
   "/images/peacemaker.jpg", // Customize the paths as needed

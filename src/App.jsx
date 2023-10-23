@@ -2,7 +2,7 @@ import React, { Suspense, lazy } from "react";
 import './App.css';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
-import LoadingSpinner from "../src/components/compo/loadinganime"; 
+import LoadingSpinner from "../src/components/LoadingAnimation/loadinganime"; 
 const IntroPage = lazy(() => import("./pages/IntroPage"));
 const Home = lazy(() => import("./pages/Home"));
 const Series = lazy(() => import("./pages/series"));
@@ -33,12 +33,12 @@ function App() {
         <Route  path="/term"  element={<Suspense fallback={<LoadingSpinner />}>{" "}<Term /></Suspense>}/>
         <Route  path="/contact"  element={<Suspense fallback={<LoadingSpinner />}>{" "}<Contact /></Suspense>}/>
         <Route  path="/login"  element={<Suspense fallback={<LoadingSpinner />}>{" "}<Login /></Suspense>}/>
-        <Route  path="/reg"  element={<Suspense fallback={<LoadingSpinner />}>{" "}    <Forgot /></Suspense>}/>
-        <Route  path="/forgot"  element={<Suspense fallback={<LoadingSpinner />}>{" "}    <Register /></Suspense>}/>
+        <Route  path="/reg"  element={<Suspense fallback={<LoadingSpinner />}>{" "}    <Register /></Suspense>}/>
+        <Route  path="/forgot"  element={<Suspense fallback={<LoadingSpinner />}>{" "}    <Forgot /></Suspense>}/>
          <Route path="/player" element={<Suspense fallback={<LoadingSpinner />}>{" "}<Player /></Suspense>}/>
          <Route path="/dashboard" element={<Suspense fallback={<LoadingSpinner />}>{" "}<Dashboard /></Suspense>}/>
          <Route  path="/credit"  element={<Suspense fallback={<LoadingSpinner />}>{" "}    <Credit /></Suspense>}/>
-         <Route path="/movie-reco" element={<Suspense fallback={<LoadingSpinner />}>{" "}<MovieRecommendations /></Suspense>}/>
+         <Route path="/recommended" element={<Suspense fallback={<LoadingSpinner />}>{" "}<MovieRecommendations /></Suspense>}/>
          <Route path="/ticket" element={<Suspense fallback={<LoadingSpinner />}>{" "}<BookTicket /></Suspense>}/>
          <Route path="/signup" element={<Suspense fallback={<LoadingSpinner />}>{" "}<Signup /></Suspense>}/>
       </Routes>

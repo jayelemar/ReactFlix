@@ -6,9 +6,10 @@ import "aos/dist/aos.css";
 import AOS from "aos";
 import Navbar from "../components/Header/navbar1";
 import SideBar from "../components/Header/sidenav"
+import Hand from "../components/Hand/hand"
 import Carousel from "../components/compo/nukacarousel";
 import TabbedHome from "../components/compo/TabbedHome";
-import FlexWrap from "../components/compo/multiplecard";
+import FlexWrap from "../components/Cards/multiplecard";
 import NewSeries from "../components/section/Credit";
 import Footer from "../components/Footer/footer";
 import Ads from "../components/Ads/bottom-ads";
@@ -48,6 +49,7 @@ const Home = () => {
     >
       <Navbar />
       <SideBar/>
+      <Hand/>
       <Carousel
         autoplay={true}
         wrapAround={true}

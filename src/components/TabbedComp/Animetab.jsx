@@ -11,8 +11,8 @@ const Heading = styled.h1`
 `;
 const CardWrapper = styled.div`
   position: relative;
-  width: 200px;
-  height: 300px;
+  width: 150px;
+  height: 200px;
   background: url(${(props) => props.imageUrl}) no-repeat center/cover;
   border-radius: 10px;
   box-shadow: 0 10px 25px 0 rgba(0, 0, 0, 0.5);
@@ -109,12 +109,60 @@ const PageButton = styled.button`
 
 function Card() {
   const [currentPage, setCurrentPage] = useState(1);
-  const cardsPerPage = 12; // Number of cards to display per page
+  const cardsPerPage = 24; // Number of cards to display per page
 
   // Sample card data (contains 14 cards)
   const cardData = [
     
     {
+        title: 'FullMetal Alchemist',
+        imageUrl: 'images/fmab.jpg',
+      },
+      {
+        title: 'FullMetal Alchemist',
+        imageUrl: 'images/fmab.jpg',
+      },
+      {
+        title: 'FullMetal Alchemist',
+        imageUrl: 'images/fmab.jpg',
+      },
+      {
+        title: 'FullMetal Alchemist',
+        imageUrl: 'images/fmab.jpg',
+      },
+      {
+        title: 'FullMetal Alchemist',
+        imageUrl: 'images/fmab.jpg',
+      },
+      {
+        title: 'FullMetal Alchemist',
+        imageUrl: 'images/fmab.jpg',
+      },
+      {
+        title: 'FullMetal Alchemist',
+        imageUrl: 'images/fmab.jpg',
+      },
+      {
+        title: 'FullMetal Alchemist',
+        imageUrl: 'images/fmab.jpg',
+      },
+      {
+        title: 'FullMetal Alchemist',
+        imageUrl: 'images/fmab.jpg',
+      },
+      {
+        title: 'FullMetal Alchemist',
+        imageUrl: 'images/fmab.jpg',
+      },
+      {
+        title: 'FullMetal Alchemist',
+        imageUrl: 'images/fmab.jpg',
+      },
+      {
+        title: 'FullMetal Alchemist',
+        imageUrl: 'images/fmab.jpg',
+      },
+      {
         title: 'FullMetal Alchemist',
         imageUrl: 'images/fmab.jpg',
       },

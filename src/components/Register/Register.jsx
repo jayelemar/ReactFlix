@@ -13,35 +13,24 @@ import bcrypt from 'bcryptjs';
 
 
 const Register = () => {
-    const [email, setEmail] = useState('');
-    const [userName, setUserName] = useState('');
-    const [password, setPassword] = useState('');
+    const [email, setEmail] = useState('')
+    const [userName, setUserName] = useState('')
+    const [password, setPassword] = useState('')
     const navigateTo = useNavigate();
 
-    const createUser = async (e) => {
-        e.preventDefault();
-
-        // Hash the password on the client-side
-        const hashedPassword = await bcrypt.hash(password, 10);
-
+    const createUser = (e) => {
+        e.preventDefault()
         Axios.post('http://localhost:3002/register', {
             Email: email,
             UserName: userName,
-            Password: hashedPassword,
-        }).then((response) => {
-            if (response.data.message === 'User added!') {
-                // User was successfully registered, clear the input fields and navigate
-                navigateTo('/');
-                setEmail('');
-                setUserName('');
-                setPassword('');
-            } else {
-                // Handle the case where the email already exists
-                // You can show an error message or take appropriate action
-                console.log('Email already exists in the database.');
-            }
-        });
-    };
+            Password: password
+        }).then(() => {
+            navigateTo('/');
+            setEmail('');
+            setUserName('');
+            setPassword('');
+        })
+    }
 
     return (
         <div className="registerPage flex">
@@ -114,5 +103,6 @@ const Register = () => {
         </div>
     )
 }
+
 
 export default Register;

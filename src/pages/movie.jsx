@@ -7,7 +7,8 @@ import AOS from "aos";
 import Navbar from "../components/Header/navbar1";
 import Carousel from "../components/compo/nukacarousel";
 import TabbedHome from "../components/compo/TabbedHome";
-import FlexWrap from "../components/compo/multiplecard";
+import FlexWrap from "../components/Cards/multiplecard";
+import SectionAds from "../components/Ads/section-ads";
 import Footer from '../components/Footer/footer';
 import Ads from "../components/Ads/bottom-ads";
 import PopUpAds from "../components/Ads/popup-ads";
@@ -18,17 +19,7 @@ const MySlider = () => {
     AOS.init();
   }, []);
 
-  const settings = {
-    className: "center",
-    centerMode: true,
-    infinite: true,
-    centerPadding: "60px",
-    slidesToShow: 3,
-    speed: 500,
-    autoplay: true,
-    autoplaySpeed: 3000,
-    cssEase: "linear",
-  };
+  
 
   return (
     <SlickSlider {...settings}>
@@ -43,25 +34,16 @@ const Home = () => {
   }, []);
 
   return (
-    <section
-      className="slider4 mbr-embla cid-tEzwvrEiry"
-      style={{ backgroundColor: "#8E95A5" }}
-      id="slider4-2j"
-    >
+    <div>
       <Navbar />
-      <Carousel
-        autoplay={true}
-        wrapAround={true}
-        speed={1000}
-        slidesToShow={1}
-      ></Carousel>
-      
+      <Carousel/>
      <TabbedHome />
      <FlexWrap />
+     <SectionAds/>
      <PopUpAds />
       <Ads />
       <Footer />
-    </section>
+    </div>
   );
 };
 

@@ -7,7 +7,7 @@ import AOS from "aos";
 import Navbar from "../components/Header/navbar1";
 import Carousel from "../components/compo/nukacarousel";
 import TabbedHome from "../components/compo/TabbedHome";
-import FlexWrap from "../components/compo/multiplecard";
+import FlexWrap from "../components/Cards/multiplecard";
 import Ads from "../components/Ads/bottom-ads";
 import PopUpAds from "../components/Ads/popup-ads";
 import Footer from '../components/Footer/footer';
