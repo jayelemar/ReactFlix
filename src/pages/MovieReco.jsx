@@ -7,6 +7,7 @@ import Intro from "../components/Cards/Intro_slider";
 import Similar from "../components/section/Similar";
 import Footer from "../components/Footer/footer";
 function MovieRecommendations() {
+  
   return (
     <section>
       <Navbar />

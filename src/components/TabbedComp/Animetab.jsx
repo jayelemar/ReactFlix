@@ -16,7 +16,7 @@ const CardWrapper = styled.div`
   background: url(${(props) => props.imageUrl}) no-repeat center/cover;
   border-radius: 10px;
   box-shadow: 0 10px 25px 0 rgba(0, 0, 0, 0.5);
-  margin: 10px;
+  margin: 15px;
   transition: 0.5s;
 
   &:hover {

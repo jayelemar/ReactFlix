@@ -16,20 +16,20 @@ const CardWrapper = styled.div`
   background: url(${(props) => props.imageUrl}) no-repeat center/cover;
   border-radius: 10px;
   box-shadow: 0 10px 25px 0 rgba(0, 0, 0, 0.5);
-  margin: 10px;
+  margin: 15px;
   transition: 0.5s;
 
   &:hover {
-    transition: 0.5s;
+    transition: 1s;
     .title {
       padding-bottom: 50px;
       opacity: 1;
-      transition: 0.5s;
+      transition: .3s;
       font-size: 10px;
     }
     .watch-button {
       opacity: 1;
-      transition: 0.5s;
+      transition: 0.3s;
       font-size: 10px;
     }
   }
@@ -40,7 +40,7 @@ const CardWrapper = styled.div`
     bottom: 0;
     left: 0;
     font-size: 26px;
-    font-weight: 300;
+    font-weight: 100;
     padding: 30px 0;
     background: linear-gradient(to top, #000, transparent);
     text-transform: uppercase;
@@ -115,116 +115,116 @@ function Card() {
   const cardData = [
     
     {
-        title: 'The Simpsons: The Good, the Bart, and the Loki',
-        imageUrl: 'https://img.sflix.to/xxrz/250x400/224/36/0c/360ca298ad78b581c8f7fdfe17eae96f/360ca298ad78b581c8f7fdfe17eae96f.jpg',
+        title: 'Saw X',
+        imageUrl: 'https://img.sflix.to/xxrz/250x400/224/d7/18/d718293c00206ab88508da84cb00456f/d718293c00206ab88508da84cb00456f.jpg',
       },
       {
-        title: 'The Simpsons: The Good, the Bart, and the Loki',
-        imageUrl: 'https://img.sflix.to/xxrz/250x400/224/36/0c/360ca298ad78b581c8f7fdfe17eae96f/360ca298ad78b581c8f7fdfe17eae96f.jpg',
+        title: 'Saw X',
+        imageUrl: 'https://img.sflix.to/xxrz/250x400/224/d7/18/d718293c00206ab88508da84cb00456f/d718293c00206ab88508da84cb00456f.jpg',
       },
       {
-        title: 'The Simpsons: The Good, the Bart, and the Loki',
-        imageUrl: 'https://img.sflix.to/xxrz/250x400/224/36/0c/360ca298ad78b581c8f7fdfe17eae96f/360ca298ad78b581c8f7fdfe17eae96f.jpg',
+        title: 'Saw X',
+        imageUrl: 'https://img.sflix.to/xxrz/250x400/224/d7/18/d718293c00206ab88508da84cb00456f/d718293c00206ab88508da84cb00456f.jpg',
       },
       {
-        title: 'The Simpsons: The Good, the Bart, and the Loki',
-        imageUrl: 'https://img.sflix.to/xxrz/250x400/224/36/0c/360ca298ad78b581c8f7fdfe17eae96f/360ca298ad78b581c8f7fdfe17eae96f.jpg',
+        title: 'Saw X',
+        imageUrl: 'https://img.sflix.to/xxrz/250x400/224/d7/18/d718293c00206ab88508da84cb00456f/d718293c00206ab88508da84cb00456f.jpg',
       },
       {
-        title: 'The Simpsons: The Good, the Bart, and the Loki',
-        imageUrl: 'https://img.sflix.to/xxrz/250x400/224/36/0c/360ca298ad78b581c8f7fdfe17eae96f/360ca298ad78b581c8f7fdfe17eae96f.jpg',
+        title: 'Saw X',
+        imageUrl: 'https://img.sflix.to/xxrz/250x400/224/d7/18/d718293c00206ab88508da84cb00456f/d718293c00206ab88508da84cb00456f.jpg',
       },
       {
-        title: 'The Simpsons: The Good, the Bart, and the Loki',
-        imageUrl: 'https://img.sflix.to/xxrz/250x400/224/36/0c/360ca298ad78b581c8f7fdfe17eae96f/360ca298ad78b581c8f7fdfe17eae96f.jpg',
+        title: 'Saw X',
+        imageUrl: 'https://img.sflix.to/xxrz/250x400/224/d7/18/d718293c00206ab88508da84cb00456f/d718293c00206ab88508da84cb00456f.jpg',
       },
       {
-        title: 'The Simpsons: The Good, the Bart, and the Loki',
-        imageUrl: 'https://img.sflix.to/xxrz/250x400/224/36/0c/360ca298ad78b581c8f7fdfe17eae96f/360ca298ad78b581c8f7fdfe17eae96f.jpg',
+        title: 'Saw X',
+        imageUrl: 'https://img.sflix.to/xxrz/250x400/224/d7/18/d718293c00206ab88508da84cb00456f/d718293c00206ab88508da84cb00456f.jpg',
       },
       {
-        title: 'The Simpsons: The Good, the Bart, and the Loki',
-        imageUrl: 'https://img.sflix.to/xxrz/250x400/224/36/0c/360ca298ad78b581c8f7fdfe17eae96f/360ca298ad78b581c8f7fdfe17eae96f.jpg',
+        title: 'Saw X',
+        imageUrl: 'https://img.sflix.to/xxrz/250x400/224/d7/18/d718293c00206ab88508da84cb00456f/d718293c00206ab88508da84cb00456f.jpg',
       },
       {
-        title: 'The Simpsons: The Good, the Bart, and the Loki',
-        imageUrl: 'https://img.sflix.to/xxrz/250x400/224/36/0c/360ca298ad78b581c8f7fdfe17eae96f/360ca298ad78b581c8f7fdfe17eae96f.jpg',
+        title: 'Saw X',
+        imageUrl: 'https://img.sflix.to/xxrz/250x400/224/d7/18/d718293c00206ab88508da84cb00456f/d718293c00206ab88508da84cb00456f.jpg',
       },
       {
-        title: 'The Simpsons: The Good, the Bart, and the Loki',
-        imageUrl: 'https://img.sflix.to/xxrz/250x400/224/36/0c/360ca298ad78b581c8f7fdfe17eae96f/360ca298ad78b581c8f7fdfe17eae96f.jpg',
+        title: 'Saw X',
+        imageUrl: 'https://img.sflix.to/xxrz/250x400/224/d7/18/d718293c00206ab88508da84cb00456f/d718293c00206ab88508da84cb00456f.jpg',
       },
       {
-        title: 'The Simpsons: The Good, the Bart, and the Loki',
-        imageUrl: 'https://img.sflix.to/xxrz/250x400/224/36/0c/360ca298ad78b581c8f7fdfe17eae96f/360ca298ad78b581c8f7fdfe17eae96f.jpg',
+        title: 'Saw X',
+        imageUrl: 'https://img.sflix.to/xxrz/250x400/224/d7/18/d718293c00206ab88508da84cb00456f/d718293c00206ab88508da84cb00456f.jpg',
       },
       {
-        title: 'The Simpsons: The Good, the Bart, and the Loki',
-        imageUrl: 'https://img.sflix.to/xxrz/250x400/224/36/0c/360ca298ad78b581c8f7fdfe17eae96f/360ca298ad78b581c8f7fdfe17eae96f.jpg',
+        title: 'Saw X',
+        imageUrl: 'https://img.sflix.to/xxrz/250x400/224/d7/18/d718293c00206ab88508da84cb00456f/d718293c00206ab88508da84cb00456f.jpg',
       },
       {
-        title: 'The Simpsons: The Good, the Bart, and the Loki',
-        imageUrl: 'https://img.sflix.to/xxrz/250x400/224/36/0c/360ca298ad78b581c8f7fdfe17eae96f/360ca298ad78b581c8f7fdfe17eae96f.jpg',
+        title: 'Saw X',
+        imageUrl: 'https://img.sflix.to/xxrz/250x400/224/d7/18/d718293c00206ab88508da84cb00456f/d718293c00206ab88508da84cb00456f.jpg',
       },
       {
-        title: 'The Simpsons: The Good, the Bart, and the Loki',
-        imageUrl: 'https://img.sflix.to/xxrz/250x400/224/36/0c/360ca298ad78b581c8f7fdfe17eae96f/360ca298ad78b581c8f7fdfe17eae96f.jpg',
+        title: 'Saw X',
+        imageUrl: 'https://img.sflix.to/xxrz/250x400/224/d7/18/d718293c00206ab88508da84cb00456f/d718293c00206ab88508da84cb00456f.jpg',
       },
       {
-        title: 'The Simpsons: The Good, the Bart, and the Loki',
-        imageUrl: 'https://img.sflix.to/xxrz/250x400/224/36/0c/360ca298ad78b581c8f7fdfe17eae96f/360ca298ad78b581c8f7fdfe17eae96f.jpg',
+        title: 'Saw X',
+        imageUrl: 'https://img.sflix.to/xxrz/250x400/224/d7/18/d718293c00206ab88508da84cb00456f/d718293c00206ab88508da84cb00456f.jpg',
       },
       {
-        title: 'The Simpsons: The Good, the Bart, and the Loki',
-        imageUrl: 'https://img.sflix.to/xxrz/250x400/224/36/0c/360ca298ad78b581c8f7fdfe17eae96f/360ca298ad78b581c8f7fdfe17eae96f.jpg',
+        title: 'Saw X',
+        imageUrl: 'https://img.sflix.to/xxrz/250x400/224/d7/18/d718293c00206ab88508da84cb00456f/d718293c00206ab88508da84cb00456f.jpg',
       },
       {
-        title: 'The Simpsons: The Good, the Bart, and the Loki',
-        imageUrl: 'https://img.sflix.to/xxrz/250x400/224/36/0c/360ca298ad78b581c8f7fdfe17eae96f/360ca298ad78b581c8f7fdfe17eae96f.jpg',
+        title: 'Saw X',
+        imageUrl: 'https://img.sflix.to/xxrz/250x400/224/d7/18/d718293c00206ab88508da84cb00456f/d718293c00206ab88508da84cb00456f.jpg',
       },
       {
-        title: 'The Simpsons: The Good, the Bart, and the Loki',
-        imageUrl: 'https://img.sflix.to/xxrz/250x400/224/36/0c/360ca298ad78b581c8f7fdfe17eae96f/360ca298ad78b581c8f7fdfe17eae96f.jpg',
+        title: 'Saw X',
+        imageUrl: 'https://img.sflix.to/xxrz/250x400/224/d7/18/d718293c00206ab88508da84cb00456f/d718293c00206ab88508da84cb00456f.jpg',
       },
       {
-        title: 'The Simpsons: The Good, the Bart, and the Loki',
-        imageUrl: 'https://img.sflix.to/xxrz/250x400/224/36/0c/360ca298ad78b581c8f7fdfe17eae96f/360ca298ad78b581c8f7fdfe17eae96f.jpg',
+        title: 'Saw X',
+        imageUrl: 'https://img.sflix.to/xxrz/250x400/224/d7/18/d718293c00206ab88508da84cb00456f/d718293c00206ab88508da84cb00456f.jpg',
       },
       {
-        title: 'The Simpsons: The Good, the Bart, and the Loki',
-        imageUrl: 'https://img.sflix.to/xxrz/250x400/224/36/0c/360ca298ad78b581c8f7fdfe17eae96f/360ca298ad78b581c8f7fdfe17eae96f.jpg',
+        title: 'Saw X',
+        imageUrl: 'https://img.sflix.to/xxrz/250x400/224/d7/18/d718293c00206ab88508da84cb00456f/d718293c00206ab88508da84cb00456f.jpg',
       },
       {
-        title: 'The Simpsons: The Good, the Bart, and the Loki',
-        imageUrl: 'https://img.sflix.to/xxrz/250x400/224/36/0c/360ca298ad78b581c8f7fdfe17eae96f/360ca298ad78b581c8f7fdfe17eae96f.jpg',
+        title: 'Saw X',
+        imageUrl: 'https://img.sflix.to/xxrz/250x400/224/d7/18/d718293c00206ab88508da84cb00456f/d718293c00206ab88508da84cb00456f.jpg',
       },
       {
-        title: 'The Simpsons: The Good, the Bart, and the Loki',
-        imageUrl: 'https://img.sflix.to/xxrz/250x400/224/36/0c/360ca298ad78b581c8f7fdfe17eae96f/360ca298ad78b581c8f7fdfe17eae96f.jpg',
+        title: 'Saw X',
+        imageUrl: 'https://img.sflix.to/xxrz/250x400/224/d7/18/d718293c00206ab88508da84cb00456f/d718293c00206ab88508da84cb00456f.jpg',
       },
       {
-        title: 'The Simpsons: The Good, the Bart, and the Loki',
-        imageUrl: 'https://img.sflix.to/xxrz/250x400/224/36/0c/360ca298ad78b581c8f7fdfe17eae96f/360ca298ad78b581c8f7fdfe17eae96f.jpg',
+        title: 'Saw X',
+        imageUrl: 'https://img.sflix.to/xxrz/250x400/224/d7/18/d718293c00206ab88508da84cb00456f/d718293c00206ab88508da84cb00456f.jpg',
       },
       {
-        title: 'The Simpsons: The Good, the Bart, and the Loki',
-        imageUrl: 'https://img.sflix.to/xxrz/250x400/224/36/0c/360ca298ad78b581c8f7fdfe17eae96f/360ca298ad78b581c8f7fdfe17eae96f.jpg',
+        title: 'Saw X',
+        imageUrl: 'https://img.sflix.to/xxrz/250x400/224/d7/18/d718293c00206ab88508da84cb00456f/d718293c00206ab88508da84cb00456f.jpg',
       },
       {
-        title: 'The Simpsons: The Good, the Bart, and the Loki',
-        imageUrl: 'https://img.sflix.to/xxrz/250x400/224/36/0c/360ca298ad78b581c8f7fdfe17eae96f/360ca298ad78b581c8f7fdfe17eae96f.jpg',
+        title: 'Saw X',
+        imageUrl: 'https://img.sflix.to/xxrz/250x400/224/d7/18/d718293c00206ab88508da84cb00456f/d718293c00206ab88508da84cb00456f.jpg',
       },
       {
-        title: 'The Simpsons: The Good, the Bart, and the Loki',
-        imageUrl: 'https://img.sflix.to/xxrz/250x400/224/36/0c/360ca298ad78b581c8f7fdfe17eae96f/360ca298ad78b581c8f7fdfe17eae96f.jpg',
+        title: 'Saw X',
+        imageUrl: 'https://img.sflix.to/xxrz/250x400/224/d7/18/d718293c00206ab88508da84cb00456f/d718293c00206ab88508da84cb00456f.jpg',
       },
       {
-        title: 'The Simpsons: The Good, the Bart, and the Loki',
-        imageUrl: 'https://img.sflix.to/xxrz/250x400/224/36/0c/360ca298ad78b581c8f7fdfe17eae96f/360ca298ad78b581c8f7fdfe17eae96f.jpg',
+        title: 'Saw X',
+        imageUrl: 'https://img.sflix.to/xxrz/250x400/224/d7/18/d718293c00206ab88508da84cb00456f/d718293c00206ab88508da84cb00456f.jpg',
       },
       {
-        title: 'The Simpsons: The Good, the Bart, and the Loki',
-        imageUrl: 'https://img.sflix.to/xxrz/250x400/224/36/0c/360ca298ad78b581c8f7fdfe17eae96f/360ca298ad78b581c8f7fdfe17eae96f.jpg',
+        title: 'Saw X',
+        imageUrl: 'https://img.sflix.to/xxrz/250x400/224/d7/18/d718293c00206ab88508da84cb00456f/d718293c00206ab88508da84cb00456f.jpg',
       },
   ];
 
