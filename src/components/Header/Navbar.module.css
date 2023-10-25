@@ -1,0 +1,396 @@
+
+header {
+    position: sticky;
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100px;
+    width: 100%;
+    font-family: "Gotham", sans-serif;
+    font-style: bold;
+    color: white; /* Set the color to white */
+    background-color: rgba(0, 0, 0, 0.1); /* Set the background color to the desired color */
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+    transition: background-color 0.3s ease, color 0.3s ease;
+    z-index: 999;
+}
+
+.header {
+    position: absolute;
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100px;
+    width: 100%;
+    font-family: "Gotham", sans-serif;
+    font-weight: bold;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+
+    transition: background-color 0.3s ease, color 0.3s ease;
+    z-index: 1;
+}
+
+header span {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 20px;
+    margin-right: auto;
+    border-radius: 10px;
+    color: white;
+
+}
+
+nav {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 80%;
+    height: 100vh;
+    background-color: rgb(40, 40, 40);
+    padding: 1rem;
+    transform: translateX(0%);
+    transition: all 0.6s;
+    z-index: 2;
+
+    @media screen and (min-width: 1024px) {
+        display: flex;
+        position: relative;
+        width: 60%;
+        height: auto;
+        flex-direction: row;
+        background-color: transparent;
+        transform: translateX(0%);
+    }
+}
+
+.show-nav {
+    transform: translateX(0);
+}
+.hide-nav {
+    transform: translateX(-200%);
+}
+
+.nav-wrapper {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.7);
+  /* background-color: blue; */
+  transform: translateX(0%);
+  transition: all 0.5s;
+  z-index: 3;
+}
+
+.show-nav-wrapper {
+  transform: translateX(100%);
+}
+
+ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    z-index: 4;
+    display: flex;
+    position: relative;
+    margin: 0;
+    justify-content: center;
+    flex-grow: 1;
+
+    @media screen and (min-width: 1024px) {
+        flex-direction: row;
+        justify-content: flex-start;
+    }
+}
+
+ul li {
+    display: block;
+    cursor: pointer;
+    width: 100%;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    transition: all .5s ease;
+    border-radius: 5px;
+
+    @media screen and (min-width: 1024px) {
+        display: block;
+    }
+}
+
+ul li:hover {
+    background: rgb(57, 57, 57);
+
+    @media screen and (min-width: 1024px) {
+        background: none;
+    }
+
+}
+
+ul li a {
+    font-size: 1.4rem;
+    color: whitesmoke;
+    text-decoration: none;
+    font-family: "Montserrat", sans-serif;
+}
+
+ul li a:hover {
+    @media screen and (min-width: 1024px) {
+        color: red;
+    }
+}
+ul li:nth-child(1), ul li:nth-child(2) {
+    width: 10rem;
+}
+
+
+ul li:nth-child(3) {
+    position: relative;
+    top: auto;
+    right: auto;
+    padding: 0;
+    margin-top: 1.5rem;
+    width:15rem;
+    /* justify-self: flex-end; */
+
+    @media screen and (min-width: 1024px) {
+        position: absolute;
+        top: 10px;
+        right: 0;
+        margin-top: 0;
+        margin-left: 10rem;
+    }
+
+
+}
+.list-subscribe-button {
+    height: 100%;
+    display: flex;
+    background-color: #e50914;
+    border-radius: 6px;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+
+    @media screen and (min-width: 1024px) {
+        background: red;
+        padding: .3rem ;
+    }
+
+
+  }
+
+  .list-subscribe-button:hover {
+    background-color: rgb(255, 55, 65);
+    color: black;
+}
+
+
+
+/* nav .menu-open {
+
+  } */
+
+
+
+
+
+
+
+
+.modal-div {
+    display: none;
+    margin-left: 30px;
+    position: relative;
+    font-family: "Montserrat", sans-serif;
+    background-color: transparent;
+    border-radius: 25%;
+    padding: 5px 10px;
+}
+
+/* Navbar */
+
+  
+  /* TextLogo */
+
+  
+  /* NavLinks */
+  .nav-links {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 85%;
+    background-color: rgba(0, 0, 0, 1);
+    margin: auto;
+    padding: 25rem 3rem;
+    list-style: none;
+    justify-content: center;
+    flex-grow: 1;
+    border-radius: 25px;
+
+
+    
+
+    @media screen and (min-width: 1024px) {
+      display: flex;
+      position: relative;
+      height: auto;
+      width: 100%;
+      background-color: transparent;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      justify-content: center;
+      flex-grow: 1;
+    }
+  }
+  
+
+  
+  /* NavLinkItem */
+  .nav-link-item {
+    position: relative;
+    font-family: "Montserrat", sans-serif;
+    background-color: transparent;
+    border-radius: 25%;
+    padding: 1rem;
+    display: none;
+    justify-content: center;
+    align-items: center;
+
+    @media screen and (min-width: 1024px) {
+      display: flex;
+    }
+  }
+  
+  /* NavLink */
+  .nav-link-item a {
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+  }
+  
+  /* SubscribeButton */
+  .subscribe-button {
+    /* display: none; */
+    background-color: #e50914;
+    border-radius: 6px;
+    height: 40px;
+    width: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+  }
+
+ 
+  
+  .subscribe-button a {
+    display: flex;
+  }
+  
+  /* MenuIcon */
+  .menu-icon {
+    display: flex;
+    font-size: 30px;
+    color: white;
+    margin: 0 1rem;
+    display: flex;
+    cursor: pointer;
+
+    @media screen and (min-width: 1024px) {
+      display: none;
+    }
+  }
+  
+  .menu-icon a {
+    display: none;
+
+
+  }
+  
+  /* CloseIcon */
+  .close-icon {
+    position: absolute;
+    font-size: 30px;
+    color: white;
+    margin: 0 1rem;
+    display: flex;
+    cursor: pointer;
+    top: 2.5rem;
+    right: 0;
+
+    @media screen and (min-width: 1024px) {
+      display: none;
+    }
+  }
+  
+  .close-icon a {
+    display: none;
+
+  }
+  
+  /* Modal */
+  .modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 1;
+  }
+  
+  /* ModalContent */
+  .modal-content {
+    background: #fff;
+    width: 300px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+    position: relative;
+  }
+  
+  /* CloseButton */
+  .close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+  }
+  
+  /* Line */
+  .line {
+    border-top: 1px solid #ccc;
+    margin: 20px 0;
+  }
+  
+  /* SubscribeModalButton */
+  .subscribe-modal-button {
+    background: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+  }
+  
+  /* ModalContentCentered */
+  .modal-content-centered {
+    text-align: center;
+  }
+  
